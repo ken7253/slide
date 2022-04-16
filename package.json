@@ -4,7 +4,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export",
+    "test": "ts-node cmd/select.ts"
   },
   "repository": {
     "type": "git",
@@ -13,9 +16,15 @@
   "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com)",
   "homepage": "https://github.com/ken7253/slide#readme",
   "devDependencies": {
-    "@slidev/cli": "^0.30.3"
+    "@slidev/cli": "^0.30.3",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@slidev/theme-default": "^0.21.2"
+    "@slidev/theme-default": "^0.21.2",
+    "@slidev/theme-seriph": "^0.21.2"
   }
 }
