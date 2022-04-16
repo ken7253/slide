@@ -1,0 +1,21 @@
+{
+  "name": "slide",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ken7253/slide.git"
+  },
+  "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com)",
+  "homepage": "https://github.com/ken7253/slide#readme",
+  "devDependencies": {
+    "@slidev/cli": "^0.30.3"
+  },
+  "dependencies": {
+    "@slidev/theme-default": "^0.21.2"
+  }
+}
