@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
     "export": "slidev export",
     "dev:cmd": "tsc -w",
-    "build:cmd": "tsc"
+    "build:cmd": "tsc",
+    "test": "node cmd/select.js"
   },
   "repository": {
     "type": "git",
