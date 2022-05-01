@@ -44,9 +44,7 @@ const exec = () => {
       choices: fetchAllSlide(),
     })
     .then((value) => {
-      /** CLIで選択されたスライドのパス */
-      const selectedPath = getSlide(value.select);
-      const slidev = spawn('npm', ['x' ,'-p', 'slidev', selectedPath]);
+      const slidev = spawn('npm', ['x' ,'-p', 'slidev', getSlide(value.select)]);
 
       slidev.stdout.on('data', (data) => {
         console.log(`[LOG] ${data}`);
