@@ -28,10 +28,10 @@ const getSlide = (fileName: string) => {
 
 const exec = () => {
   console.log(`Searching for slides.\n at ${path.join(process.cwd(), config.slideRoot)}`);
-  if(fetchAllSlide().length === 0){
-    console.log("\u001b[31m" + "[ERROR] No slides were available." + "\u001b[0m");
+  if (fetchAllSlide().length === 0) {
+    console.log('\u001b[31m' + '[ERROR] No slides were available.' + '\u001b[0m');
     return;
-  };
+  }
 
   inquirer
     .prompt({
