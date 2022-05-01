@@ -6,7 +6,9 @@ import { spawn } from 'node:child_process';
 
 /** 設定情報 */
 const config = {
+  /** スライドを格納しているディレクトリ */
   slideRoot: 'slides',
+  scriptName: 'dev',
 };
 
 /**
@@ -40,8 +42,13 @@ const exec = () => {
       choices: fetchAllSlide(),
     })
     .then((value) => {
-      const selectedSlide = getSlide(value.select);
-      const slidev = spawn('npm', ['run', 'dev', '--', selectedSlide]);
+      /** CLIで選択されたスライドのパス */
+      const selectedPath = getSlide(value.select);
+      const slidev = spawn('npm', ['x' ,'-p', 'slidev', selectedPath]); 
+
+      slidev.stderr.on('error', (err) => {
+        console.log(`[ERROR] ${err}`);
+      });
 
       slidev.stdout.on('data', (data) => {
         console.log(`[LOG] ${data}`);
@@ -52,7 +59,7 @@ const exec = () => {
       });
 
       slidev.on('close', (code) => {
-        console.log(`child process exited with code ${code}`);
+        console.log(`[LOG] Child process exited with code ${code}`);
       });
     });
 };
