@@ -17,9 +17,12 @@ const config = {
  */
 const fetchAllSlide = () => {
   const slideDir = path.join(process.cwd(), config.slideRoot);
-  const files = fs.readdirSync(slideDir);
+  const ls = fs.readdirSync(slideDir);
+  const markdownFiles = ls.filter((file) => {
+    return path.extname(file) === '.md';
+  });
 
-  return files;
+  return markdownFiles;
 };
 
 /** 選択されたスライドのパス */
