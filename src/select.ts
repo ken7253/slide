@@ -8,7 +8,6 @@ import { spawn } from 'node:child_process';
 const config = {
   /** スライドを格納しているディレクトリ */
   slideRoot: 'slides',
-  scriptName: 'dev',
 };
 
 /**
