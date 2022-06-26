@@ -5,10 +5,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "select": "node --loader ts-node/esm scripts/select.ts",
+    "select": "node scripts/select.js",
     "dev": "slidev",
     "build": "slidev build",
-    "export": "slidev export"
+    "export": "slidev export",
+    "build:scripts": "tsc -p ./tsconfig.node.json"
   },
   "repository": {
     "type": "git",
