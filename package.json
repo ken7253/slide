@@ -5,12 +5,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "select": "node --loader ts-node/esm scripts/select.ts",
     "dev": "slidev",
     "build": "slidev build",
-    "export": "slidev export",
-    "dev:cmd": "tsc -w",
-    "build:cmd": "tsc",
-    "test": "node cmd/select.js"
+    "export": "slidev export"
   },
   "repository": {
     "type": "git",
@@ -18,6 +16,9 @@
   },
   "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com)",
   "homepage": "https://github.com/ken7253/slide#readme",
+  "volta": {
+    "node": "16.15.0"
+  },
   "devDependencies": {
     "@slidev/cli": "^0.30.3",
     "@types/inquirer": "^8.2.1",
@@ -27,6 +28,7 @@
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.6.2",
+    "ts-node": "^10.8.1",
     "typescript": "^4.6.3"
   },
   "dependencies": {
