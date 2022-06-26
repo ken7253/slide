@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "preview": "slidev ./writing/slides.md",
     "fmt": "prettier -w ."
   },
   "volta": {
@@ -13,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/ken7253/slide.git"
   },
+  "workspaces": [
+    "*/src"
+  ],
   "homepage": "https://github.com/ken7253/slide#readme",
   "devDependencies": {
     "@slidev/cli": "^0.33.1",
