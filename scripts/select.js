@@ -32,10 +32,10 @@ const exec = () => {
         .then((value) => {
         const slidev = spawn('npm', ['x', '-p', 'slidev', getSlide(value.select)]);
         slidev.stdout.on('data', (data) => {
-            console.log(`[LOG] ${data}`);
+            console.log(`[LOG] \n${data}`);
         });
         slidev.stderr.on('data', (data) => {
-            console.error(`[ERROR] ${data}`);
+            console.error(`[ERROR] \n${data}`);
         });
         slidev.on('close', (code) => {
             console.log(`[LOG] Child process exited with code ${code}`);
