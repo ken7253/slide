@@ -1,0 +1,85 @@
+:root {
+  --c-theme-main: #049dbf;
+  --c-theme-sub: #06CC83;
+  --c-theme-light: #ddd;
+  --c-theme-lighter: #eee;
+  --c-theme-dark: #444;
+  --c-theme-darker: #333;
+  --c-brand-node: #026e00;
+  --c-brand-ts: #3178c6;
+  --c-brand-js: #efd81d;
+}
+
+html.light {
+  --c-theme-darker: #eee;
+  --c-theme-light: #333;
+}
+
+h1:not([class]) {
+  color: var(--c-theme-main);
+  font-weight: 700;
+  padding-bottom: .25em;
+  border-bottom: dashed 2px var(--c-theme-main);
+}
+
+h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]) {
+  margin: .25em 0 .5em 0;
+}
+
+h2:not([class]) {
+  background-color: var(--c-theme-lighter);
+  color: var(--c-theme-main);
+  padding: 0 10px 2px;
+  font-weight: 700;
+  border-left: solid 5px var(--c-theme-main);
+}
+
+h3:not([class]) {
+  display: flex;
+  align-items: center;
+}
+
+h3:not([class])::before {
+  content: "";
+  display: block;
+  height: 1em;
+  width: 7px;
+  background-color: var(--c-theme-main);
+  margin-right: 7px;
+  transform: translateY(1px);
+}
+
+h4:not([class]) {
+  color: var(--c-theme-main);
+  font-weight: 700;
+}
+
+h5:not([class]) {
+  font-weight: 700;
+}
+
+strong:not([class]) {
+  text-shadow: 0 0 5px var(--c-theme-darker);
+  background:linear-gradient(transparent 70%, var(--c-theme-sub) 70%);
+  padding: 0 .25ex;
+  margin: 0 .25ex;
+}
+
+#app th {
+  font-weight: 700;
+  background-color: var(--c-theme-main);
+  border: solid 1px var(--c-theme-main);
+}
+
+#app tr:nth-child(2n) td {
+  color: var(--c-theme-main);
+}
+
+ul li:not([class]) {
+  list-style-type: disc;
+}
+
+li::marker {
+  color: var(--c-theme-main);
+  font-weight: 700;
+}
