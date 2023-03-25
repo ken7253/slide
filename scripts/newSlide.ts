@@ -17,7 +17,7 @@ const crateWorkspace = (name?: string) => {
         ["export", "slidev export"],
       ].forEach((scripts) => {
         execSync(
-          `npm set-script -w ${workspaceName} ${scripts[0]} ${scripts[1]}`
+          `npm set-script -w ${workspaceName} "${scripts[0]}" "${scripts[1]}"`
         );
       });
       // スライドファイルの作成
@@ -25,9 +25,13 @@ const crateWorkspace = (name?: string) => {
         process.cwd(),
         "scripts",
         "assets",
-        "slide.md"
+        "slides.md"
       );
-      const slideFilePath = path.join(process.cwd(), workspaceName, "slide.md");
+      const slideFilePath = path.join(
+        process.cwd(),
+        workspaceName,
+        "slides.md"
+      );
       cp(templateFilePath, slideFilePath).catch((err) => console.log(err));
 
       const styleDir = path.join(process.cwd(), workspaceName, "styles");
