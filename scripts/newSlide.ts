@@ -1,10 +1,11 @@
 import path from "node:path";
 import { writeFile, mkdir, cp } from "node:fs/promises";
 import { execSync, exec } from "node:child_process";
-import dayjs from "../node_modules/dayjs/esm/index";
+import dayjs from "dayjs";
 
 const crateWorkspace = (name?: string) => {
-  const workspaceName = name ?? dayjs("YYYY-MM-DD").toString();
+  const workspaceName =
+    name ?? dayjs(new Date()).format("YYYY-MM-DD").toString();
   exec(`npm init -w ${workspaceName} -y`, (err) => {
     if (err) {
       console.log(err);
