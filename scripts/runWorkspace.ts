@@ -5,14 +5,13 @@ import path from "node:path";
 import inquirer from "inquirer";
 
 const ignoreDirName = ["node_modules", "scripts", "reuse"];
-const hiddenFilePattern = new RegExp("^(.|_)", "u");
 
 (async (commandOption?: string[]) => {
   const command =
     commandOption?.find((v) => v.match("--command="))?.split("=")[1] ?? "dev";
   const fileNameList = await readdir(process.cwd());
   const dirNameList = fileNameList.filter((fileName) => {
-    const isHiddenFile = hiddenFilePattern.test(fileName);
+    const isHiddenFile = [".", "_"].includes(fileName[0]);
     if (isHiddenFile) return false;
 
     const isIgnoreDir =
