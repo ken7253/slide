@@ -1,6 +1,6 @@
 import { readdir } from "node:fs/promises";
 import { statSync } from "node:fs";
-import { exec } from "child_process";
+import { spawn } from "child_process";
 import path from "node:path";
 import inquirer from "inquirer";
 
@@ -43,10 +43,8 @@ const ignoreDirName = ["node_modules", "scripts", "reuse"];
     })
     .then((answers) => {
       const { dirName } = answers;
-      exec(`npm run ${command} -w ${dirName}`, (err) => {
-        if (err) {
-          console.log(err);
-        }
+      spawn("npm", ["run", command, "-w", dirName], {
+        stdio: "inherit",
       });
     })
     .catch((err) => console.log(err));
