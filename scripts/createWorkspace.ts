@@ -37,7 +37,10 @@ const crateWorkspace = (name?: string) => {
       const styleDir = path.join(process.cwd(), workspaceName, "styles");
       mkdir(styleDir)
         .then(() => {
-          writeFile(path.join(styleDir, "index.ts"), 'import "./mod.css"');
+          writeFile(
+            path.join(styleDir, "index.ts"),
+            'import "./mod.css"\nimport "@slide/reuse/styles";'
+          );
           writeFile(path.join(styleDir, "mod.css"), "");
         })
         .catch((err) => console.log(err));

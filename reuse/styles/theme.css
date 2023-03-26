@@ -1,0 +1,6 @@
+:root {
+  --c-main: red;
+  --c-secondary: blue;
+  --c-accent: orange;
+  --c-main-gradient: linear-gradient(45deg, var(--c-main), var(--c-secondary));
+}

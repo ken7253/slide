@@ -1,12 +1,88 @@
 #app #slide-content {
-  background: var(--c-background, linear-gradient(45deg, red, blue));
-}
-
-#app p {
-  opacity: 1;
+  background: var(--c-main-gradient);
 }
 
 #app .slidev-layout.end {
-  background: var(--c-background, linear-gradient(45deg, red, blue));
+  background: var(--c-main-gradient);
   filter: brightness(0.8);
+}
+
+deepl-inline-trigger {
+  display: none !important;
+}
+
+/* Heading */
+#app h1,
+#app h2,
+#app h3,
+#app h4,
+#app h5 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+#app h1 {
+  margin-bottom: 0.25em;
+}
+
+#app h2 {
+  margin: 0 0 0.25em 0;
+  padding: 0.25em;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  letter-spacing: 0.03em;
+}
+
+/* List */
+#app ol,
+#app ul {
+  margin: 0.5em 0.25em;
+}
+#app ul {
+  list-style-type: disc;
+}
+
+/* Code */
+#app .slidev-code {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-left: solid 5px var(--c-main);
+}
+
+#app :not(pre) > code:before,
+#app :not(pre) > code::after {
+  content: none;
+}
+
+#app :not(pre) > code {
+  margin: 0 4px;
+  padding: 2px 0.3em;
+  font-weight: 600;
+}
+
+/* strong */
+#app strong {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--c-accent);
+}
+
+/* Table */
+#app th {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Paragraph */
+#app p {
+  opacity: 1;
+  line-height: 2.1;
+  margin: 0.25em 0;
+  letter-spacing: 0.03em;
+}
+#app h1 + p {
+  letter-spacing: normal;
+  line-height: 1.6;
 }
