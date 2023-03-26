@@ -2,7 +2,9 @@
   "name": "slide",
   "private": true,
   "scripts": {
-    "new": "ts-node --esm \"./scripts/newSlide.ts\""
+    "new": "ts-node \"./scripts/createWorkspace.ts\"",
+    "dev": "ts-node \"./scripts/runWorkspace.ts\" --command=dev",
+    "build": "ts-node \"./scripts/runWorkspace.ts\" --command=build"
   },
   "workspaces": [
     "reuse"

@@ -1,0 +1,54 @@
+import { readdir } from "node:fs/promises";
+import { statSync } from "node:fs";
+import { exec } from "child_process";
+import path from "node:path";
+import inquirer from "inquirer";
+
+const ignoreDirName = ["node_modules", "scripts", "reuse"];
+const hiddenFilePattern = new RegExp("^(.|_)", "u");
+
+(async (commandOption?: string[]) => {
+  const command =
+    commandOption?.find((v) => v.match("--command="))?.split("=")[1] ?? "dev";
+  const fileNameList = await readdir(process.cwd());
+  const dirNameList = fileNameList.filter((fileName) => {
+    const isHiddenFile = hiddenFilePattern.test(fileName);
+    if (isHiddenFile) return false;
+
+    const isIgnoreDir =
+      typeof ignoreDirName.find((v) => v === fileName) === "string";
+    if (isIgnoreDir) return false;
+
+    const absolutePath = path.join(process.cwd(), fileName);
+    const fileStats = statSync(absolutePath);
+
+    return fileStats.isDirectory();
+  });
+
+  if (dirNameList.length === 0) {
+    const messages = [
+      "[Error]  Could not detect workspace",
+      "[Info]   settings:ignore",
+    ];
+    console.log(messages.join("\n"));
+    console.dir(ignoreDirName);
+    return;
+  }
+
+  inquirer
+    .prompt({
+      type: "list",
+      name: "dirName",
+      message: "select workspace",
+      choices: dirNameList,
+    })
+    .then((answers) => {
+      const { dirName } = answers;
+      exec(`npm run ${command} -w ${dirName}`, (err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
+    })
+    .catch((err) => console.log(err));
+})(process.argv.slice(2));

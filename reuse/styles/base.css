@@ -1,0 +1,12 @@
+#app #slide-content {
+  background: var(--c-background, linear-gradient(45deg, red, blue));
+}
+
+#app p {
+  opacity: 1;
+}
+
+#app .slidev-layout.end {
+  background: var(--c-background, linear-gradient(45deg, red, blue));
+  filter: brightness(0.8);
+}
