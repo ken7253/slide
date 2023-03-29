@@ -20,7 +20,10 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "@iconify-json/mdi": "^1.1.50",
+    "@iconify-json/radix-icons": "^1.1.10",
+    "@iconify-json/simple-icons": "^1.1.47"
   },
   "type": "module"
 }
