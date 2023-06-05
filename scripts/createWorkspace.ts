@@ -2,11 +2,14 @@ import path from "node:path";
 import { writeFile, mkdir, cp } from "node:fs/promises";
 import childProcess from "node:child_process";
 import { promisify } from "node:util";
-import dayjs from "dayjs";
 
+import dayjs from "dayjs";
+import inquirer from "inquirer";
+
+/** Promise like exec. */
 const exec = promisify(childProcess.exec);
 
-const crateWorkspace = (name?: string) => {
+const crateWorkspace = (name: string | null) => {
   const workspaceName =
     name ?? dayjs(new Date()).format("YYYY-MM-DD").toString();
 
@@ -51,4 +54,18 @@ const crateWorkspace = (name?: string) => {
     });
 };
 
-crateWorkspace();
+inquirer
+  .prompt([
+    {
+      name: "workspaceName",
+      type: "input",
+      message: "Enter a workspace name.",
+      default: dayjs(new Date()).format("YYYY-MM-DD").toString(),
+    },
+  ])
+  .then((answer) => {
+    const { workspaceName } = answer;
+    if (typeof workspaceName === "string") {
+      crateWorkspace(workspaceName === "" ? null : workspaceName);
+    }
+  });
