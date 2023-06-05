@@ -17,14 +17,14 @@ const crateWorkspace = (name: string | null) => {
     .catch((err) => console.log(err))
     .then(() => {
       // コマンドの設定
-      [
+      const scripts = [
         ["dev", "slidev"],
         ["build", "slidev build"],
         ["export", "slidev export"],
-      ].forEach((script) => {
-        exec(
-          `npm pkg set scripts.${script[0]}="${script[1]}" -w=${workspaceName}`
-        );
+      ];
+      const makeScriptsTask = scripts.map((script) => {
+        const command = `npm pkg set scripts.${script[0]}="${script[1]}" -w=${workspaceName}`;
+        return exec(command);
       });
 
       // スライドファイルの作成
@@ -40,17 +40,21 @@ const crateWorkspace = (name: string | null) => {
         "slides.md"
       );
 
-      cp(templateFilePath, slideFilePath).catch((err) => console.log(err));
+      const copyTemplateTask = cp(templateFilePath, slideFilePath);
+
       const styleDir = path.join(process.cwd(), workspaceName, "styles");
-      mkdir(styleDir)
-        .then(() => {
-          writeFile(
-            path.join(styleDir, "index.ts"),
-            'import "./mod.css"\nimport "@slide/reuse/styles";'
-          );
-          writeFile(path.join(styleDir, "mod.css"), "");
-        })
-        .catch((err) => console.log(err));
+      const makeStyleFileTask = mkdir(styleDir).then(() => {
+        writeFile(
+          path.join(styleDir, "index.ts"),
+          'import "./mod.css"\nimport "@slide/reuse/styles";'
+        );
+        writeFile(path.join(styleDir, "mod.css"), "");
+      });
+
+      const taskGroup = [makeScriptsTask, copyTemplateTask, makeStyleFileTask];
+      Promise.allSettled(taskGroup).then(() =>
+        console.log(`[Done] Create ${workspaceName}`)
+      );
     });
 };
 
