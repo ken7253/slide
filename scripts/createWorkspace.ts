@@ -1,25 +1,29 @@
 import path from "node:path";
 import { writeFile, mkdir, cp } from "node:fs/promises";
-import { execSync, exec } from "node:child_process";
+import childProcess from "node:child_process";
+import { promisify } from "node:util";
 import dayjs from "dayjs";
+
+const exec = promisify(childProcess.exec);
 
 const crateWorkspace = (name?: string) => {
   const workspaceName =
     name ?? dayjs(new Date()).format("YYYY-MM-DD").toString();
-  exec(`npm init -w ${workspaceName} -y`, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
+
+  exec(`npm init -w ${workspaceName} -y`)
+    .catch((err) => console.log(err))
+    .then(() => {
       // コマンドの設定
       [
         ["dev", "slidev"],
         ["build", "slidev build"],
         ["export", "slidev export"],
-      ].forEach((scripts) => {
-        execSync(
-          `npm set-script -w ${workspaceName} "${scripts[0]}" "${scripts[1]}"`
+      ].forEach((script) => {
+        exec(
+          `npm pkg set scripts.${script[0]}="${script[1]}" -w=${workspaceName}`
         );
       });
+
       // スライドファイルの作成
       const templateFilePath = path.join(
         process.cwd(),
@@ -32,8 +36,8 @@ const crateWorkspace = (name?: string) => {
         workspaceName,
         "slides.md"
       );
-      cp(templateFilePath, slideFilePath).catch((err) => console.log(err));
 
+      cp(templateFilePath, slideFilePath).catch((err) => console.log(err));
       const styleDir = path.join(process.cwd(), workspaceName, "styles");
       mkdir(styleDir)
         .then(() => {
@@ -44,8 +48,7 @@ const crateWorkspace = (name?: string) => {
           writeFile(path.join(styleDir, "mod.css"), "");
         })
         .catch((err) => console.log(err));
-    }
-  });
+    });
 };
 
 crateWorkspace();
