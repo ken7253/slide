@@ -3,6 +3,8 @@ import path from "node:path";
 
 import inquirer from "inquirer";
 
+import { reservedDirChars } from "./util/reservedDirChars.js";
+
 /** プロパティの存在チェックと型の絞り込みを行う形ガード */
 const hasWorkspaces = (
   packageJSON: Object
@@ -24,9 +26,6 @@ const hasWorkspaces = (
       return workspaces.filter((v) => v !== "reuse");
     };
     const workspaceList = removeReuse(parsedJSON.workspaces);
-
-    /** ファイル名として使用できない文字列 */
-    const reservedDirChars = /[/:*?"<>|\\\x00-\x1F]/gu;
 
     inquirer
       .prompt([

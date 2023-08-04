@@ -6,6 +6,8 @@ import { promisify } from "node:util";
 import dayjs from "dayjs";
 import inquirer from "inquirer";
 
+import { reservedDirChars } from "./util/reservedDirChars.js";
+
 /** Promise like exec. */
 const exec = promisify(childProcess.exec);
 
@@ -64,6 +66,10 @@ inquirer
       name: "workspaceName",
       type: "input",
       message: "Enter a workspace name.",
+      validate: (input) =>
+        reservedDirChars.test(input)
+          ? "ディレクトリ名に指定できない文字列が含まれています"
+          : true,
       default: dayjs(new Date()).format("YYYY-MM-DD").toString(),
     },
   ])
