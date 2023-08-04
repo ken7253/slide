@@ -43,6 +43,24 @@ deepl-inline-trigger {
   margin-top: 0.25em;
 }
 
+#app h3 {
+  position: relative;
+  width: fit-content;
+  padding: 0 5px;
+}
+
+#app h3::after {
+  content: "";
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  background-color: var(--c-accent);
+  opacity: 0.3;
+}
+
 /* List */
 #app ol,
 #app ul {
