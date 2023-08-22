@@ -43,6 +43,13 @@ deepl-inline-trigger {
   margin-top: 0.25em;
 }
 
+/* 中央揃えの場合のレイアウト */
+#app .slidev-layout.center h2::after {
+  width: 100%;
+  margin: 0.25em auto 0 auto;
+  opacity: 0.5;
+}
+
 #app h3 {
   position: relative;
   width: fit-content;
@@ -115,4 +122,13 @@ deepl-inline-trigger {
 #app p,
 #app li {
   font-size: 1.3rem;
+}
+
+/* blockquote */
+#app blockquote {
+  padding-left: 1rem;
+}
+#app blockquote p,
+#app blockquote li {
+  font-size: 0.95rem;
 }
