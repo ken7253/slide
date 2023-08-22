@@ -137,7 +137,29 @@ layout: center
 
 ### アウトプットを行う
 
-インプットの習慣がついたらアウトプットもする。
+インプットの習慣がついたらアウトプットもする。  
+アウトプットも絶対にできることから始めてみる。  
+まずは、読んだ記事のURLとかをX（Twitter）や自分のtimesにポストするだけでいい。
+
+<v-clicks>
+
+- なるべくパブリックなチャンネルにポストする
+- 読み始めにURLを貼って読みながらスレッドをつなげるとよい
+- 記事以外にも業務の中で学んだことなどを書き留めておく
+
+</v-clicks>
+
+<div v-click style="border-radius: 8px;padding: 1rem;margin-top:3rem;">
+<p style="line-height:1;margin-bottom:1rem;">（忘れるので）何かしらの形で <strong>学んだことを残しておく</strong></p>
+</div>
+
+---
+
+### アウトプットを行う
+
+[Zenn.dev](https://zenn.dev/)のスクラップ機能などもおすすめ。
+
+![zenn.devのスクラップ機能画面のスクリーンショット 数件のスクラップ（投稿）が既に作成されている](public/img/zenn-scrap.png)
 
 ---
 
