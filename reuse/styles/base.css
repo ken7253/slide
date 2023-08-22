@@ -112,3 +112,7 @@ deepl-inline-trigger {
   letter-spacing: normal;
   line-height: 1.6;
 }
+#app p,
+#app li {
+  font-size: 1.5rem;
+}
