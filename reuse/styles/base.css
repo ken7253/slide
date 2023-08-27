@@ -1,8 +1,5 @@
-:root {
-  --webkit-print-color-adjust: exact !important;
-}
-
-#app #slide-content {
+#app .slidev-layout,
+#app .slidev-layout {
   background: var(--c-main-gradient);
 }
 
