@@ -166,7 +166,7 @@ layout: center
 
 [Zenn.dev](https://zenn.dev/)のスクラップ機能などもおすすめ。
 
-![zenn.devのスクラップ機能画面のスクリーンショット 数件のスクラップ（投稿）が既に作成されている](public/img/zenn-scrap.png)
+![zenn.devのスクラップ機能画面のスクリーンショット 数件のスクラップ（投稿）が既に作成されている](/img/zenn-scrap.png)
 
 ---
 
