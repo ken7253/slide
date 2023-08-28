@@ -1,0 +1,14 @@
+{
+  "name": "@slide/introduction-functional-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export": "slidev export",
+    "dev": "slidev"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT"
+}
