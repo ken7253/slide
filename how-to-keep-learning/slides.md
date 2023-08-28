@@ -3,7 +3,7 @@ theme: default
 titleTemplate: '%s - ken7253'
 colorSchema: 'dark'
 fonts:
-  sans: 'BIZ UDPGothic'
+  sans: 'Zen Kaku Gothic Antique'
   mono: 'Noto Sans Mono'
 ---
 
@@ -27,8 +27,8 @@ src: "../reuse/me.md"
 
 ## 話すこと
 
-- 勉強法を模索して気付いたことをまとめます。
-- あくまで個人の体感の話です。
+- 勉強法を模索して気付いたことをまとめます
+- あくまで個人の体感の話です
 - 学習方法は人それぞれなので自分に合ったやり方を探すきっかけに
 
 ---
