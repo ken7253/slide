@@ -1,4 +1,12 @@
-#app #slide-content {
+*,
+::before,
+*::after {
+  font-weight: 600;
+  font-feature-settings: "palt";
+}
+
+#app .slidev-layout,
+#app .slidev-layout {
   background: var(--c-main-gradient);
 }
 
@@ -25,6 +33,8 @@ deepl-inline-trigger {
 
 #app h1 {
   margin-bottom: 0.25em;
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 #app h2 {
@@ -41,6 +51,13 @@ deepl-inline-trigger {
   background-color: var(--c-accent);
   width: 5%;
   margin-top: 0.25em;
+}
+
+/* 中央揃えの場合のレイアウト */
+#app .slidev-layout.center h2::after {
+  width: 100%;
+  margin: 0.25em auto 0 auto;
+  opacity: 0.5;
 }
 
 #app h3 {
@@ -70,6 +87,10 @@ deepl-inline-trigger {
   list-style-type: disc;
 }
 
+#app li {
+  letter-spacing: 0.03em;
+}
+
 /* Code */
 #app .slidev-code {
   font-weight: 600;
@@ -90,7 +111,7 @@ deepl-inline-trigger {
 
 /* strong */
 #app strong {
-  font-size: 1.25rem;
+  font-size: 1.25em;
   font-weight: 900;
   color: var(--c-accent);
 }
@@ -111,4 +132,17 @@ deepl-inline-trigger {
 #app h1 + p {
   letter-spacing: normal;
   line-height: 1.6;
+}
+#app p,
+#app li {
+  font-size: 1.3rem;
+}
+
+/* blockquote */
+#app blockquote {
+  padding-left: 1rem;
+}
+#app blockquote p,
+#app blockquote li {
+  font-size: 0.95rem;
 }

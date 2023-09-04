@@ -2,8 +2,8 @@
 theme: default
 titleTemplate: '%s - ken7253'
 fonts:
-  sans: 'BIZ UDPGothic'
-  mono: 'Noto Sans Mono'
+  sans: 'M PLUS 2'
+  mono: 'M PLUS 1 Code'
 layout: cover
 ---
 <!-- markdownlint-disable first-line-h1 -->
