@@ -14,7 +14,8 @@
   "workspaces": [
     "reuse",
     "2023-03-26",
-    "how-to-keep-learning"
+    "how-to-keep-learning",
+    "introduction-functional-programming"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.40.3",
