@@ -39,9 +39,7 @@ layout: center
 layout: full
 ---
 
-<div style="position:fixed; top:0; left:0; height:100%; width:auto;">
-<img alt="React.devのスクリーンショット（トップページ）" src="/img/react-dot-dev.png"/>
-</div>
+![React.devのスクリーンショット（トップページ）](/img/react-dot-dev.png)
 
 <!--
   自分もReactの書き方を調べているうちに関数型プログラミングの情報にたどり着きました。
