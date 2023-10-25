@@ -15,7 +15,8 @@
     "reuse",
     "2023-03-26",
     "how-to-keep-learning",
-    "introduction-functional-programming"
+    "introduction-functional-programming",
+    "how-to-tech-writing"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.40.3",
