@@ -7,7 +7,8 @@ fonts:
   mono: 'M PLUS 1 Code'
 ---
 
-# slide title
+# テックブログ文豪への道
+Road to tech-blog "Bunngou"
 
 ---
 src: "../reuse/me.md"
