@@ -1,0 +1,3 @@
+[layout="image-left"] > div:first-child {
+  background-size: 50% !important;
+}
