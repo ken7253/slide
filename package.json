@@ -31,7 +31,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@iconify-json/mdi": "^1.1.50",
+    "@iconify-json/mdi": "^1.1.55",
     "@iconify-json/radix-icons": "^1.1.10",
     "@iconify-json/simple-icons": "^1.1.47",
     "dayjs": "^1.11.10"
