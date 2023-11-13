@@ -34,7 +34,7 @@
     "@iconify-json/mdi": "^1.1.50",
     "@iconify-json/radix-icons": "^1.1.10",
     "@iconify-json/simple-icons": "^1.1.47",
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.10"
   },
   "volta": {
     "node": "18.17.1"
