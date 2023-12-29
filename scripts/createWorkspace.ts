@@ -56,7 +56,9 @@ const crateWorkspace = (name: string | null) => {
       const taskGroup = [makeScriptsTask, copyTemplateTask, makeStyleFileTask];
       Promise.allSettled(taskGroup).then(() =>
         console.log(`[Done] Create ${workspaceName}`)
-      );
+      ).catch((e) => {
+        console.log(e)
+      });
     });
 };
 
