@@ -16,7 +16,8 @@
     "2023-03-26",
     "how-to-keep-learning",
     "introduction-functional-programming",
-    "how-to-tech-writing"
+    "how-to-tech-writing",
+    "howto-use-react-keys"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.46.1",
