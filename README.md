@@ -10,3 +10,7 @@ The following command will launch an interactive prompt.
 - preview slide `npm run dev`
 - build slide `npm run build`
 - export pdf file `npm run export`
+
+## Reference
+
+- [slidev](https://ja.sli.dev/)
