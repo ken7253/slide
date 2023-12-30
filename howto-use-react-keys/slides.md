@@ -18,7 +18,7 @@ src: "../reuse/me.md"
 
 ## Reactのkeyについて
 
-リストを `map()` とかでレンダリングするときに使う `key` について。
+リストを`map()`とかでレンダリングするときに使う`key`について。
 
 ```tsx
 const list = ['リンゴ', 'バナナ', 'ゴリラ'];
@@ -47,8 +47,8 @@ export const App = () => {
     <>
       {
         process === 'before' 
-        ? <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
-        : <CheckList label="終了後チェックリスト" />
+          ? <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
+          : <CheckList label="終了後チェックリスト" />
       }
       <button onClick={
         // クリックされた場合次のチェックリストに進む
@@ -74,21 +74,19 @@ layout: center
 ```tsx
 {
   process === 'before' 
-  ? <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
-  : <CheckList label="終了後チェックリスト" />
+    ? <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
+    : <CheckList label="終了後チェックリスト" />
 }
 ```
 
-Reactから見たらこの書き方は…
-
-**CheckListコンポーネントを差し替えた** のではなく  
-**CheckListコンポーネントのlabel** だけが変わったという認識
+- 自分：`CheckList`コンポーネント自体を再レンダリングしてほしい
+- React：差分のある`CheckList[label]`のみを更新します
 
 ---
 
 ### 対処方法
 
-`key` を付けたら治った。
+`key`を付けたら治った。
 
 ```tsx
 {
@@ -98,7 +96,7 @@ Reactから見たらこの書き方は…
 }
 ```
 
-なぜ `key` を付けたら解決するか分かったのか
+なぜ`key`を付けてみようと思ったのか
 
 - Reactのレンダリングにおける差分検知の仕組みを知っていたから
 - 個人的には対処療法のつもりだった
@@ -127,4 +125,5 @@ Reactから見たらこの書き方は…
 
 ## 伝えたいこと
 
-Reactはレンダリングの仕組みを理解するのがめちゃくちゃ大切
+- `key`は識別子として使える
+- Reactはレンダリングの仕組みを知ることが大切
