@@ -13,7 +13,7 @@ layout: cover
       <h1 style="margin: 0 0 0 -3px; line-height: 1;">ken7253</h1>
       <p style="margin: 0;">Frontend developer</p>
     </div>
-    <img src="https://dairoku-studio.com/ogp-thumbnail.png" style="width: 120px; border-radius: 10px;">
+    <img alt="" src="https://dairoku-studio.com/ogp-thumbnail.png" style="position:fixed; top: 75px; right: 100px; width:220px; mix-blend-mode:soft-light; border-radius: 100%;">
   </div>
 
   <div>
