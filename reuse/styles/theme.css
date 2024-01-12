@@ -1,6 +1,7 @@
 :root {
-  --c-main: red;
-  --c-secondary: blue;
-  --c-accent: orange;
-  --c-main-gradient: linear-gradient(45deg, var(--c-main), var(--c-secondary));
+  --c-main: #3d387b;
+  --c-secondary: #337885;
+  --c-accent: #ff4848;
+  --c-main-gradient: linear-gradient(45deg, var(--c-main), rgba(0, 0, 0, 0)),
+    url("./filter.svg"), var(--c-secondary);
 }
