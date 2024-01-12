@@ -5,6 +5,10 @@
   font-feature-settings: "palt";
 }
 
+#app #slide-content {
+  border: solid 2px var(--c-base);
+}
+
 #app .slidev-layout,
 #app .slidev-layout {
   background: var(--c-main-gradient);
@@ -39,7 +43,7 @@ deepl-inline-trigger {
 
 #app h2 {
   margin: 0 0 0.25em 0;
-  padding: 0.25em;
+  padding: 0.25em 0;
   border-radius: 7px;
   letter-spacing: 0.03em;
 }
@@ -53,17 +57,10 @@ deepl-inline-trigger {
   margin-top: 0.25em;
 }
 
-/* 中央揃えの場合のレイアウト */
-#app .slidev-layout.center h2::after {
-  width: 100%;
-  margin: 0.25em auto 0 auto;
-  opacity: 0.5;
-}
-
 #app h3 {
   position: relative;
   width: fit-content;
-  padding: 0 5px;
+  padding: 0;
 }
 
 #app h3::after {
@@ -76,6 +73,37 @@ deepl-inline-trigger {
   position: absolute;
   background-color: var(--c-accent);
   opacity: 0.3;
+}
+
+#app h5 {
+  color: var(--c-accent);
+}
+
+/* 中央揃えの場合のレイアウト */
+#app .slidev-layout.center h2 {
+  &::after {
+    width: 100%;
+    margin: 0.25em auto 0 auto;
+    opacity: 0.5;
+  }
+}
+
+/* セクション見出し用 */
+#app .slidev-layout.section {
+  & h2 {
+    font-size: 2.5rem;
+    line-height: 1.4;
+
+    &::after {
+      width: 100%;
+      margin: 0.25em auto 0 auto;
+      opacity: 0.5;
+    }
+  }
+
+  & h3 {
+    padding: 0;
+  }
 }
 
 /* List */
@@ -117,9 +145,28 @@ deepl-inline-trigger {
 }
 
 /* Table */
-#app th {
-  font-weight: 700;
+#app table {
+  background-color: #3334;
+  border-radius: 4px;
   letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  overflow: hidden;
+
+  & tr:hover {
+    color: var(--c-accent);
+  }
+
+  & th {
+    font-weight: 700;
+  }
+
+  & td {
+    font-weight: 400;
+  }
+
+  & tbody tr:last-child {
+    border: none;
+  }
 }
 
 /* Paragraph */
@@ -140,9 +187,36 @@ deepl-inline-trigger {
 
 /* blockquote */
 #app blockquote {
-  padding-left: 1rem;
-}
-#app blockquote p,
-#app blockquote li {
-  font-size: 0.95rem;
+  font-family: monospace;
+  position: relative;
+  padding: 8px 1rem 4px 1rem;
+  border: none;
+  border-radius: 0;
+  background-color: #333c;
+  margin: 0.75rem 0;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  &::before {
+    content: "“";
+    top: -0.85rem;
+    left: 0;
+  }
+
+  &::after {
+    content: "”";
+    bottom: -1.5rem;
+    right: 0;
+  }
+
+  & p,
+  & li {
+    font-size: 0.95rem;
+  }
 }
