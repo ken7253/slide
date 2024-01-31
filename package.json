@@ -27,7 +27,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.10",
     "inquirer": "^9.2.13",
-    "playwright": "^1.40.1",
+    "playwright": "^1.41.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
