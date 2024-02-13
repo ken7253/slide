@@ -7,7 +7,8 @@ fonts:
   mono: 'M PLUS 1 Code'
 ---
 
-# slide title
+# &lt;TheTooltip /&gt;
+使いやすいツールチップを実装する方法
 
 ---
 src: "../reuse/me.md"
