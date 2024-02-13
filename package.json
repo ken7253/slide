@@ -18,7 +18,8 @@
     "how-to-keep-learning",
     "introduction-functional-programming",
     "how-to-tech-writing",
-    "howto-use-react-keys"
+    "howto-use-react-keys",
+    "the-tooltip"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.47.4",
