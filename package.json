@@ -5,7 +5,8 @@
     "new": "ts-node \"./scripts/createWorkspace.ts\"",
     "dev": "ts-node \"./scripts/runWorkspace.ts\" --command=dev",
     "build": "ts-node \"./scripts/runWorkspace.ts\" --command=build",
-    "export": "ts-node \"./scripts/runWorkspace.ts\" --command=export"
+    "export": "ts-node \"./scripts/runWorkspace.ts\" --command=export",
+    "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\""
   },
   "type": "module",
   "engines": {
@@ -27,6 +28,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.17",
     "inquirer": "^9.2.14",
+    "markdownlint-cli2": "^0.12.1",
     "playwright": "^1.41.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
