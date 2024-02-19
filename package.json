@@ -24,7 +24,7 @@
     "@slidev/cli": "^0.47.4",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
-    "@swc/core": "^1.4.0",
+    "@swc/core": "^1.4.2",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.17",
     "inquirer": "^9.2.14",
