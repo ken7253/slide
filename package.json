@@ -36,7 +36,7 @@
   "dependencies": {
     "@iconify-json/mdi": "^1.1.64",
     "@iconify-json/radix-icons": "^1.1.14",
-    "@iconify-json/simple-icons": "^1.1.92",
+    "@iconify-json/simple-icons": "^1.1.93",
     "dayjs": "^1.11.10"
   },
   "volta": {
