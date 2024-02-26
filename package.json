@@ -27,7 +27,7 @@
     "@swc/core": "^1.4.2",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.11.19",
-    "inquirer": "^9.2.14",
+    "inquirer": "^9.2.15",
     "markdownlint-cli2": "^0.12.1",
     "playwright": "^1.41.2",
     "ts-node": "^10.9.2",
