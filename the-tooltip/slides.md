@@ -131,7 +131,7 @@ ARIA APGを見るとインタラクションとして`ESC`キーでのキャン�
 
 ### Selectivity
 
-![](/img/bad-tooltip-listener.svg)
+![ツールチップを表示する要素にだけイベントハンドラーを適用した場合のイベントの発生条件を表した図](/img/bad-tooltip-listener.svg)
 
 トリガーとなる要素だけにイベントハンドラーを貼ると  
 ツールチップにポインタが移動した場合`PointerLeave`が発火して消えてしまう。
@@ -140,7 +140,7 @@ ARIA APGを見るとインタラクションとして`ESC`キーでのキャン�
 
 ### Selectivity
 
-![](/img/good-tooltip-listener.svg)
+![ツールチップ全体をラップする要素にイベントハンドラーを適用した場合のイベント発生条件を表した図](/img/good-tooltip-listener.svg)
 
 ツールチップとして認識する範囲を広げてWrapperを用意すると  
 ツールチップにポインタが移動しても`PointerLeave`が発火せず選択できる。
