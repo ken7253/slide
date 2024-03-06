@@ -126,11 +126,6 @@ deepl-inline-trigger {
   border-left: solid 5px var(--c-main);
 }
 
-#app code[class*="language-"],
-#app pre[class*="language-"] {
-  background-color: transparent;
-}
-
 #app :not(pre) > code:before,
 #app :not(pre) > code::after {
   content: none;
