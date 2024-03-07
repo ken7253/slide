@@ -137,6 +137,11 @@ deepl-inline-trigger {
   font-weight: 600;
 }
 
+#app code[class*="language-"],
+#app pre[class*="language-"] {
+  background-color: revert;
+}
+
 /* strong */
 #app strong {
   font-size: 1.25em;
