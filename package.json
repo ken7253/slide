@@ -22,7 +22,7 @@
     "the-tooltip"
   ],
   "devDependencies": {
-    "@slidev/cli": "^0.48.7",
+    "@slidev/cli": "^0.48.8",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "@swc/core": "^1.4.8",
