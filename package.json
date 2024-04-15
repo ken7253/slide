@@ -19,7 +19,8 @@
     "introduction-functional-programming",
     "how-to-tech-writing",
     "howto-use-react-keys",
-    "the-tooltip"
+    "the-tooltip",
+    "is-seo-everything"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.48.9",
