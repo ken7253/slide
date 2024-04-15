@@ -107,7 +107,7 @@ A: 接待とか（期待）
 
 ## 検索結果
 
-<img style="width:75%;margin:auto;" alt="Google検索の結果画面 検索ワードは「銀座 居酒屋 おしゃれ 安い」で食べログなどが上位表示され、次にGoogle Mapsが表示されている。" src="/img/google-search.png">
+<img style="width:75%;margin:auto;" alt="Google検索の結果画面 検索ワードは「銀座 居酒屋 おしゃれ 安い」で食べログなどが上位表示され、次にGoogle Mapsが表示されている。" src="/img/google-search-result.png">
 
 ---
 
