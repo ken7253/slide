@@ -3,6 +3,7 @@
 *::after {
   font-weight: 600;
   font-feature-settings: "palt";
+  color: var(--c-text);
 }
 
 #app #slide-content {
