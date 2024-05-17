@@ -86,6 +86,8 @@ export const sum = (array: number[]): number => {
 
 よくあるのは関数に引数を渡して、返り値を検査するパターン。
 
+````md magic-move
+
 ```ts
 import { describe, test, expect } from "vitest";
 import { sum } from "./index.ts";
@@ -106,12 +108,6 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
   });
 });
 ```
-
----
-
-### 単体テストはどのように書くか
-
-よくあるのは関数に引数を渡して、返り値を検査するパターン。
 
 ```ts{4-6}
 import { describe, test, expect } from "vitest";
@@ -134,12 +130,6 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
 });
 ```
 
----
-
-### 単体テストはどのように書くか
-
-よくあるのは関数に引数を渡して、返り値を検査するパターン。
-
 ```ts{4,14-15}
 import { describe, test, expect } from "vitest";
 import { sum } from "./index.ts";
@@ -160,12 +150,6 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
   });
 });
 ```
-
----
-
-### 単体テストはどのように書くか
-
-よくあるのは関数に引数を渡して、返り値を検査するパターン。
 
 ```ts{4,14,16}
 import { describe, test, expect } from "vitest";
@@ -188,11 +172,16 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
 });
 ```
 
+````
+
 ---
 
 ### 単体テストと純粋関数
 
-このとき関数自体が純粋関数ではない場合テストが書きづらい。
+このとき関数自体が純粋関数ではない場合テストが書きづらい。  
+下記のコードは`Math.random()`は実行毎に値が変わってしまうのでテストしづらい。
+
+````md magic-move
 
 ```ts
 export const sum = (array: number[]) => {
@@ -208,13 +197,27 @@ export const sum = (array: number[]) => {
 }
 ```
 
-`Math.random()`は実行毎に値が変わってしまうのでテストしづらい。
+```ts{1,10}
+export const sum = (array: number[], randomize: number) => {
+  if (array.some(v => v === Infinity || v === -Infinity)) {
+    return Infinity;
+  }
+
+  const sumAll = array.reduce(
+    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
+  );
+
+  return sumAll * randomize;
+}
+```
+````
 
 ---
 
 ### 副作用を除去してテストしやすい関数を作る
 
-副作用は外部から渡して純粋関数にする。
+副作用は外部から渡して純粋関数にする。  
+テストをするときは`randomize`に固定値を入れれば保証したいロジックを検査できる。
 
 ```ts{1,10}
 export const sum = (array: number[], randomize: number) => {
@@ -230,37 +233,13 @@ export const sum = (array: number[], randomize: number) => {
 }
 ```
 
-テストをするときは`randomize`に固定値を入れれば保証したいロジックを検査できる。
-
 ---
 
 ## 単体テストの考え方をHooksにも適用する
 
-Hooksのテストは`testing-library`によって提供されているのでそれを使う。  
-例えばNext.jsの`pathname`でFizzBuzzをしたい時に利用するHooksを考える。
-
-```ts
-import { useRouter } from "next/router";
-
-export const useFizzBuzz = () => {
-  const { pathname } = useRouter();
-  const pathNumber = parseInt(pathname, 10);
-
-  if (pathNumber % 3 === 0 && pathNumber % 5 === 0) {
-    return 'FizzBuzz';
-  } else if (pathNumber % 3 === 0) {
-    return 'Fizz';
-  } else if (pathNumber % 5 === 0) {
-    return 'Buzz';
-  } else {
-    return pathNumber;
-  }
-};
-```
-
 ---
 
-### テストしづらい依存の除去
+### 依存を整理する
 
 ---
 
@@ -270,3 +249,5 @@ export const useFizzBuzz = () => {
 
 ## まとめ
 
+- Hooksのテストであっても考え方は単体テストと変わらない
+- シグニチャーの情報量を増やして意外性のないHooksに
