@@ -33,6 +33,7 @@ src: "../reuse/me.md"
 
 - [useQuery](https://tanstack.com/query/latest/docs/framework/react/reference/useQuery)(Tanstack Query)
 - [useRouter](https://nextjs-ja-translation-docs.vercel.app/docs/api-reference/next/router)(next/router)
+- [useAtom](https://jotai.org/docs/core/use-atom)(jotai)
 
 特殊な制約を持った関数ぐらいの認識でもOK
 
