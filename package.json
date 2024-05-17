@@ -10,7 +10,7 @@
   },
   "type": "module",
   "engines": {
-    "node": "^18.17.0"
+    "node": "^22.2.0"
   },
   "workspaces": [
     "reuse",
@@ -42,7 +42,7 @@
     "dayjs": "^1.11.11"
   },
   "volta": {
-    "node": "18.17.1"
+    "node": "22.2.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.17.2"
