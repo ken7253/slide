@@ -89,6 +89,11 @@ deepl-inline-trigger {
   }
 }
 
+/* 2カラムレイアウト */
+#app .slidev-layout.two-columns {
+  gap: 16px;
+}
+
 /* セクション見出し用 */
 #app .slidev-layout.section {
   & h2 {
@@ -140,6 +145,7 @@ deepl-inline-trigger {
 
 /* strong */
 #app strong {
+  margin: 0 4px;
   font-size: 1.25em;
   font-weight: 900;
   color: var(--c-accent);

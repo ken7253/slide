@@ -79,7 +79,7 @@ export const sum = (array: number[]): number => {
 - NaNがあった場合`0`として扱う（無視する）
 - `Infinity`が含まれていた場合は常に`Infinity`を返す
 
-この関数に対してのテストを書く
+この関数に対してのテストを書く想定
 
 ---
 
@@ -238,13 +238,160 @@ export const sum = (array: number[], randomize: number) => {
 
 ## 単体テストの考え方をHooksにも適用する
 
+```ts
+import { useAtom } from "jotai";
+import { useRouter } from "next/router";
+import { someAtom } from "@/store/someAtom";
+
+export const useFizzBuzz = () => {
+  const { pathname } = useRouter();
+  const [fizzBuzz, setFizzBuzz] = useAtom(someAtom);
+  const result =
+    parseInt(pathname, 10) % 15 === 0
+      ? "FizzBuzz"
+      : parseInt(pathname, 10) % 5 === 0
+      ? "Fizz"
+      : parseInt(pathname, 10) % 3 === 0
+      ? "Buzz"
+      : parseInt(pathname, 10);
+
+  setFizzBuzz([...fizzBuzz, result]);
+  return fizzBuzz;
+};
+```
+
+`pathname`を参照元にFizzBuzzをしてその履歴をstoreに格納するHooks
+
 ---
 
 ### 依存を整理する
 
+このHooksをテストしやすいように修正してみる。
+
+````md magic-move
+
+```ts
+import { useAtom } from "jotai";
+import { useRouter } from "next/router";
+import { someAtom } from "@/store/someAtom";
+
+export const useFizzBuzz = () => {
+  const { pathname } = useRouter();
+  const [fizzBuzz, setFizzBuzz] = useAtom(someAtom);
+  const result =
+    parseInt(pathname, 10) % 15 === 0
+      ? "FizzBuzz"
+      : parseInt(pathname, 10) % 5 === 0
+      ? "Fizz"
+      : parseInt(pathname, 10) % 3 === 0
+      ? "Buzz"
+      : parseInt(pathname, 10);
+
+  setFizzBuzz([...fizzBuzz, result]);
+  return fizzBuzz;
+};
+```
+
+```ts
+import { useAtom } from "jotai";
+import { someAtom } from "@/store/someAtom";
+
+export const useFizzBuzz = (pathname: string) => { // pathnameは引数として取るように
+  const [fizzBuzz, setFizzBuzz] = useAtom(someAtom);
+  const result =
+    parseInt(pathname, 10) % 15 === 0
+      ? "FizzBuzz"
+      : parseInt(pathname, 10) % 5 === 0
+      ? "Fizz"
+      : parseInt(pathname, 10) % 3 === 0
+      ? "Buzz"
+      : parseInt(pathname, 10);
+
+  setFizzBuzz([...fizzBuzz, result]);
+  return fizzBuzz;
+};
+```
+
+```ts
+import { useAtom, type Atom } from "jotai";
+
+export const useFizzBuzz = <T>(pathname: string, atom: Atom<T>) => { // atomも引数として渡す
+  const [fizzBuzz, setFizzBuzz] = useAtom(atom);
+  const result =
+    parseInt(pathname, 10) % 15 === 0
+      ? "FizzBuzz"
+      : parseInt(pathname, 10) % 5 === 0
+      ? "Fizz"
+      : parseInt(pathname, 10) % 3 === 0
+      ? "Buzz"
+      : parseInt(pathname, 10);
+
+  setFizzBuzz([...fizzBuzz, result]);
+  return fizzBuzz;
+};
+```
+
+````
+
+---
+layout: center
 ---
 
-### テストケースのラベルを見直して責務も見直す
+## なにか見覚えのあるやり方だ…
+
+---
+layout: two-cols
+---
+
+### Hooks
+
+```ts
+import { useAtom, type Atom } from "jotai";
+
+export const useFizzBuzz = <T>(
+    pathname: string, atom: Atom<T>
+  ) => {
+  const [fizzBuzz, setFizzBuzz] = useAtom(atom);
+  const result =
+    parseInt(pathname, 10) % 15 === 0
+      ? "FizzBuzz"
+      : parseInt(pathname, 10) % 5 === 0
+      ? "Fizz"
+      : parseInt(pathname, 10) % 3 === 0
+      ? "Buzz"
+      : parseInt(pathname, 10);
+
+  setFizzBuzz([...fizzBuzz, result]);
+  return fizzBuzz;
+};
+```
+
+::right::
+
+### Function
+
+```ts
+export const sum = (array: number[], randomize: number) => {
+  if (array.some(v => v === Infinity || v === -Infinity)) {
+    return Infinity;
+  }
+
+  const sumAll = array.reduce(
+    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
+  );
+
+  return sumAll * randomize;
+}
+```
+
+- 副作用を引数で受け取りテストしやすい
+- シグニチャーの情報が増え分かりやすい
+
+<div style="background-color: var(--c-main); border-radius: 8px; padding: 4px 8px;">
+<p style="font-size: 16px;text-wrap: balance;line-height: 1.6;text-align: center;">
+モジュールが持つ<strong>責務が引数の数に現れる</strong><br>のでそれを基準にコード分割のタイミングを探る
+</p>
+</div>
 
 ---
 
