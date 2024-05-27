@@ -7,19 +7,12 @@ fonts:
   mono: 'M PLUS 1 Code'
 ---
 
-# テストを通じてHooksのシグニチャーを再考する
+# カスタムHooksと単体テストの共通点について
 @[CTOA若手エンジニアコミュニティ勉強会 #5](https://ctoa-wakate.connpass.com/event/318007/)
 
 ---
 src: "../reuse/me.md"
 ---
----
-
-## 用語の整理
-
-- Hooks
-- シグニチャー
-
 ---
 
 ### Hooks（カスタムHooks）とは
@@ -38,18 +31,6 @@ src: "../reuse/me.md"
 特殊な制約を持った関数ぐらいの認識でもOK
 
 https://ja.react.dev/reference/rules/rules-of-hooks
-
----
-
-### シグニチャーとは
-
-- 関数名
-- 引数の型
-- 返り値の型
-
-これらの情報をまとめてシグニチャーという
-
-シグニチャーが正しく、適切な情報量を持っていれば挙動が推測できる。
 
 ---
 layout: center
@@ -235,6 +216,19 @@ export const sum = (array: number[], randomize: number) => {
 ```
 
 ---
+layout: center
+---
+
+## 単体テストの考え方をHooksにも適用する
+
+---
+
+## 単体テストの考え方をHooksにも適用する
+
+- テストしづらい副作用は外部から受け取る
+- テストコードが簡潔になるようにI/Fを設計する
+
+---
 
 ## 単体テストの考え方をHooksにも適用する
 
@@ -337,7 +331,7 @@ export const useFizzBuzz = <T>(pathname: string, atom: Atom<T>) => { // atomも�
 layout: center
 ---
 
-## なにか見覚えのあるやり方だ…
+## 関数とHooksのテストの共通項
 
 ---
 layout: two-cols
@@ -384,7 +378,7 @@ export const sum = (array: number[], randomize: number) => {
 }
 ```
 
-- 副作用を引数で受け取りテストしやすい
+- どちらも副作用は外部から受け取る
 - シグニチャーの情報が増え分かりやすい
 
 <div style="background-color: var(--c-main); border-radius: 8px; padding: 4px 8px;">
@@ -398,4 +392,6 @@ export const sum = (array: number[], randomize: number) => {
 ## まとめ
 
 - Hooksのテストであっても考え方は単体テストと変わらない
-- シグニチャーの情報量を増やして意外性のないHooksに
+- シグニチャーの情報量を増やして意外性のないHooksになる
+
+シグニチャー：関数名、関数の引数の型、返り値の型などの情報のこと
