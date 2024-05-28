@@ -163,6 +163,27 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
 このとき関数自体が純粋関数ではない場合テストが書きづらい。  
 下記のコードは`Math.random()`は実行毎に値が変わってしまうのでテストしづらい。
 
+```ts
+export const sum = (array: number[]) => {
+  if (array.some(v => v === Infinity || v === -Infinity)) {
+    return Infinity;
+  }
+
+  const sumAll = array.reduce(
+    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
+  );
+
+  return sumAll * Math.random();
+}
+```
+
+---
+
+### 単体テストと純粋関数
+
+このとき関数自体が純粋関数ではない場合テストが書きづらい。  
+下記のコードは`Math.random()`は実行毎に値が変わってしまうのでテストしづらい。
+
 ````md magic-move
 
 ```ts
