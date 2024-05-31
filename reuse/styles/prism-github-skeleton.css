@@ -5,7 +5,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  background-color: var(--color-bg-code-block);
+  background-color: transparent;
   color: var(--color-fg-default);
   direction: ltr;
   text-align: left;

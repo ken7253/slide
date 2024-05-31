@@ -20,7 +20,8 @@
     "how-to-tech-writing",
     "howto-use-react-keys",
     "the-tooltip",
-    "is-seo-everything"
+    "is-seo-everything",
+    "hooks-testing"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.49.4",
