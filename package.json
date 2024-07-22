@@ -32,7 +32,7 @@
     "@types/node": "^20.14.10",
     "inquirer": "^10.0.1",
     "markdownlint-cli2": "^0.13.0",
-    "playwright": "^1.45.1",
+    "playwright": "^1.45.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   },
