@@ -1,4 +1,5 @@
 {
+    // https://github.com/vuejs/tsconfig
     "extends": ["@vue/tsconfig/tsconfig.dom.json", "@vue/tsconfig/tsconfig.lib.json"],
     "include": ["./**/*.ts"],
     "compilerOptions": {
