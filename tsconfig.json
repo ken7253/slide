@@ -2,9 +2,9 @@
     "include": ["./**/*.ts"],
     "compilerOptions": {
         "lib": ["ESNext"],
-        "module": "ESNext",
+        "module": "NodeNext",
         "target": "ESNext",
-        "moduleResolution": "nodenext",
+        "moduleResolution": "NodeNext",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
