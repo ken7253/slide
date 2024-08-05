@@ -7,6 +7,7 @@
     "build": "ts-node \"./scripts/runWorkspace.ts\" --command=build",
     "export": "ts-node \"./scripts/runWorkspace.ts\" --command=export",
     "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "fmt": "prettier . --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -27,6 +28,7 @@
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
+    "@eslint/js": "^9.8.0",
     "@slidev/cli": "^0.49.23",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
@@ -43,12 +45,17 @@
     "@types/node": "^22.0.2",
     "@types/qrcode": "^1.5.5",
     "@vitejs/plugin-vue": "^5.1.2",
+    "eslint": "^9.8.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^15.9.0",
     "inquirer": "^10.1.7",
     "markdownlint-cli2": "^0.13.0",
     "playwright": "^1.45.3",
+    "prettier": "^3.3.3",
     "storybook": "^8.2.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0",
     "vite": "^5.3.5"
   },
   "dependencies": {
@@ -56,7 +63,6 @@
     "@iconify-json/radix-icons": "^1.1.15",
     "@iconify-json/simple-icons": "^1.1.112",
     "dayjs": "^1.11.12",
-    "eslint": "^9.8.0",
     "qrcode": "^1.5.3",
     "vue": "^3.4.35"
   },
