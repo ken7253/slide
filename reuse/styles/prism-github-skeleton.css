@@ -3,8 +3,8 @@
  * @author Jongwoo Han (@jongwooo)
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   background-color: transparent;
   color: var(--color-fg-default);
   direction: ltr;
@@ -18,10 +18,9 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   font-size: 0.875rem;
-  font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
-    monospace;
+  font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
@@ -29,7 +28,7 @@ pre[class*="language-"] {
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   font-size: 1rem;
   background-color: var(--color-bg-inline-code-block);
   padding: 0.2em 0.3em;
@@ -38,7 +37,7 @@ pre[class*="language-"] {
 }
 
 @media (max-width: 700px) {
-  :not(pre) > code[class*="language-"] {
+  :not(pre) > code[class*='language-'] {
     font-size: 0.875rem;
   }
 }

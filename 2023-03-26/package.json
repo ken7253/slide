@@ -1,12 +1,12 @@
 {
-  "name": "@slide/2023-03-26",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "slidev",
-    "build": "slidev build",
-    "export": "slidev export"
-  }
+    "name": "@slide/2023-03-26",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "slidev",
+        "build": "slidev build",
+        "export": "slidev export"
+    }
 }

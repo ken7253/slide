@@ -9,11 +9,12 @@ title: how to use "key" in React
 ---
 
 # how to use "key" in React
+
 Reactにおけるkeyの効果的な使い方について
 
 ---
-src: "../reuse/me.md"
----
+
+## src: "../reuse/me.md"
 
 ---
 
@@ -26,11 +27,11 @@ const list = ['リンゴ', 'バナナ', 'ゴリラ'];
 
 return (
   <ul>
-    {
-      list.map((v) => <li key={v}>{v}</li>)
-    }
+    {list.map((v) => (
+      <li key={v}>{v}</li>
+    ))}
   </ul>
-)
+);
 ```
 
 <!--
@@ -42,26 +43,28 @@ Reactのkeyというとリストレンダリングの場合にとりあえずLin
 ## 実際に起きた出来事
 
 ```tsx
-import { CheckList } from "../CheckList"; // 複数のチェックボックスを管理するコンポーネント
-type Process = "before" | "after"; // 進行状況
+import { CheckList } from '../CheckList'; // 複数のチェックボックスを管理するコンポーネント
+type Process = 'before' | 'after'; // 進行状況
 
 export const App = () => {
   const [process, setProcess] = useState<Process>('before');
 
   return (
     <>
-      {
-        process === 'before' 
-          ? <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
-          : <CheckList label="終了後チェックリスト" />
-      }
-      <button onClick={
-        // クリックされた場合次のチェックリストに進む
-        () => setProcess((prev) => prev === 'before' ? 'after' : 'before')
-      } />
+      {process === 'before' ? (
+        <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
+      ) : (
+        <CheckList label="終了後チェックリスト" />
+      )}
+      <button
+        onClick={
+          // クリックされた場合次のチェックリストに進む
+          () => setProcess((prev) => (prev === 'before' ? 'after' : 'before'))
+        }
+      />
     </>
-  )
-}
+  );
+};
 ```
 
 <!--
@@ -69,8 +72,8 @@ export const App = () => {
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ### コンポーネントを切り替えたはずなのにチェック状態が維持されてしまう
 
@@ -82,9 +85,11 @@ layout: center
 
 ```tsx
 {
-  process === 'before' 
-    ? <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
-    : <CheckList label="終了後チェックリスト" />
+  process === 'before' ? (
+    <CheckList label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
+  ) : (
+    <CheckList label="終了後チェックリスト" />
+  );
 }
 ```
 
@@ -103,9 +108,11 @@ layout: center
 
 ```tsx
 {
-  process === 'before'
-    ? <CheckList key="before" label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
-    : <CheckList key="after" label="終了後チェックリスト" />
+  process === 'before' ? (
+    <CheckList key="before" label="開始前チェックリスト" /> // input[type="checkbox"]が複数並んだコンポーネント
+  ) : (
+    <CheckList key="after" label="終了後チェックリスト" />
+  );
 }
 ```
 
@@ -131,8 +138,8 @@ layout: center
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## Reactのレンダリングの仕組みについて
 

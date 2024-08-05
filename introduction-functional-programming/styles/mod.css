@@ -1,7 +1,7 @@
 #app h1 {
   font-size: 2.5rem;
 }
-#app [layout="image-left"] > div {
+#app [layout='image-left'] > div {
   background-size: auto !important;
 }
 

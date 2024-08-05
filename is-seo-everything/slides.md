@@ -7,6 +7,7 @@ fonts:
 ---
 
 # Is SEO Everything?
+
 検索エンジン最適化はWebサイトの全てなのか
 
 <small style="font-size: 0.5em; margin-top: 150px;">Phrasing by ChatGPT-3.5</small>
@@ -16,8 +17,8 @@ fonts:
 -->
 
 ---
-src: "../reuse/me.md"
----
+
+## src: "../reuse/me.md"
 
 ---
 
@@ -34,14 +35,15 @@ src: "../reuse/me.md"
 
 ## SEOとは
 
-Search Engine Optimization.  
+Search Engine Optimization.
 
 - 検索エンジン最適化、と言いつつ実態はGoogle検索最適化
 - 広告枠の次の表示を競うプライドバトルの別名
 
 ---
-layout: center
----
+
+## layout: center
+
 ### Webサイト作るときって何が重要？
 
 ---
@@ -56,10 +58,11 @@ layout: center
 <small>※ 一部にポジショントークが含まれます</small>
 
 ---
-layout: center
----
+
+## layout: center
 
 # 場合による・バランスが大切
+
 ---
 
 ## 場合による・バランスが大切
@@ -114,8 +117,8 @@ A: 接待とか（期待）
 - 調べ物をするのに使うのはいつもブラウザだけですか？
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 最近のWebの話
 
@@ -130,8 +133,8 @@ Webサイトの立ち位置も変わってきていている。
 GoogleMap と Instagram だけで十分な時代かもしれない。
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 検索エンジン最適化はWebサイトの全てなのか
 
@@ -157,7 +160,7 @@ SEOが不要なサイトだとしたら、フロントエンドエンジニア�
 ただし、単純に良いサイトを作るのは簡単ではない。
 
 - BFCache
-- prefers-reduced-***
+- prefers-reduced-\*\*\*
 - npm packages(Astro, partytown, ...)
 - 静的解析や単体テスト
 

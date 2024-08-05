@@ -11,8 +11,8 @@ fonts:
 sample
 
 ---
-src: "../reuse/me.md"
----
+
+## src: "../reuse/me.md"
 
 ---
 
@@ -25,8 +25,8 @@ src: "../reuse/me.md"
 ##### 見出し5
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 ## リスト
 
@@ -79,39 +79,41 @@ layout: two-cols
 | Sell   |  Sell  |   セル |
 
 ---
-layout: section
----
+
+## layout: section
 
 ## セクション見出し Level 2
 
 ---
-layout: section
----
+
+## layout: section
 
 ### セクション見出し Level 3
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 中央揃え見出し Level 2
 
 ---
-layout: center
----
+
+## layout: center
 
 ### 中央揃え見出し Level 3
 
 ---
+
 layout: image-left
 image: public/img/logo-slidev.png
+
 ---
 
 ## 画像組み合わせ
 
 ---
-layout: quote
----
+
+## layout: quote
 
 > 引用文
 
@@ -120,8 +122,8 @@ layout: quote
 ## TypeScript
 
 ```ts
-import path from "node:path";
-import { readdir } from "node:fs";
+import path from 'node:path';
+import { readdir } from 'node:fs';
 
 /**
  * @ref https://ja.sli.dev/
@@ -131,7 +133,7 @@ export type Foo<T extends {}> = {
   bar: Readonly<T>;
 };
 
-export class SomeError extends Error {};
+export class SomeError extends Error {}
 
 // exec
 ((args: string) => {
@@ -171,7 +173,7 @@ export class SomeError extends Error {};
 ```html
 <script>
   const foo = (prefix) => `${prefix}-foo`;
-  class SomeError extends Error {};
+  class SomeError extends Error {}
 </script>
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; flex-direction: column; gap: 16px;">
@@ -179,13 +181,13 @@ export class SomeError extends Error {};
     <p style="margin: 0;">Frontend developer</p>
   </div>
   <!-- アイコン画像 -->
-  <img alt="" src="https://dairoku-studio.com/ogp-thumbnail.png" style="position:fixed;">
+  <img alt="" src="https://dairoku-studio.com/ogp-thumbnail.png" style="position:fixed;" />
 </div>
 
 <div>
   <p style="font-size: 1rem; line-height: 2.1;">
-    技術記事を書いたりするのが趣味。<br>
-    最近はNext.jsを使ったアプリケーションを書いています。<br>
+    技術記事を書いたりするのが趣味。<br />
+    最近はNext.jsを使ったアプリケーションを書いています。<br />
     インターフェイス設計やアクセシビリティ・SSG関連の技術に興味があります。
   </p>
 </div>

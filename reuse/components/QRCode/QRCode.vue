@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
-import QRCode from "qrcode";
+import { computed, onMounted, ref } from 'vue';
+import QRCode from 'qrcode';
 
 export type Props = {
   text: string;
@@ -8,7 +8,7 @@ export type Props = {
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  text: "",
+  text: '',
   removeParams: true,
 });
 
@@ -18,18 +18,16 @@ const removeParams = (text: string) => {
   if (!URL.canParse(text)) {
     return text;
   }
-  const noParamsURL = text.split("?")[0];
+  const noParamsURL = text.split('?')[0];
 
   return props.removeParams ? noParamsURL : props.text;
 };
 
-const link = computed(() =>
-  URL.canParse(props.text) ? removeParams(props.text) : undefined
-);
+const link = computed(() => (URL.canParse(props.text) ? removeParams(props.text) : undefined));
 
 onMounted(() => {
   if (!(canvas.value instanceof HTMLCanvasElement)) return;
-  QRCode.toCanvas(canvas.value, removeParams(props.text) ?? "");
+  QRCode.toCanvas(canvas.value, removeParams(props.text) ?? '');
 });
 </script>
 

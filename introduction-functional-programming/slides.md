@@ -6,16 +6,20 @@ fonts:
   sans: 'M PLUS 2'
   mono: 'M PLUS 1 Code'
 ---
+
 # Introduction Functional Programming
+
 関数型プログラミングの考え方を取り入れて予測しやすいコードを書く
 
 ---
-src: "../reuse/me.md"
----
+
+## src: "../reuse/me.md"
 
 ---
+
 layout: image-left
 image: https://www.seshop.com/original/images/product/25646/L.png
+
 ---
 
 ## 前日譚
@@ -29,15 +33,15 @@ image: https://www.seshop.com/original/images/product/25646/L.png
 少し取り入れてコードの品質を上げる
 
 ---
-layout: center
----
+
+## layout: center
 
 関数型プログラミングの考え方を部分的に採用し  
 フロントエンドでも馴染み深いライブラリといえば？
 
 ---
-layout: full
----
+
+## layout: full
 
 ![React.devのスクリーンショット（トップページ）](/img/react-dot-dev.png)
 
@@ -59,8 +63,8 @@ layout: full
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 純粋関数
 
@@ -92,7 +96,7 @@ layout: center
 
 ```ts
 // 🙆‍♂ 純粋関数
-const pureFunc = (x:number, y:number): number => {
+const pureFunc = (x: number, y: number): number => {
   return x * y;
 };
 
@@ -122,10 +126,10 @@ const notPureFunc = (a: number): number | void => {
   if (a === 0) {
     throw new Error('Error');
   } else if (a >= 100) {
-    return a
+    return a;
   }
   // 値を返さない場合もある
-}
+};
 ```
 
 状況によってエラーを発生させたり、そもそも値を返さない場合がある関数など。
@@ -143,7 +147,7 @@ const notPureFunc = (a: number): number | void => {
 ```ts
 let num = 0;
 // 🙆‍♂ 純粋関数
-const pureFunc = (n:number): number => {
+const pureFunc = (n: number): number => {
   return n + 1;
 };
 pureFunc(num); // num => 0
@@ -152,7 +156,7 @@ pureFunc(num); // num => 0
 ```ts
 let num = 0;
 // 🙅‍♂ 純粋関数ではない
-const notPureFunc = (n:number): number => {
+const notPureFunc = (n: number): number => {
   return n++;
 };
 notPureFunc(num); // num => 1
@@ -181,8 +185,8 @@ notPureFunc(num); // num => 1
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## シグニチャー
 
@@ -230,19 +234,25 @@ export const foo: (a: any, b: any): any => {
 ```ts
 export const sum = (first: number, second: number): number | TypeError => {
   // 外部からは見えない何らかの処理
-}
+};
 ```
 
 これにテストを追加してみる。
 
 ```ts
-import { sum } from "./sum"
+import { sum } from './sum';
 
 describe('与えられた引数を足し算して返却するsum関数', () => {
-  test('自然数同士の足し算が正しく実行されること', () => {/* 省略 */})
-  test('引数のどちらかにNaNが渡された場合TypeErrorを返却すること', () => {/* 省略 */})
-  test('引数のどちらかにInfinityが渡された場合TypeErrorを返却すること', () => {/* 省略 */})
-})
+  test('自然数同士の足し算が正しく実行されること', () => {
+    /* 省略 */
+  });
+  test('引数のどちらかにNaNが渡された場合TypeErrorを返却すること', () => {
+    /* 省略 */
+  });
+  test('引数のどちらかにInfinityが渡された場合TypeErrorを返却すること', () => {
+    /* 省略 */
+  });
+});
 ```
 
 こうすることで（テストが無くても）ある程度挙動が推測できる。
@@ -259,11 +269,11 @@ describe('与えられた引数を足し算して返却するsum関数', () => {
 例としてこの関数を実際に使ってみる。
 
 ```ts
-import { sum } from "./sum";
-import { sendError } from "./sendError";
+import { sum } from './sum';
+import { sendError } from './sendError';
 
-const [x,y] = [10, 20];
-const sumResult = sum(x,y); // number | TypeError
+const [x, y] = [10, 20];
+const sumResult = sum(x, y); // number | TypeError
 
 // そのままだと型が合わないので型ガードを利用する。
 if (sumResult instanceof TypeError) {
@@ -320,7 +330,7 @@ displayHighestElementByElementList();
 // 与えられた要素の配列から一番高さを持つ要素を返す関数
 const getHighestElement = (elementList: Element[]): Element => {
   const sorted = [...elementList].sort((prev, next) => {
-    return next.clientHeight - prev.clientHeight
+    return next.clientHeight - prev.clientHeight;
   });
 
   return sorted[0];
@@ -347,11 +357,9 @@ console.log(getHighestElement(elementList));
 ```ts
 // 与えられた要素の配列から一番高さを持つ要素を返す関数
 const getHighestElement = (elementList: Element[]): Element =>
-  elementList.reduce((acc, current) =>
-    acc.clientHeight >= current.clientHeight ? acc : current
-  );
+  elementList.reduce((acc, current) => (acc.clientHeight >= current.clientHeight ? acc : current));
 // 要素の取得
-const elementList = Array.from(document.querySelectorAll(".some-class"));
+const elementList = Array.from(document.querySelectorAll('.some-class'));
 // コンソールへの出力
 console.log(getHighestElement(elementList));
 ```

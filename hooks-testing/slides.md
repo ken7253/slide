@@ -8,11 +8,13 @@ fonts:
 ---
 
 # カスタムHooksと単体テストの共通点について
+
 @[CTOA若手エンジニアコミュニティ勉強会 #5](https://ctoa-wakate.connpass.com/event/318007/)
 
 ---
-src: "../reuse/me.md"
----
+
+## src: "../reuse/me.md"
+
 ---
 
 ### Hooks（カスタムHooks）とは
@@ -37,8 +39,8 @@ https://ja.react.dev/reference/rules/rules-of-hooks
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 関数の単体テストについて簡単に確認
 
@@ -54,14 +56,12 @@ layout: center
 
 ```ts
 export const sum = (array: number[]): number => {
-  if (array.some(v => v === Infinity || v === -Infinity)) {
+  if (array.some((v) => v === Infinity || v === -Infinity)) {
     return Infinity;
   }
 
-  return array.reduce(
-    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
-  );
-}
+  return array.reduce((a, c) => a + (Number.isNaN(c) ? c : 0), 0);
+};
 ```
 
 - 基本的には配列の加算
@@ -81,10 +81,9 @@ export const sum = (array: number[]): number => {
 よくあるのは関数に引数を渡して、返り値を検査するパターン。
 
 ````md magic-move
-
 ```ts
-import { describe, test, expect } from "vitest";
-import { sum } from "./index.ts";
+import { describe, test, expect } from 'vitest';
+import { sum } from './index.ts';
 
 describe('引数として与えられた配列を全て足し合わせるsum関数', () => {
   describe('引数が全て有効な数値の場合', () => {
@@ -93,12 +92,16 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
       const sumResult = sum(array);
 
       expect(sumResult).toBe(15);
-    })
+    });
   });
 
   describe('計算不能な数値型が含まれている場合', () => {
-    test('NaNが含まれていた場合0として扱う', () => { /* 略 */ });
-    test('Infinityが含まれていた場合常にInfinityを返却する', () => { /* 略 */  });
+    test('NaNが含まれていた場合0として扱う', () => {
+      /* 略 */
+    });
+    test('Infinityが含まれていた場合常にInfinityを返却する', () => {
+      /* 略 */
+    });
   });
 });
 ```
@@ -165,7 +168,6 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
   });
 });
 ```
-
 ````
 
 <!--
@@ -181,16 +183,14 @@ describe('引数として与えられた配列を全て足し合わせるsum関�
 
 ```ts
 export const sum = (array: number[]) => {
-  if (array.some(v => v === Infinity || v === -Infinity)) {
+  if (array.some((v) => v === Infinity || v === -Infinity)) {
     return Infinity;
   }
 
-  const sumAll = array.reduce(
-    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
-  );
+  const sumAll = array.reduce((a, c) => a + (Number.isNaN(c) ? c : 0), 0);
 
   return sumAll * Math.random();
-}
+};
 ```
 
 <!--
@@ -205,19 +205,16 @@ export const sum = (array: number[]) => {
 下記のコードは`Math.random()`は実行毎に値が変わってしまうのでテストしづらい。
 
 ````md magic-move
-
 ```ts
 export const sum = (array: number[]) => {
-  if (array.some(v => v === Infinity || v === -Infinity)) {
+  if (array.some((v) => v === Infinity || v === -Infinity)) {
     return Infinity;
   }
 
-  const sumAll = array.reduce(
-    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
-  );
+  const sumAll = array.reduce((a, c) => a + (Number.isNaN(c) ? c : 0), 0);
 
   return sumAll * Math.random();
-}
+};
 ```
 
 ```ts{1,10}
@@ -265,8 +262,8 @@ export const sum = (array: number[], randomize: number) => {
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 単体テストの考え方をHooksにも適用する
 
@@ -290,21 +287,21 @@ layout: center
 ## 単体テストの考え方をHooksにも適用する
 
 ```ts
-import { useAtom } from "jotai";
-import { useRouter } from "next/router";
-import { someAtom } from "@/store/someAtom";
+import { useAtom } from 'jotai';
+import { useRouter } from 'next/router';
+import { someAtom } from '@/store/someAtom';
 
 export const useFizzBuzz = () => {
   const { pathname } = useRouter();
   const [fizzBuzz, setFizzBuzz] = useAtom(someAtom);
   const result =
     parseInt(pathname, 10) % 15 === 0
-      ? "FizzBuzz"
+      ? 'FizzBuzz'
       : parseInt(pathname, 10) % 5 === 0
-      ? "Fizz"
-      : parseInt(pathname, 10) % 3 === 0
-      ? "Buzz"
-      : parseInt(pathname, 10);
+        ? 'Fizz'
+        : parseInt(pathname, 10) % 3 === 0
+          ? 'Buzz'
+          : parseInt(pathname, 10);
 
   setFizzBuzz([...fizzBuzz, result]);
   return fizzBuzz;
@@ -324,23 +321,22 @@ export const useFizzBuzz = () => {
 このHooksをテストしやすいように修正してみる。
 
 ````md magic-move
-
 ```ts
-import { useAtom } from "jotai";
-import { useRouter } from "next/router";
-import { someAtom } from "@/store/someAtom";
+import { useAtom } from 'jotai';
+import { useRouter } from 'next/router';
+import { someAtom } from '@/store/someAtom';
 
 export const useFizzBuzz = () => {
   const { pathname } = useRouter();
   const [fizzBuzz, setFizzBuzz] = useAtom(someAtom);
   const result =
     parseInt(pathname, 10) % 15 === 0
-      ? "FizzBuzz"
+      ? 'FizzBuzz'
       : parseInt(pathname, 10) % 5 === 0
-      ? "Fizz"
-      : parseInt(pathname, 10) % 3 === 0
-      ? "Buzz"
-      : parseInt(pathname, 10);
+        ? 'Fizz'
+        : parseInt(pathname, 10) % 3 === 0
+          ? 'Buzz'
+          : parseInt(pathname, 10);
 
   setFizzBuzz([...fizzBuzz, result]);
   return fizzBuzz;
@@ -348,19 +344,20 @@ export const useFizzBuzz = () => {
 ```
 
 ```ts
-import { useAtom } from "jotai";
-import { someAtom } from "@/store/someAtom";
+import { useAtom } from 'jotai';
+import { someAtom } from '@/store/someAtom';
 
-export const useFizzBuzz = (pathname: string) => { // pathnameは引数として取るように
+export const useFizzBuzz = (pathname: string) => {
+  // pathnameは引数として取るように
   const [fizzBuzz, setFizzBuzz] = useAtom(someAtom);
   const result =
     parseInt(pathname, 10) % 15 === 0
-      ? "FizzBuzz"
+      ? 'FizzBuzz'
       : parseInt(pathname, 10) % 5 === 0
-      ? "Fizz"
-      : parseInt(pathname, 10) % 3 === 0
-      ? "Buzz"
-      : parseInt(pathname, 10);
+        ? 'Fizz'
+        : parseInt(pathname, 10) % 3 === 0
+          ? 'Buzz'
+          : parseInt(pathname, 10);
 
   setFizzBuzz([...fizzBuzz, result]);
   return fizzBuzz;
@@ -368,24 +365,24 @@ export const useFizzBuzz = (pathname: string) => { // pathnameは引数として
 ```
 
 ```ts
-import { useAtom, type Atom } from "jotai";
+import { useAtom, type Atom } from 'jotai';
 
-export const useFizzBuzz = <T>(pathname: string, atom: Atom<T>) => { // atomも引数として渡す
+export const useFizzBuzz = <T>(pathname: string, atom: Atom<T>) => {
+  // atomも引数として渡す
   const [fizzBuzz, setFizzBuzz] = useAtom(atom);
   const result =
     parseInt(pathname, 10) % 15 === 0
-      ? "FizzBuzz"
+      ? 'FizzBuzz'
       : parseInt(pathname, 10) % 5 === 0
-      ? "Fizz"
-      : parseInt(pathname, 10) % 3 === 0
-      ? "Buzz"
-      : parseInt(pathname, 10);
+        ? 'Fizz'
+        : parseInt(pathname, 10) % 3 === 0
+          ? 'Buzz'
+          : parseInt(pathname, 10);
 
   setFizzBuzz([...fizzBuzz, result]);
   return fizzBuzz;
 };
 ```
-
 ````
 
 <!--
@@ -393,8 +390,8 @@ export const useFizzBuzz = <T>(pathname: string, atom: Atom<T>) => { // atomも�
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 関数とHooksのテストの共通項
 
@@ -403,26 +400,24 @@ layout: center
 -->
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 ### Hooks
 
 ```ts
-import { useAtom, type Atom } from "jotai";
+import { useAtom, type Atom } from 'jotai';
 
-export const useFizzBuzz = <T>(
-    pathname: string, atom: Atom<T>
-  ) => {
+export const useFizzBuzz = <T>(pathname: string, atom: Atom<T>) => {
   const [fizzBuzz, setFizzBuzz] = useAtom(atom);
   const result =
     parseInt(pathname, 10) % 15 === 0
-      ? "FizzBuzz"
+      ? 'FizzBuzz'
       : parseInt(pathname, 10) % 5 === 0
-      ? "Fizz"
-      : parseInt(pathname, 10) % 3 === 0
-      ? "Buzz"
-      : parseInt(pathname, 10);
+        ? 'Fizz'
+        : parseInt(pathname, 10) % 3 === 0
+          ? 'Buzz'
+          : parseInt(pathname, 10);
 
   setFizzBuzz([...fizzBuzz, result]);
   return fizzBuzz;
@@ -435,16 +430,14 @@ export const useFizzBuzz = <T>(
 
 ```ts
 export const sum = (array: number[], randomize: number) => {
-  if (array.some(v => v === Infinity || v === -Infinity)) {
+  if (array.some((v) => v === Infinity || v === -Infinity)) {
     return Infinity;
   }
 
-  const sumAll = array.reduce(
-    (a, c) => a + (Number.isNaN(c) ? c : 0), 0
-  );
+  const sumAll = array.reduce((a, c) => a + (Number.isNaN(c) ? c : 0), 0);
 
   return sumAll * randomize;
-}
+};
 ```
 
 - どちらも副作用は外部から受け取る

@@ -1,15 +1,15 @@
 {
-  "name": "@slide/how-to-keep-learning",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "slidev build",
-    "export": "slidev export",
-    "dev": "slidev"
-  },
-  "keywords": [],
-  "author": "ken7253 <ken7253@gmail.com>",
-  "license": "MIT"
+    "name": "@slide/how-to-keep-learning",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "slidev build",
+        "export": "slidev export",
+        "dev": "slidev"
+    },
+    "keywords": [],
+    "author": "ken7253 <ken7253@gmail.com>",
+    "license": "MIT"
 }

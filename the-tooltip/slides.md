@@ -8,15 +8,16 @@ fonts:
 ---
 
 # &lt;TheTooltip /&gt;
+
 使いやすいツールチップを実装する方法
 
 ---
-src: "../reuse/me.md"
----
+
+## src: "../reuse/me.md"
 
 ---
-layout: section
----
+
+## layout: section
 
 ## TooltipとはどういうUIなのか
 
@@ -59,8 +60,8 @@ layout: section
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 実装時の注意点
 
@@ -127,9 +128,7 @@ ARIA APGを見るとインタラクションとして`ESC`キーでのキャン�
   <div role="tooltip" hidden={!open} id={id}>
     {content}
   </div>
-  <button aria-describedby={id}>
-    {children}
-  </button>
+  <button aria-describedby={id}>{children}</button>
 </div>
 ```
 
@@ -186,8 +185,8 @@ ARIA APGを見るとインタラクションとして`ESC`キーでのキャン�
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## 解説されると分かるけど、普段はあまり気付けない
 
@@ -196,8 +195,8 @@ layout: center
 -->
 
 ---
-layout: center
----
+
+## layout: center
 
 ## どうしてこうなった
 
