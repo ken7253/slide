@@ -50,6 +50,7 @@
         "globals": "^15.9.0",
         "inquirer": "^10.1.7",
         "markdownlint-cli2": "^0.13.0",
+        "npm-run-all2": "^6.2.2",
         "playwright": "^1.45.3",
         "prettier": "^3.3.3",
         "storybook": "^8.2.7",
