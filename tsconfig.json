@@ -3,6 +3,7 @@
     "compilerOptions": {
         "lib": ["ESNext"],
         "module": "ESNext",
+        "target": "ESNext",
         "moduleResolution": "nodenext",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,

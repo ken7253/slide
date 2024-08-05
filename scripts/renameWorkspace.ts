@@ -6,7 +6,7 @@ import inquirer from 'inquirer';
 import { reservedDirChars } from './util/reservedDirChars.js';
 
 /** プロパティの存在チェックと型の絞り込みを行う形ガード */
-const hasWorkspaces = (packageJSON: Object): packageJSON is { workspaces: string[] } => {
+const hasWorkspaces = (packageJSON: object): packageJSON is { workspaces: string[] } => {
   const hasProperty = Object.hasOwn(packageJSON, 'workspaces');
   if (!hasProperty) return false;
   const isArray = Array.isArray((packageJSON as { workspaces: unknown }).workspaces);

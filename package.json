@@ -6,7 +6,10 @@
         "dev": "ts-node \"./scripts/runWorkspace.ts\" --command=dev",
         "build": "ts-node \"./scripts/runWorkspace.ts\" --command=build",
         "export": "ts-node \"./scripts/runWorkspace.ts\" --command=export",
-        "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+        "check": "run-p check:*",
+        "check:fmt": "prettier . --check --log-level=silent",
+        "check:markdown": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+        "check:eslint": "eslint .",
         "fmt": "prettier . --write",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
