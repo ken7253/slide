@@ -1,10 +1,7 @@
 import globals from 'globals';
 import eslint from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
 import tseslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
-
-const compat = new FlatCompat();
 
 export default tseslint.config(
   {
@@ -25,6 +22,7 @@ export default tseslint.config(
       'prefer-template': ['error'],
       'no-plusplus': ['error'],
       camelcase: ['error'],
+      complexity: ['warn', 2],
     },
   },
 
@@ -33,20 +31,4 @@ export default tseslint.config(
 
   // eslint vue
   ...pluginVue.configs['flat/essential'],
-
-  {
-    name: 'storybook/plugin',
-    plugins: compat.extends('plugin:storybook/recommended')[0].plugins,
-  },
-
-  {
-    name: 'storybook/stories',
-    files: ['**/*.stories.ts'],
-    rules: compat.extends('plugin:storybook/recommended')[1].rules,
-  },
-  {
-    name: 'storybook/settings',
-    files: ['.storybook/**.ts'],
-    rules: compat.extends('plugin:storybook/recommended')[2].rules,
-  },
 );
