@@ -48,6 +48,7 @@
         "@types/node": "^22.0.2",
         "@types/qrcode": "^1.5.5",
         "@vitejs/plugin-vue": "^5.1.2",
+        "@vue/tsconfig": "^0.5.1",
         "eslint": "^9.8.0",
         "eslint-plugin-vue": "^9.27.0",
         "globals": "^15.9.0",
