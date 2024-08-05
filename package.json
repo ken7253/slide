@@ -54,7 +54,9 @@
     "@iconify-json/mdi": "^1.1.68",
     "@iconify-json/radix-icons": "^1.1.15",
     "@iconify-json/simple-icons": "^1.1.112",
-    "dayjs": "^1.11.12"
+    "dayjs": "^1.11.12",
+    "qrcode": "^1.5.3",
+    "vue": "^3.4.35"
   },
   "volta": {
     "node": "18.17.1"
