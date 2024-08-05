@@ -30,7 +30,7 @@
     "@swc/core": "^1.7.6",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.0.2",
-    "inquirer": "^10.1.6",
+    "inquirer": "^10.1.7",
     "markdownlint-cli2": "^0.13.0",
     "playwright": "^1.45.3",
     "ts-node": "^10.9.2",
