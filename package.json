@@ -32,7 +32,7 @@
     "@swc/core": "^1.7.6",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.0.2",
-    "inquirer": "^10.1.7",
+    "inquirer": "^10.1.8",
     "@chromatic-com/storybook": "^1.6.1",
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/addon-interactions": "^8.2.7",
