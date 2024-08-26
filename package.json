@@ -55,7 +55,7 @@
     "@iconify-json/mdi": "^1.1.68",
     "@iconify-json/radix-icons": "^1.1.15",
     "@iconify-json/simple-icons": "^1.1.114",
-    "dayjs": "^1.11.12",
+    "dayjs": "^1.11.13",
     "qrcode": "^1.5.3",
     "vue": "^3.4.38"
   },
