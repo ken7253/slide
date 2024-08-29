@@ -117,8 +117,12 @@ layout: center
 - 旅行がてらのカンファレンスはいいぞ
 
 ---
+layout: image
+image: /images/otaru.jpg
+---
+
+---
 layout: end
-image: /images/sushi.jpg
 ---
 
 # おしまい
