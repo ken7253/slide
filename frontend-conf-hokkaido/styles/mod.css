@@ -1,3 +1,27 @@
-#app h1 {
+#app .slidev-page-1 h1 {
   font-size: 2.25rem;
+  color: var(--c-main);
+  background-color: rgb(from var(--c-base) 255 255 255 / 50%);
+  text-align: center;
+  font-weight: 900;
+}
+
+.slidev-page-1 {
+  background-image: url("/images/entrance.jpg");
+  background-size: cover;
+}
+
+#app .slidev-page-1 .slidev-layout,
+#app .slidev-page-1 .slidev-layout {
+  background: none;
+}
+
+#app .slidev-layout.end {
+  background: url("/images/sushi.jpg") !important;
+  background-size: cover !important;
+
+  h1 {
+    color: var(--c-main);
+    background-color: rgb(from var(--c-base) 255 255 255 / 50%);
+  }
 }

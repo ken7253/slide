@@ -12,31 +12,28 @@ fonts:
 ---
 src: "../reuse/me.md"
 ---
----
-layout: image
-image: /images/entrance.jpg
----
-
-## フロントエンドカンファレンス北海道
-
-8/24に札幌で開催されたWebフロントエンドにフィーチャーしたカンファレンス
 
 ---
 layout: image-left
-image: 
+image: /images/ramen.jpg
 ---
 
 ### 前日入りしました
 
+- 朝起きれないので昼の便で行った
+- 軽く札幌観光
+- ラーメン食べて終了
+
+---
+layout: image-right
+image: /images/curry.jpg
 ---
 
 ## 当日のトークについて
 
-すべては紹介できないので、ざっくりと。
+すべては紹介できないのでざっくりと
 
-全ての資料はここにまとめられている。
-
-https://zenn.dev/yumemi_inc/articles/2024-08-25-frontend-conf-hokkaido-2024
+<QRCode text="https://zenn.dev/yumemi_inc/articles/2024-08-25-frontend-conf-hokkaido-2024" caption="資料まとめ" />
 
 ---
 layout: iframe-left
@@ -113,13 +110,15 @@ layout: center
 
 ---
 
-### カンファレンス終了後
-
----
-
 ## 感想
 
 - カンファレンスの楽しさを再認識できた
 - 「フロントエンド」のカンファレンスは意外と少ないので貴重な話を聴けた
 - 旅行がてらのカンファレンスはいいぞ
-- みんなももっと社外の勉強会・カンファレンスに参加しよう！
+
+---
+layout: end
+image: /images/sushi.jpg
+---
+
+# おしまい
