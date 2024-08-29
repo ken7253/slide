@@ -65,6 +65,7 @@ layout: iframe-left
 url: https://speakerdeck.com/player/d42d61cd3e8d4501b0b27309172205be
 ---
 
+<!-- markdownlint-disable-next-line MD026 タイトルなので -->
 ### React Aria のコントリビューターが思う React Aria の良いところ・これからなところを5分でお話します！
 
 - Adobeが開発しているHeadless UI系ライブラリ
@@ -106,7 +107,7 @@ url: https://speakerdeck.com/player/8b2ccaf6aae94ae2986f7ef7d4a30e70
 layout: center
 ---
 
-## ほかにも面白い発表がたくさんあったので見てみてね！
+## ほかにも面白い発表がたくさんあったので見てみてね
 
 ---
 
