@@ -1,0 +1,14 @@
+{
+  "name": "@slide/not-sequential-focus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "export": "slidev export",
+    "build": "slidev build",
+    "dev": "slidev"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT"
+}
