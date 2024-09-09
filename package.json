@@ -23,7 +23,8 @@
     "howto-use-react-keys",
     "the-tooltip",
     "is-seo-everything",
-    "hooks-testing"
+    "hooks-testing",
+    "frontend-conf-hokkaido"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.49.29",
