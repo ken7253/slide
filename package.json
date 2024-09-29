@@ -34,7 +34,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.5.2",
     "inquirer": "^10.1.8",
-    "@chromatic-com/storybook": "^1.7.0",
+    "@chromatic-com/storybook": "^2.0.2",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
