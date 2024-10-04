@@ -1,9 +1,9 @@
 {
   "include": ["./**/*.ts"],
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "nodenext",
+    "lib": ["ESNext", "DOM"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
