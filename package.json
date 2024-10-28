@@ -58,7 +58,7 @@
     "@iconify-json/simple-icons": "^1.2.4",
     "dayjs": "^1.11.13",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.11"
+    "vue": "^3.5.12"
   },
   "volta": {
     "node": "18.17.1"
