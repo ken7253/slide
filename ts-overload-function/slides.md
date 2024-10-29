@@ -127,5 +127,13 @@ layout: section
 - [サバイバルTypescript｜オーバーロード以外も検討しよう](https://typescriptbook.jp/reference/functions/overload-functions#%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%E4%BB%A5%E5%A4%96%E3%82%82%E6%A4%9C%E8%A8%8E%E3%81%97%E3%82%88%E3%81%86)
 
 ---
+layout: image
+image: /img/kansai-tskaigi.png
+---
 
-<!-- TSKaigi の宣伝 -->
+<div style="position:fixed;top:60%;left:73%;">
+<div style="display:flex;flex-direction:column;align-items:center;" >
+<QRCode text="https://peatix.com/event/4149743"/>
+<p>チケット購入はこちら！</p>
+</div>
+</div>
