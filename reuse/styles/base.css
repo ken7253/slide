@@ -143,6 +143,10 @@ deepl-inline-trigger {
   font-weight: 600;
 }
 
+#app :not(pre) > code {
+  font-weight: bolder;
+}
+
 /* strong */
 #app strong {
   margin: 0 4px;
