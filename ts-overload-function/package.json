@@ -1,0 +1,14 @@
+{
+  "name": "@slide/ts-overload-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "slidev build",
+    "dev": "slidev"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT"
+}
