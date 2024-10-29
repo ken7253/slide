@@ -132,12 +132,12 @@ deepl-inline-trigger {
   border-left: solid 5px var(--c-main);
 }
 
-#app :not(pre) > code:before,
-#app :not(pre) > code::after {
+#app :not(pre) > :not(.twoslash-popup-code)code:before,
+#app :not(pre) > :not(.twoslash-popup-code)code::after {
   content: none;
 }
 
-#app :not(pre) > code {
+#app :not(pre) > :not(.twoslash-popup-code)code {
   margin: 0 4px;
   padding: 2px 0.3em;
   font-weight: 600;
@@ -227,4 +227,8 @@ deepl-inline-trigger {
   & li {
     font-size: 0.95rem;
   }
+}
+
+#app .twoslash-popup-code {
+  overflow: hidden;
 }
