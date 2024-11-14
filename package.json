@@ -25,7 +25,8 @@
     "is-seo-everything",
     "hooks-testing",
     "frontend-conf-hokkaido",
-    "ts-overload-function"
+    "ts-overload-function",
+    "pepc"
   ],
   "devDependencies": {
     "@slidev/cli": "^0.49.29",
