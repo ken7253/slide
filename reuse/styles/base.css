@@ -147,6 +147,10 @@ deepl-inline-trigger {
   font-weight: bolder;
 }
 
+#app .mermaid {
+  background-color: var(--c-main);
+}
+
 /* strong */
 #app strong {
   margin: 0 4px;
