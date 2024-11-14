@@ -64,9 +64,9 @@ layout: section
 
 ### "permanent deny" policy
 
-> Many user agents implement a "permanent deny" policy, and other user agents offer it as an option in the permission prompt. This means that a site will not be able to ask for permission again after the user has blocked it.
-
 ユーザーが許可するまでプロンプトを出し続けるというスパムができないように、一度拒否した権限リクエストはアプリケーション側から再度リクエストができないようになっている。
+
+> Many user agents implement a "permanent deny" policy, and other user agents offer it as an option in the permission prompt. This means that a site will not be able to ask for permission again after the user has blocked it.
 
 https://github.com/WICG/PEPC/blob/main/explainer.md#user-agent-abuse-mitigations
 
