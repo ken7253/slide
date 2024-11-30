@@ -11,9 +11,6 @@
     "build-storybook": "storybook build"
   },
   "type": "module",
-  "engines": {
-    "node": "^18.17.0"
-  },
   "workspaces": [
     "reuse",
     "2023-03-26",
@@ -63,6 +60,9 @@
   },
   "volta": {
     "node": "22.11.0"
+  },
+  "engines": {
+    "node": "^22.11.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.21.2"
