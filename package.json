@@ -2,10 +2,10 @@
   "name": "slide",
   "private": true,
   "scripts": {
-    "new": "ts-node \"./scripts/createWorkspace.ts\"",
-    "dev": "ts-node \"./scripts/runWorkspace.ts\" --command=dev",
-    "build": "ts-node \"./scripts/runWorkspace.ts\" --command=build",
-    "export": "ts-node \"./scripts/runWorkspace.ts\" --command=export",
+    "new": "tsx \"./scripts/createWorkspace.ts\"",
+    "dev": "tsx \"./scripts/runWorkspace.ts\" --command=dev",
+    "build": "tsx \"./scripts/runWorkspace.ts\" --command=build",
+    "export": "tsx \"./scripts/runWorkspace.ts\" --command=export",
     "lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
