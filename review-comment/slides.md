@@ -58,7 +58,7 @@ layout: center
 
 ---
 
-## 問題点について
+## 問題点
 
 - IMOとNITSの使い方が人によって異なる
 - Questionが多用され着地点が分からないコメントがある
@@ -99,7 +99,7 @@ layout: center
 
 <!-- https://excalidraw.com/#json=JdU3mJdujM7nVJ8mr9tjw,lWGc1uSH_X9UrSXUQH6pjQ -->
 
-変更要望度に合わせてラベルを整理してみた。
+変更要望度に合わせてラベルを整理してみる。
 
 ---
 
@@ -138,15 +138,17 @@ layout: center
 
 ---
 
-### [おまけ] 質問っぽい指摘を避けるための書き方
+### 質問っぽい指摘を避けるための書き方
+
+質問を避けるために文章を工夫する方法などもドキュメントにまとめてみた。
+
+書いたこととしては下記の３つの順番でコメントを書くといいよ、という内容でした。
 
 - 前提として自分の認識
 - 前提が正しかった場合にどのような懸念があるか
 - それを解決する方法
 
-<div style="background-color: var(--color-bg-code-block);border-radius: 8px;padding: 1rem;margin-top:32px;">
-<p style="line-height:1;"></p>
-</div>
+これによって曖昧な部分も自分の認識を前提として変更要望度が出せるように。
 
 ---
 
