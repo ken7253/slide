@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "slidev dev",
+    "dev": "slidev",
     "build": "slidev build",
     "export": "slidev export"
   },
