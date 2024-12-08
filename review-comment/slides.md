@@ -8,6 +8,7 @@ fonts:
 ---
 
 # レビューのやり方を（ちょっと）整理した話
+@[IVRyエンジニア忘年LT大会2024](https://connpass.com/event/333537/)
 
 ---
 src: "../reuse/me.md"
