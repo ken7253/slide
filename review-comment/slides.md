@@ -60,7 +60,7 @@ layout: center
 
 ## 問題点について
 
-- IMOとNITSの変更要望度が人によって異なる
+- IMOとNITSの使い方が人によって異なる
 - Questionが多用され着地点が分からないコメントがある
 
 <img src="/image/review.png" width="400" style="margin: 64px 0 0 auto; mix-blend-mode: plus-lighter;" alt="人によって利用するラベルが違うことを表した図">
@@ -79,9 +79,17 @@ layout: center
 
 話し合うと、ラベルは変更してほしい度合いで使い分けていたことが分かった。
 
-- ラベルの振り分けを変更要望度を基準にする
-- IMOとNITSを同じ要望度とする
-- Wantというラベルを追加
+なのでざっくり下記のような対応を行うことに。
+
+#### IMOとNITSの変更要望度が人によって異なる 
+
+- ラベルの使い分けを変更要望度を軸としたものに
+- レイヤーが分かれるようにラベルを定義する
+
+#### Questionが多用され着地点が分からないコメントがある
+
+- 質問っぽい指摘を無くす
+- 質問としてコメントされた場合はコードの変更はしない
 
 ---
 
@@ -89,13 +97,13 @@ layout: center
 
 <img src="/image/label.png" style="background-color: rgb(51 51 51 / 70%);padding: 32px;margin-top: 16px;border-radius: 16px;" alt="ラベルの整理を表した図、Must/IMO/NITS/Questionがバラバラから、Must/Want/IMO or NITS/Askという順になっている">
 
-<!-- https://excalidraw.com/#json=XxwxcWFp166lkW-pgMbuu,nLzak3elk7rny1Mxf_HFRQ -->
+<!-- https://excalidraw.com/#json=JdU3mJdujM7nVJ8mr9tjw,lWGc1uSH_X9UrSXUQH6pjQ -->
 
 変更要望度に合わせてラベルを整理してみた。
 
 ---
 
-### Questionが多用され着地点が分からないコメントがある
+### IMOとNITSの変更要望度が人によって異なる
 
 ある程度整理できたので、変更要望度を軸にドキュメントに記載。
 
@@ -106,21 +114,27 @@ layout: center
 | IMO / NITS | 49%-1%     | （主観的な）より良い書き方の提案                 |
 | Ask        | 0%         | 質問                                             |
 
----
-layout: section
----
-
-## 質問が結局残ってますよ？
+どういった場面で利用するのかなどもある程度書いておく。
 
 ---
+layout: center
+---
 
-## 質問が結局残ってますよ？
+## Questionが多用され着地点が分からないコメントがある
+
+---
+
+## Questionが多用され着地点が分からないコメントがある
 
 純粋な質問まで禁止してしまうのは厳しいのでラベルは残すことになった。
 
-- 難しそうな実装部分はモブレビューを実施してそのログを残すことに
+その上で指摘は指摘として他のラベルを使ってもらうように。
+
+- 難しそうな実装部分はモブレビューを実施してそのログを残す
 - 「大丈夫そうですか？」みたいな変更を期待した質問はNGに
 - レビューコメントの書き方を工夫して「質問っぽい指摘」になるのを避ける
+
+<img src="/image/question.png" alt="" width="400" style="margin: 0 0 0 auto">
 
 ---
 
