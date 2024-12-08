@@ -14,3 +14,15 @@ src: "../reuse/me.md"
 ---
 
 ---
+layout: section
+---
+
+## みなさん！レビューしてますか！？
+
+---
+layout: section
+---
+
+## レビュー好きですか？
+
+---
