@@ -27,6 +27,12 @@ layout: section
 ## レビューは大変
 
 ---
+layout: center
+---
+
+<p style="font-size: 2rem;">レビュープロセスを見直す機会があったのでその紹介</p>
+
+---
 
 ## レビューコメントのラベル
 
