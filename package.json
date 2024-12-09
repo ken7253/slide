@@ -53,7 +53,7 @@
   "dependencies": {
     "@iconify-json/mdi": "^1.2.0",
     "@iconify-json/radix-icons": "^1.2.1",
-    "@iconify-json/simple-icons": "^1.2.4",
+    "@iconify-json/simple-icons": "^1.2.15",
     "dayjs": "^1.11.13",
     "qrcode": "^1.5.4",
     "vue": "^3.5.12"
