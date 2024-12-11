@@ -22,7 +22,8 @@
     "is-seo-everything",
     "hooks-testing",
     "frontend-conf-hokkaido",
-    "ts-overload-function"
+    "ts-overload-function",
+    "review-comment"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^2.0.2",
