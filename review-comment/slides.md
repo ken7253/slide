@@ -36,7 +36,7 @@ layout: center
 
 ## レビューコメントのラベル
 
-レビューコメントには必ずラベルを付けてもらう運用にしていてた。
+レビューコメントには必ずラベルを付けてもらう運用にしていた。
 
 | ラベル   | 意味                                         |
 | -------- | -------------------------------------------- |
@@ -65,7 +65,7 @@ layout: center
 
 <img src="/image/review.png" width="400" style="margin: 64px 0 0 auto; mix-blend-mode: plus-lighter;" alt="人によって利用するラベルが違うことを表した図">
 
-<!-- https://excalidraw.com/#json=3cnobLM0GllkyPjPMpGhp,vWhkxvfQSR1z7fckyMVVaA -->
+<!-- https://excalidraw.com/#json=3cnobLM0GllkyPjPMpGhp,vWhkxvfQSR1z7fckyMVVaA 質問なのに空気を読んで修正する的なことがちょっとあった -->
 
 ---
 layout: center
