@@ -3,11 +3,12 @@
   "compilerOptions": {
     "lib": ["ESNext"],
     "module": "ESNext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "target": "ESNext"
   },
   "ts-node": {
     "esm": true,
