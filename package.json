@@ -44,7 +44,7 @@
     "@types/qrcode": "^1.5.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "inquirer": "^12.3.0",
-    "markdownlint-cli2": "^0.17.0",
+    "markdownlint-cli2": "^0.17.1",
     "playwright": "^1.49.1",
     "storybook": "^8.4.5",
     "tsx": "^4.19.2",
