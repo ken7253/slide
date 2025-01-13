@@ -38,7 +38,7 @@
     "@storybook/test": "^8.4.7",
     "@storybook/vue3": "^8.3.6",
     "@storybook/vue3-vite": "^8.4.7",
-    "@swc/core": "^1.10.4",
+    "@swc/core": "^1.10.7",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.10.5",
     "@types/qrcode": "^1.5.5",
