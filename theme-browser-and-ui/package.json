@@ -23,11 +23,15 @@
   },
   "//": "Learn more: https://sli.dev/guide/write-theme.html",
   "slidev": {
-    "colorSchema": "both",
+    "colorSchema": "dark",
     "defaults": {
+      "htmlAttrs": {
+        "lang": "ja"
+      },
       "fonts": {
-        "sans": "Nunito Sans",
-        "mono": "Fira Code"
+        "sans": "Inter, M PLUS 2",
+        "mono": "M PLUS 1 Code",
+        "weights": "400,600,700,900"
       }
     }
   }
