@@ -26,7 +26,7 @@
     "review-comment"
   ],
   "devDependencies": {
-    "@chromatic-com/storybook": "^2.0.2",
+    "@chromatic-com/storybook": "^3.2.4",
     "@slidev/cli": "^51.1.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
