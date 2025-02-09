@@ -9,9 +9,9 @@ layout: cover
 <!-- markdownlint-disable first-line-h1 -->
 <div style="display: flex; flex-direction: column; gap: 24px;">
   <div style="display: flex; justify-content: space-between; position: relative;">
-    <div style="display: flex; flex-direction: column; gap: 16px;">
-      <h1 style="margin: 0 0 0 -3px; line-height: 1;">ken7253</h1>
-      <p style="margin: 0;">Frontend developer</p>
+    <div style="display: flex; flex-direction: column;">
+      <h1 style="margin: 0 0 0 -2px; line-height: 1;font-size:2.5rem;">ken7253</h1>
+      <p style="margin: 0;opacity: .5;">Frontend developer</p>
     </div>
     <img alt="" src="https://dairoku-studio.com/ogp-thumbnail.png" style="position:absolute; top:0; right:50px; width: 200px; border-radius: 100vh;">
   </div>
