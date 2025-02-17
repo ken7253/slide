@@ -52,7 +52,7 @@
     "vite": "^6.0.7"
   },
   "dependencies": {
-    "@iconify-json/mdi": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/simple-icons": "^1.2.19",
     "dayjs": "^1.11.13",
