@@ -1,0 +1,13 @@
+{
+  "name": "@slide/theme-browser-and-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT",
+  "description": ""
+}

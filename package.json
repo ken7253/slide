@@ -23,7 +23,9 @@
     "hooks-testing",
     "frontend-conf-hokkaido",
     "ts-overload-function",
-    "review-comment"
+    "review-comment",
+    "browser-and-ui-1",
+    "theme-browser-and-ui"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
