@@ -26,3 +26,20 @@ layout: section
 ---
 
 ## Opening LT
+
+---
+layout: section
+---
+
+## 簡単にCSSの動向を追う方法
+
+---
+
+### 最近のCSSの進化
+
+- CSS Basic User Interface Module
+- CSS Anchor Positioning
+- CSS Scrollbars Styling Module `scrollbar-color` / `scrollbar-width`
+- CSS Properties and Values API `@property`
+- CSS Values and Units Module `calc-size()` / `interpolate-size`
+- CSS View Transitions Module
