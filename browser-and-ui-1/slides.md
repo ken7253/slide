@@ -25,7 +25,6 @@ layout: section
 
 <!--
 フロントエンドがどんどん発展するに従って、フロントエンドエンジニアがやることもどんどん増えていった。
-しかし、僕達はブラウザの上で動くユーザーインターフェースを作ることが目的だったはず。
 アプリケーション開発はフレームワークの上で行うことが当たり前になりサーバーサイドのコードも書くようになった
 ただ、どんなフレームワークの上で開発していようが自分たちはブラウザというプラットフォームの上にいることは変わらないはずで
 どんな環境にいるフロントエンドエンジニア同士でも共通の話題として「狭義のフロントエンド」の話をする場を作りたかった。
@@ -42,6 +41,10 @@ layout: section
 - UI・デザインの話
 - UI実装を支えるツール
 
+<!--
+画像やフォントの話とかもしたい
+-->
+
 ---
 
 ### **狭義の**フロントエンドエンジニアの勉強会
@@ -52,6 +55,11 @@ layout: section
 - （サービス全体の）設計論・アーキテクチャ
 - サーバーサイドの話
 - 技術以外の話
+
+<!--
+最近Denoの話を聞きたい欲があるけどこの勉強会ではやらない。
+あんまやらないとは言ってるけど世の中がかわってフロントエンドエンジニアという概念が根底から変わったり、自分がやりたくなったりしたらやるかも。
+-->
 
 ---
 layout: section
@@ -85,19 +93,27 @@ layout: section
 ## 簡単にCSSの動向を追う方法
 
 <!--
-わりとライトな感じで仕様の動向を追いたい人向けの情報になると思います。
+わりとライトな感じで仕様の動向を追いたい人向けの情報になると思います。  
+普段から仕様を追っている人にとっては当たり前の話が続くかもしれない。
+とりあえず、みなさん"最近"のCSSの新機能といえばどんなことが思いつきますか？
 -->
 
 ---
 
 ### 最近のCSSの進化
 
+- CSS View Transitions Module
 - CSS Basic User Interface Module
 - CSS Anchor Positioning
 - CSS Scrollbars Styling Module `scrollbar-color` / `scrollbar-width`
 - CSS Properties and Values API `@property`
 - CSS Values and Units Module `calc-size()` / `interpolate-size`
-- CSS View Transitions Module
+- CSS Conditional Rules Module `@container`
+
+<!--
+各種仕様の話をざっとさらう。
+今日の勉強会で多分出てくる話も多いと思いますが、おそらく
+-->
 
 ---
 layout: section
@@ -105,13 +121,34 @@ layout: section
 
 ## 多すぎる…！
 
+
+---
+layout: section
+---
+
+## 簡単にCSSの動向を追う方法
+
+---
+
+## 簡単にCSSの動向を追う方法  
+
+- 趣味じゃない人は（たぶん）全部追わなくてもいい
+- 自分の場合[mozaic.fm](https://mozaic.fm/)を散歩中に止まらず聞けるようにしたかった
+- 提案段階の仕様とかまで追うのは大変
+
+---
+layout: section
+---
+
+## intent to ship
+
 ---
 
 ## intent to ship
 
 - みんな大好きintent to ship
 - Twitter or Bluesky で気軽に見れる
-- blink-devのページは情報がコンパクトにまとまっているため調査の起点にしやすい
+- blink-devは情報がコンパクトにまとまっているため調査の起点に
 - 仕様を追ってる人は大体見てるイメージ
 
 shisamaさんのブログが分かりやすい。
@@ -128,7 +165,20 @@ https://shisama.hatenablog.com/entry/2019/01/24/075701
 
 ## intent to ship(blink-dev)
 
-![](/img/blink-dev.png)
+[![](/img/blink-dev.png)](https://groups.google.com/a/chromium.org/g/blink-dev/c/O5ZmbyRh9LE)
+
+<!--
+重要な部分を説明する、これはCSSでhtmlのinert的なのを実現するためのCSS interactivityについての提案なのですが
+Explainer（仕様の提案の概要についてまとめられたドキュメントへのリンク・ディスカッションとかも行われている）
+TAGReview（W3CのTechnical architecture groupのレビューへのリンク、今回だとCSS interactivityはOpenUIがカルーセルのUIを標準化するために用意した一連の提案の一部だということがわかる）
+standards-positionsに関しては、webkitやmozillaがその提案に対してどのようにとらえているかが分かる。ここで合意が得られてないと標準化は遠いなということが分かる。  
+-->
+
+---
+layout: section
+---
+
+## CSS WG Minutes
 
 ---
 
@@ -145,7 +195,21 @@ https://shisama.hatenablog.com/entry/2019/01/24/075701
 
 ## CSS WG Minutes
 
-![](/img/csswg-minutes.png)
+[![](/img/csswg-minutes.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
+
+---
+
+## CSS WG Minutes
+
+[![](/img/csswg-minutes-2.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
+
+https://zenn.dev/progfay/articles/visited-selector-privacy
+
+`:visited`疑似クラスの前提についてはこの記事が分かりやすい。
+
+<!--
+:visited疑似クラスに対してのセキュリティ面での懸念に対してのさらなる対策が必要そうという議論をしていたりする。
+-->
 
 ---
 
