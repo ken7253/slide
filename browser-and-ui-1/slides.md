@@ -1,10 +1,7 @@
 ---
-theme: ./theme-browser-and-ui
+theme: ../theme-browser-and-ui
 titleTemplate: '%s - ken7253'
-colorSchema: 'dark'
-fonts:
-  sans: 'M PLUS 2'
-  mono: 'M PLUS 1 Code'
+layout: intro
 ---
 
 # Browser and UI
@@ -15,3 +12,17 @@ src: "../reuse/me.md"
 ---
 
 ---
+layout: section
+---
+
+## Browser and UI とはなにか
+
+---
+
+勉強会の趣旨について説明
+
+---
+layout: section
+---
+
+## Opening LT
