@@ -159,13 +159,13 @@ https://shisama.hatenablog.com/entry/2019/01/24/075701
 
 ## intent to ship
 
-![](/img/intent-to-ship.png)
+![blueskyでのintent-to-shipアカウントの投稿画面のスクリーンショット、Intent to Ship: CSS interactivityについての内容](/img/intent-to-ship.png)
 
 ---
 
 ## intent to ship(blink-dev)
 
-[![](/img/blink-dev.png)](https://groups.google.com/a/chromium.org/g/blink-dev/c/O5ZmbyRh9LE)
+[![先ほどのintent-to-shipのリンクを辿った先のblink-devの画面のスクリーンショット、仕様についての様々なリンクがあることを確認できる](/img/blink-dev.png)](https://groups.google.com/a/chromium.org/g/blink-dev/c/O5ZmbyRh9LE)
 
 <!--
 重要な部分を説明する、これはCSSでhtmlのinert的なのを実現するためのCSS interactivityについての提案なのですが
