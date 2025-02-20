@@ -8,7 +8,7 @@ layout: intro
 \#1 CSS
 
 ---
-src: "../reuse/me.md"
+src: "../theme-browser-and-ui/me.md"
 ---
 
 ---
