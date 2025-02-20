@@ -259,3 +259,20 @@ BCD-watchならMDNへのリンクと仕様書のリンクがあるのでそれ�
 
 そもそもどういう提案なのか知らなかったらblink-devからExplainerを読みに行く。  
 standards-positionsを見ておくと標準化の合意が得られそうかが分かる。
+
+---
+
+## 自分の使い方
+
+<img src="/img/watch-list.png" alt="" class="h-full">
+
+<!--
+個人的にはintent to prototypeの時点である程度どのような仕様か把握しておくと楽
+使えるようになってから教えてくれって人はBCD-watchだけ見ていてればいいと思う。
+-->
+
+---
+layout: section
+---
+
+## 皆さんも楽しい Web標準ライフを！
