@@ -294,4 +294,4 @@ standards-positionsを見ておくと標準化の合意が得られそうかが�
 layout: section
 ---
 
-## 皆さんも楽しい Web標準ライフを！
+## ありがとうございました！
