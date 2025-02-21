@@ -214,7 +214,7 @@ layout: section
 
 ## CSS WG Minutes
 
-[!CSS WG Minutesのサイトのスクリーンショット](/img/csswg-minutes.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
+[![CSS WG Minutesのサイトのスクリーンショット](/img/csswg-minutes.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
 
 ---
 
