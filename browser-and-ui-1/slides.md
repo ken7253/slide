@@ -214,13 +214,13 @@ layout: section
 
 ## CSS WG Minutes
 
-[![](/img/csswg-minutes.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
+[!CSS WG Minutesのサイトのスクリーンショット](/img/csswg-minutes.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
 
 ---
 
 ## CSS WG Minutes
 
-[![](/img/csswg-minutes-2.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
+[![Minutesの概要部分にフォーカスしたスクリーンショット](/img/csswg-minutes-2.png)](https://www.w3.org/blog/CSS/2025/01/24/minutes-2025-01-22/)
 
 https://zenn.dev/progfay/articles/visited-selector-privacy
 
@@ -250,7 +250,7 @@ https://zenn.dev/ken7253/articles/browser-compat-data-watch
 
 ## BCD-watch
 
-![](/img/bcd-watch.png)
+![BCD-watchのサイトのスクリーンショット](/img/bcd-watch.png)
 
 ---
 
