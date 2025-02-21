@@ -12,6 +12,20 @@ src: "../theme-browser-and-ui/me.md"
 ---
 
 ---
+
+## JSConfのイベントにてPEPCについて話します！
+
+![JSConfJP おかわりイベントのconnpassページのスクリーンショット](/img/pr1.png)
+
+---
+
+## TSKaigiのCfP応募受付中です！
+
+<a style="display:flex;justify-content:center;border:none;" href="https://docs.google.com/forms/d/e/1FAIpQLScKXPc8dLC3QSqu_pMTGJdED3LuuFi0QCVsCMWIrC6nPcxRnA/viewform" target="_blank">
+<img width="400" height="400" src="/img/tskaigi-cfp-link.png" alt="TSKaigiのCfP応募フォームへのリンクQRコード">
+</a>
+
+---
 layout: section
 ---
 
@@ -40,6 +54,7 @@ layout: section
 - ブラウザの実装について
 - UI・デザインの話
 - UI実装を支えるツール
+- フォント・画像とかのアセット系の話とかも
 
 <!--
 画像やフォントの話とかもしたい
@@ -57,8 +72,9 @@ layout: section
 - 技術以外の話
 
 <!--
-最近Denoの話を聞きたい欲があるけどこの勉強会ではやらない。
-あんまやらないとは言ってるけど世の中がかわってフロントエンドエンジニアという概念が根底から変わったり、自分がやりたくなったりしたらやるかも。
+この話ちょっとネガティブっぽい感じだから話すか迷ったけど、やらないことを決めるのも大切だしこういう話できる場って結構あると思ってるので
+最近Denoが面白いと思ってるけど勉強会ではやらない。
+ただ、1か0ではないのでそこはアナログな感じで
 -->
 
 ---
@@ -84,7 +100,7 @@ layout: section
 layout: section
 ---
 
-## Opening LT
+## Opening talk
 
 ---
 layout: section
@@ -103,8 +119,8 @@ layout: section
 ### 最近のCSSの進化
 
 - CSS View Transitions Module
-- CSS Basic User Interface Module
 - CSS Anchor Positioning
+- CSS Basic User Interface Module `appearance` / `interactivity`
 - CSS Scrollbars Styling Module `scrollbar-color` / `scrollbar-width`
 - CSS Properties and Values API `@property`
 - CSS Values and Units Module `calc-size()` / `interpolate-size`
@@ -112,7 +128,7 @@ layout: section
 
 <!--
 各種仕様の話をざっとさらう。
-今日の勉強会で多分出てくる話も多いと思いますが、おそらく
+今日の勉強会で多分出てくる話も多いと思います、楽しみですね。
 -->
 
 ---
@@ -135,6 +151,9 @@ layout: section
 - 趣味じゃない人は（たぶん）全部追わなくてもいい
 - 自分の場合[mozaic.fm](https://mozaic.fm/)を散歩中に止まらず聞けるようにしたかった
 - 提案段階の仕様とかまで追うのは大変
+- まとめると大変なので週単位とかで追えるようにしていく
+
+<!-- 仕様を追ったりするのに利用しているサービスと自分の使い方を軽く紹介する -->
 
 ---
 layout: section
