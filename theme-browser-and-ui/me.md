@@ -7,7 +7,7 @@ fonts:
 layout: cover
 ---
 <!-- markdownlint-disable first-line-h1 -->
-<div style="display: flex; flex-direction: column; gap: 24px;">
+<div style="display: flex; flex-direction: column; gap: 24px;height: 100%;justify-content: center;">
   <div style="display: flex; justify-content: space-between; position: relative;">
     <div style="display: flex; flex-direction: column;">
       <h1 style="margin: 0 0 0 -2px; line-height: 1;font-size:2.5rem;">ken7253</h1>
