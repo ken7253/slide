@@ -1,0 +1,81 @@
+:root {
+  --theme-c-background: #eee;
+  --theme-c-text: #333;
+}
+
+#app {
+  .slide-content,
+  .print-slide-container {
+    background-color: var(--theme-c-background);
+    color: var(--theme-c-text);
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.025em;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-weight: 900;
+    }
+
+    code {
+      margin: 0 4px;
+      color: var(--theme-c-background);
+    }
+
+    li {
+      list-style-type: disc;
+      font-size: 1.5rem;
+    }
+
+    strong {
+      font-size: 1.1em;
+      position: relative;
+      padding: 0 8px;
+      font-weight: 700;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        z-index: -1;
+        background-color: var(--theme-c-text);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  /* Layout */
+  .slidev-layout {
+    /* layout: intro */
+    &.intro {
+      h1 {
+        font-size: 3em;
+        font-weight: 900;
+
+        & + p {
+          font-size: 1.5em;
+          margin: 0;
+        }
+      }
+    }
+    /* layout: section */
+    &.section {
+      h2 {
+        font-size: 2.5em;
+        font-weight: 900;
+      }
+    }
+  }
+}
