@@ -28,6 +28,17 @@ layout: section
 - アプリケーションの実装としては非同期処理として素直に実装すればいいだけ
 - `then...catch`とかでエラーハンドリング
 
+```ts
+try {
+  await navigator.getUserMedia({
+    audio: true,
+    video: true,
+  }, () => {}, () => {});
+} catch (e) {
+  // ...
+}
+```
+
 実装としてはそれでいいが、本当に使いやすいのか？
 
 ---
@@ -42,6 +53,12 @@ layout: section
 
 <img alt="Google Mapでの例画面右下にある位置情報のボタンをクリックすると反対側でプロンプトが起動している画面をスクリーンショットで表している" src="https://github.com/WICG/PEPC/raw/main/images/image2.png" width="650" style="display: flex; margin: auto;" />
 <em style="font-size: 16px;">Chromeの場合、権限が必要なAPIが呼ばれるとオムニボックスの下にプロンプトが現れユーザーに許可を求める。</em>
+
+---
+layout: section
+---
+
+### "permanent deny" policy
 
 ---
 
