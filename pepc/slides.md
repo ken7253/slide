@@ -8,6 +8,9 @@ fonts:
 ---
 
 # PEPCは何を変えようとしているのか
+[@JSConf.jp おかわり Node学園46時限目](https://nodejs.connpass.com/event/344588/)
+
+<!-- 事前にMeetの権限リクエスト画面を用意しておく -->
 
 ---
 src: "../reuse/me.md"
@@ -17,9 +20,41 @@ src: "../reuse/me.md"
 layout: section
 ---
 
-## 権限が必要な機能の実装
+## PEPCとはなにか
 
-通知、メディアデバイスアクセス、位置情報などなど  
+---
+layout: section
+---
+
+### PEPC = Page Embedded Permission Control
+
+---
+
+### PEPC = Page Embedded Permission Control
+
+一番大きい変更としては `<permission>` 要素を追加すること。
+
+- クリック時に指定した権限の許可がトリガーされる
+- UIはUAから提供されクリック ジャッキングなどができない
+- 権限の許可と種類がセマンティックとして定義される
+- 一度権限を拒否しても再度クリックすることで許可のリクエストが発行される
+
+Chrome 126-137にてOrigin Trialが行われている。
+
+既存のブラウザのパーミッションモデルを大きく変えようとする提案。
+
+---
+layout: section
+---
+
+## 現在のブラウザにおける権限管理
+
+---
+
+## 現在のブラウザにおける権限管理
+
+<img alt="Google Mapでの例画面右下にある位置情報のボタンをクリックすると反対側でプロンプトが起動している画面をスクリーンショットで表している" src="https://github.com/WICG/PEPC/raw/main/images/image2.png" width="650" style="display: flex; margin: auto;" />
+<em style="font-size: 16px;">Chromeの場合、権限が必要なAPIが呼ばれるとオムニボックスの下にプロンプトが現れユーザーに許可を求める。</em>
 
 ---
 
@@ -42,23 +77,12 @@ try {
 実装としてはそれでいいが、本当に使いやすいのか？
 
 ---
-layout: section
----
 
-## 現在のブラウザにおける権限管理
+## 現在の権限管理の問題点
 
----
-
-## 現在のブラウザにおける権限管理
-
-<img alt="Google Mapでの例画面右下にある位置情報のボタンをクリックすると反対側でプロンプトが起動している画面をスクリーンショットで表している" src="https://github.com/WICG/PEPC/raw/main/images/image2.png" width="650" style="display: flex; margin: auto;" />
-<em style="font-size: 16px;">Chromeの場合、権限が必要なAPIが呼ばれるとオムニボックスの下にプロンプトが現れユーザーに許可を求める。</em>
-
----
-layout: section
----
-
-### "permanent deny" policy
+- どの要素がどの権限のリクエストを行うかがセマンティックとして表現されていない
+- 権限のリクエストを行った要素とプロンプトの位置の乖離
+- "permanent deny" policyにより誤った権限拒否の訂正を行うのが難しい
 
 ---
 
@@ -117,19 +141,6 @@ sequenceDiagram
 
 ---
 
-## 現在のパーミッションリクエストの問題点
-
-現在のパーミッションリクエストはセキュリティ面では安全であるが
-
-- 間違って拒否してしまった場合、再度許可を行うのが難しい
-- プロンプトの表示とユーザーが起こすアクションが必ずしも合致しない
-- プロンプトの表示をトリガーした要素とプロンプトの位置が離れていること
-- 権限の要求がトリガーされるということがセマンティックとして明らかでない
-
-のような問題もある。
-
----
-
 ## PEPCでのパーミッションリクエストで変わること
 
 > A permission model designed to be initiated by the user would solve these issues.
@@ -148,17 +159,16 @@ layout: section
 
 Webkit,MozillaともにStandard positionはNegative寄り。
 
-- 仕様の複雑性
-- セキュリティ面でのリスク
-- i18n
-- ブラウザ互換性
-
-などが問題になっている。
-
-#### Standard position
-
 - https://github.com/WebKit/standards-positions/issues/270
 - https://github.com/mozilla/standards-positions/issues/908 
+
+最大の懸念であるクリックジャッキングの対策のため非常に複雑な仕様に…
+
+---
+layout: section
+---
+
+### なぜ複雑な仕様になってしまうのか
 
 ---
 
@@ -170,23 +180,61 @@ Webkit,MozillaともにStandard positionはNegative寄り。
 - アプリケーション側からEventをdispatchできてしまう
 - ユーザーが別の要素をクリックする直前に前面にpermission要素を表示する
 
-などなどユーザーの意図しない状況での権限許可が行われてしまう
+などクリックジャッキングが可能になってしまう。
 
 ---
 
 ### なぜ複雑な仕様になってしまうのか
 
-自分が読んでいて面白かったissue
+クリックジャッキング対策のために
 
-[Styling button text-transform (capitalize/uppercase/lowercase) #28](https://github.com/WICG/PEPC/issues/28)
+- 表示されるテキストはUAが管理する
+- CSSの指定をホワイトリスト形式に
+- 要素のレンダリング上限の制限
+- サブフレームでの使用条件の制限
+- クリックイベントのdispatchに対する制限
+- クリックの直前にPEPCが移動していないこと
+- クリックの直前にPEPCが（他の要素に覆われていない）見えていること
+- クリックの直前にPEPCがNodeに挿入されていないこと
 
-現状はボタンのテキストもユーザーエージェントが提供する想定になっているがCSSでupper caseに指定した場合にテキストの意味が変わってしまう言語はあるのか。
+などの対策を行う必要があることが一番大きな要因
 
-CSSの適用がホワイトリスト形式になっているので考慮することが多くなっている。
+<!--
+CSSの制限については主に透明化して全画面表示にしたりすることの対策
+要素のレンダリング数上限はpermission要素で画面全体をタイル状に覆い尽くすことへの対策
+-->
 
 ---
 
-## まとめ
+### なぜ複雑な仕様になってしまうのか
 
-- 大変そうだけど課題意識とかには共感できるので長期的な目線では応援したい。
-- 仕様は意図が分かると面白い
+UAがテキストを管理することとCSSの制限に関連して、CSSで Upper case に指定した場合にテキストの意味が変わってしまう言語はあるのかなどの懸念も
+
+[Styling button text-transform (capitalize/uppercase/lowercase) #28](https://github.com/WICG/PEPC/issues/28)
+
+---
+layout: section
+---
+
+## PEPCの現状
+
+---
+
+## PEPCの現状
+
+- Webkit,Mozillaの反対意見は根強い
+- セキュリティ的な懸念や余計な複雑性が発生しているのは事実
+- 大きく問題を2つに分けて代替え案なども検討されている
+  - 権限リクエストのプロンプトを改善する方向
+  - 権限の許可フローの改善
+
+---
+
+## PEPCの現状
+
+- 現状のままでは標準化は非常に厳しい状態である。
+- やりたいことは分かるし、需要もありそうだが理解を得られる実装ではない。
+- 一方で代替え案や`<portal>`要素のように機能の分割も有り得そう。
+
+今後の動向によってはパーミッションモデルの変化があるかもしれない。
+
