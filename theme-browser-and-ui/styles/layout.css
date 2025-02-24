@@ -4,7 +4,8 @@
 }
 
 #app {
-  .slidev-slide-content {
+  .slide-content,
+  .print-slide-container {
     background-color: var(--theme-c-background);
     color: var(--theme-c-text);
     font-weight: 600;
