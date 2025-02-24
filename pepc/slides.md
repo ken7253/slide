@@ -17,6 +17,23 @@ src: "../reuse/me.md"
 layout: section
 ---
 
+## 権限が必要な機能の実装
+
+通知、メディアデバイスアクセス、位置情報などなど  
+
+---
+
+## 権限が必要な機能の実装
+
+- アプリケーションの実装としては非同期処理として素直に実装すればいいだけ
+- `then...catch`とかでエラーハンドリング
+
+実装としてはそれでいいが、本当に使いやすいのか？
+
+---
+layout: section
+---
+
 ## 現在のブラウザにおける権限管理
 
 ---
@@ -119,7 +136,12 @@ Webkit,MozillaともにStandard positionはNegative寄り。
 - i18n
 - ブラウザ互換性
 
-などが問題になっている
+などが問題になっている。
+
+#### Standard position
+
+- https://github.com/WebKit/standards-positions/issues/270
+- https://github.com/mozilla/standards-positions/issues/908 
 
 ---
 
@@ -134,12 +156,8 @@ Webkit,MozillaともにStandard positionはNegative寄り。
 などなどユーザーの意図しない状況での権限許可が行われてしまう
 
 ---
-layout: center
----
 
-### さらに
-
----
+### なぜ複雑な仕様になってしまうのか
 
 自分が読んでいて面白かったissue
 
@@ -153,4 +171,5 @@ CSSの適用がホワイトリスト形式になっているので考慮する�
 
 ## まとめ
 
-大変そうだけど課題意識とかには共感できるので長期的な目線では応援したい。
+- 大変そうだけど課題意識とかには共感できるので長期的な目線では応援したい。
+- 仕様は意図が分かると面白い
