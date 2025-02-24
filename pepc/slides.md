@@ -76,6 +76,7 @@ sequenceDiagram
     participant Browser
     Actor User
     User->>Browser: Permission要素をクリック
+    Note over User,Browser: ユーザー側から事前に許可を与える
     Browser->>Application: アクセスの許可
     Application->>User: 機能の提供
 ```
