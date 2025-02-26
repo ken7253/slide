@@ -39,7 +39,7 @@ layout: section
 - 権限の許可と種類がセマンティックとして定義される
 - 一度権限を拒否しても再度クリックすることで許可のリクエストが発行される
 
-Chrome 126-137にてOrigin Trialが行われている。
+Chrome 126-137 にてOrigin Trialが行われている。
 
 既存のブラウザのパーミッションモデルを大きく変えようとする提案。
 
@@ -71,7 +71,7 @@ try {
   }, () => {}, () => {});
 } catch (e) {
   // ...
-}
+};
 ```
 
 実装としてはそれでいいが、本当に使いやすいのか？
@@ -82,7 +82,7 @@ try {
 
 - どの要素がどの権限のリクエストを行うかがセマンティックとして表現されていない
 - 権限のリクエストを行った要素とプロンプトの位置の乖離
-- "permanent deny" policyにより誤った権限拒否の訂正を行うのが難しい
+- "permanent deny" policy により誤った権限拒否の訂正を行うのが難しい
 
 ---
 
@@ -109,20 +109,21 @@ sequenceDiagram
     participant Application
     participant Browser
     Actor User
+    User --)Browser: ボタン等をクリック
+    Browser--)Application: Event
     Application--)Browser: 権限のリクエスト
     Browser--)User: プロンプトを表示
 
-    alt 許可
     User--)Browser:権限を許可
     Browser--)Application: アクセスの許可
     Application->>User: 機能の提供
-    else 拒否
-    User--)Browser:権限を拒否
-    Browser--)Application: アクセスの拒否
-    Application--xBrowser: 権限のリクエスト
-    Note over Browser: 同じ権限は再度リクエストできない
-    end
+    Note over Browser: 権限を拒否した場合、同じ権限は再度リクエストできない
 ```
+
+<!--
+図の要点としてはユーザーエージェントとユーザー間で２回のやり取りが必要になる点
+-->
+
 
 ---
 
@@ -135,17 +136,24 @@ sequenceDiagram
     Actor User
     User->>Browser: Permission要素をクリック
     Note over User,Browser: ユーザー側から事前に許可を与える
-    Browser->>Application: アクセスの許可
+    Browser->>Application: Event
     Application->>User: 機能の提供
 ```
 
 ---
 
-## PEPCでのパーミッションリクエストで変わること
+## 何が変わるのか
 
-> A permission model designed to be initiated by the user would solve these issues.
+- 従来はアクション後にプロンプトが表示され計２回のアクションが必要になる。  
+- PEPCでは許可しつつイベントを処理でき１度のアクションで機能を提供できる。
+- ユーザー起点の許可なのでスパムの心配がなく拒否からの復帰が楽になる。
+- 要素がどの権限を許可するものなのかがセマンティックとして明確になる（はず）。
 
-従来のパーミッションリクエストはアプリケーション（JavaScript）が起点となっているのに対して、PEPCでは**ユーザーのアクションを起点としている**ことが異なる。
+https://permission.site/pepc
+
+<!--
+「はず」と書いているのはあくまでセマンティック関連の話はARIAの話なのでARIAとのインテグレーションが必要になるため。
+-->
 
 ---
 layout: section
@@ -237,4 +245,14 @@ layout: section
 - 一方で代替え案や`<portal>`要素のように機能の分割も有り得そう。
 
 今後の動向によってはパーミッションモデルの変化があるかもしれない。
+
+<!--
+
+-->
+
+---
+layout: section
+---
+
+## ありがとうございました！
 
