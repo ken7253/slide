@@ -7,7 +7,7 @@ fonts:
   mono: 'M PLUS 1 Code'
 ---
 
-# PEPCは何を変えようとしているのか
+# PEPCは何を変えようとしていたのか
 [@JSConf.jp おかわり Node学園46時限目](https://nodejs.connpass.com/event/344588/)
 
 <!-- 事前にMeetの権限リクエスト画面を用意しておく -->
