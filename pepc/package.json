@@ -1,0 +1,14 @@
+{
+  "name": "@slide/pepc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "export": "slidev export",
+    "dev": "slidev",
+    "build": "slidev build"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT"
+}

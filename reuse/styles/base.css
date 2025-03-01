@@ -147,6 +147,10 @@ deepl-inline-trigger {
   font-weight: bolder;
 }
 
+#app .mermaid {
+  background-color: var(--c-main);
+}
+
 /* strong */
 #app strong {
   margin: 0 4px;
@@ -198,7 +202,6 @@ deepl-inline-trigger {
 
 /* blockquote */
 #app blockquote {
-  font-family: monospace;
   position: relative;
   padding: 8px 1rem 4px 1rem;
   border: none;

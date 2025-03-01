@@ -25,7 +25,8 @@
     "ts-overload-function",
     "review-comment",
     "browser-and-ui-1",
-    "theme-browser-and-ui"
+    "theme-browser-and-ui",
+    "pepc"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -68,6 +69,7 @@
     "node": "^22.11.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-darwin-arm64": "^4.34.6"
+    "@rollup/rollup-darwin-arm64": "^4.34.6",
+    "@rollup/rollup-linux-arm64-gnu": "^4.34.8"
   }
 }
