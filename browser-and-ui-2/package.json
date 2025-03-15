@@ -1,0 +1,14 @@
+{
+  "name": "@slide/browser-and-ui-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT",
+  "description": ""
+}
