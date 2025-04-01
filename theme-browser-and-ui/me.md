@@ -1,9 +1,6 @@
 ---
-theme: default
+theme: .
 titleTemplate: '%s - ken7253'
-fonts:
-  sans: 'M PLUS 2'
-  mono: 'M PLUS 1 Code'
 layout: cover
 ---
 <!-- markdownlint-disable first-line-h1 -->
