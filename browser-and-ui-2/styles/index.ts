@@ -1,2 +1,1 @@
-import "./mod.css"
-import "@slide/reuse/styles";
+import "./mod.css";
