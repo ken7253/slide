@@ -36,6 +36,27 @@ layout: section
 - 簡潔にするために解説では手順をスキップしている箇所があります🙇
 
 ---
+
+## Q0: Example
+
+```html
+<div data-foo="foo" data-foo="bar"></div>
+```
+
+例題：同一の属性値を複数記述した場合どうなるのか？
+
+---
+
+## A0: Example
+
+```html
+<div data-foo="foo"></div>
+```
+
+最初に定義した属性値が採用される。
+（重複した属性値は無視される）
+
+---
 layout: section
 ---
 
@@ -64,7 +85,7 @@ layout: section
 <html>
   <head>
     <meta charset="utf-8">
-    </head>
+  </head>
   <body>
     <div>Hello World.</div>
   </body>
