@@ -37,6 +37,27 @@ layout: section
 
 ---
 
+### HTML Parser Quiz!!
+
+手元で試してみたい人はコンソールで`DOMParser`を使うと簡単に試せるかも。
+
+```ts
+const p = new DOMParser();
+const dom = p.parseFromString(`
+<!DOCTYPE html>
+<html>
+<head></head>
+<body><h1 id="foo">Hello HTML!</h1></body>
+</html>
+`, 'text/html');
+dom.getElementById("foo");
+// => <h1 id="foo">Hello HTML!</h1>
+```
+
+https://developer.mozilla.org/ja/docs/Web/API/DOMParser
+
+---
+
 ## Q0: Example
 
 ```html
@@ -110,6 +131,11 @@ head内部の処理
   - `head`をDOMに挿入する
   - `in head`に移行する
 - `meta[charset="UTF-8"]`を挿入する
+
+<!--
+before htmlという名前の通り基本的にDOCTYPE宣言の後に来るのはhtml以外あり得ないので自動的にhtmlが挿入される
+htmlの次に来るのはhead以外あり得ないので、headも自動挿入されるという風に仕様として修正可能な部分は極力修正を行いつつパースが進んでいく
+-->
 
 ---
 layout: section
@@ -209,7 +235,10 @@ HTML LSに定義されている下記の要素
 
 これらの要素が出現している間は自動閉じタグ挿入の仕組みが特別なものになる。
 
-自動的に閉じタグが挿入されるが、本当に閉じタグがある場所まではフォーマットを維持するためにタグで囲われていない部分も囲ったり、開始タグを挿入したりする。
+自動的に閉じタグが挿入されるが、本来の閉じタグがある場所まではフォーマットを維持するために開始タグを挿入したりする。
 
+---
+layout: section
+---
 
-
+## END
