@@ -50,7 +50,7 @@ const dom = p.parseFromString(`
 <body><h1 id="foo">Hello HTML!</h1></body>
 </html>
 `, 'text/html');
-dom.getElementById("foo");
+console.log(dom.getElementById("foo"));
 // => <h1 id="foo">Hello HTML!</h1>
 ```
 
@@ -64,7 +64,7 @@ https://developer.mozilla.org/ja/docs/Web/API/DOMParser
 <div data-foo="foo" data-foo="bar"></div>
 ```
 
-例題：同一の属性値を複数記述した場合どうなるのか？
+例題：同一の属性値を複数記述した場合
 
 ---
 
@@ -236,6 +236,115 @@ HTML LSに定義されている下記の要素
 これらの要素が出現している間は自動閉じタグ挿入の仕組みが特別なものになる。
 
 自動的に閉じタグが挿入されるが、本来の閉じタグがある場所まではフォーマットを維持するために開始タグを挿入したりする。
+
+---
+
+## Step
+
+````md magic-move
+
+```html
+<!-- // -->
+<body>
+  <p>foo<!-- [] -->
+    <b>bar
+      <a href="#top">
+        buzz
+      </b>qux
+    </a>foobar
+  </p>
+</body>
+<!-- // -->
+```
+
+```html
+<!-- // -->
+<body>
+  <p>foo
+    <b>bar<!-- [b] -->
+      <a href="#top">
+        buzz
+      </b>qux
+    </a>foobar
+  </p>
+</body>
+<!-- // -->
+```
+
+```html
+<!-- // -->
+<body>
+  <p>foo
+    <b>bar
+      <a href="#top">
+        buzz<!-- [b, a[href="#top"]] -->
+      </b>qux
+    </a>foobar
+  </p>
+</body>
+<!-- // -->
+```
+
+```html
+<!-- // -->
+<body>
+  <p>foo
+    <b>bar
+      <a href="#top">
+        buzz
+      </a>
+    </b><!-- [a[href="#top"]] -->qux
+    </a>foobar
+  </p>
+</body>
+<!-- // -->
+```
+
+```html
+<!-- // -->
+<body>
+  <p>foo
+    <b>bar
+      <a href="#top">
+        buzz
+      </a>
+    </b>
+    <a href="#top"><!-- [a[href="#top"]] -->qux
+    </a>foobar
+  </p>
+</body>
+<!-- // -->
+```
+
+```html
+<!-- // -->
+<body>
+  <p>foo
+    <b>bar
+      <a href="#top">
+        buzz
+      </a>
+    </b><a href="#top">qux
+    </a><!-- [] -->foobar
+  </p>
+</body>
+<!-- // -->
+```
+
+````
+
+<!--
+まずパーサーはFormatting Elementsに対応するためにFormatting Elementsの開始を記録しておく必要がある。
+
+コメントにある配列がその記憶領域だと思ってください。
+
+1. 最初はFormatting Elementsではないので何も記録しない
+2. 次にbが出現した時点でそれを覚えておく
+3. 次のaもFormatting Elementsなので追加
+4. bの閉じタグが現れたのでaの閉じタグを挿入（これは自動閉じタグ挿入なので普通の挙動）
+5. 次にbは閉じたが、本当のaの閉じタグがないのでaタグを開始する（Formatting Elements特有の挙動）
+6. 次に本当にaが閉じたのでaの情報を忘れられる
+-->
 
 ---
 layout: section
