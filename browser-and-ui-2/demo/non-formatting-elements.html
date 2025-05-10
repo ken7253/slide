@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <style>
+    body * {
+      display: block;
+    }
+    span {
+      color: red;
+    }
+    time {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <p>foo <-- p
+    <span>bar <-- p > span
+      <time>buzz <-- p > span > time
+    </span>qux <-- p > time
+    </time>quux <-- p
+  </p>
+</body>
+</html>
