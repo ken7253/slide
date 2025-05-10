@@ -26,7 +26,8 @@
     "review-comment",
     "browser-and-ui-1",
     "theme-browser-and-ui",
-    "pepc"
+    "pepc",
+    "browser-and-ui-2"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
