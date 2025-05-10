@@ -1,0 +1,17 @@
+{
+  "name": "@slide/browser-and-ui-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "keywords": [],
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
