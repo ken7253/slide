@@ -51,7 +51,7 @@
     "markdownlint-cli2": "^0.17.2",
     "playwright": "^1.51.1",
     "storybook": "^8.5.4",
-    "tsx": "^4.19.3",
+    "tsx": "^4.19.4",
     "typescript": "^5.7.3",
     "vite": "^6.0.7"
   },
