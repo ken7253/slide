@@ -27,7 +27,8 @@
     "browser-and-ui-1",
     "theme-browser-and-ui",
     "pepc",
-    "browser-and-ui-2"
+    "browser-and-ui-2",
+    "css-polyfill"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",

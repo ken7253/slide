@@ -6,6 +6,7 @@ fonts:
   mono: 'M PLUS 1 Code'
 layout: cover
 ---
+
 <!-- markdownlint-disable first-line-h1 -->
 <div style="display: flex; flex-direction: column; gap: 40px;">
   <div style="display: flex; justify-content: space-between; position: relative;">
@@ -47,3 +48,8 @@ layout: cover
     </a>
   </div>
 </div>
+
+<!--
+簡単に自己紹介を、ken7253というディスプレイネームで活動しています。数字の部分は読まなくていいです。
+どちらかというとブラウザとか標準まわりが好きでそういう勉強会もやったりしてます。
+-->
