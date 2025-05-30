@@ -8,6 +8,7 @@ fonts:
 ---
 
 # CSS polyfill とその未来
+@Megro.css
 
 <!--
 前回のmegroesが終わって2次会的なところに行った時にちょうどこの話をしてたんですよね。
