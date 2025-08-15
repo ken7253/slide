@@ -29,7 +29,8 @@
     "pepc",
     "browser-and-ui-2",
     "css-polyfill",
-    "beyond-early-returns"
+    "beyond-early-returns",
+    "reduce-bundle-size"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
