@@ -27,7 +27,9 @@
     "browser-and-ui-1",
     "theme-browser-and-ui",
     "pepc",
-    "browser-and-ui-2"
+    "browser-and-ui-2",
+    "css-polyfill",
+    "beyond-early-returns"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -47,12 +49,12 @@
     "@types/node": "^22.13.14",
     "@types/qrcode": "^1.5.5",
     "@vitejs/plugin-vue": "^5.2.4",
-    "inquirer": "^12.4.2",
     "markdownlint-cli2": "^0.18.1",
-    "playwright": "^1.51.1",
+    "playwright": "^1.53.1",
+    "inquirer": "^12.6.0",
     "storybook": "^8.5.4",
-    "tsx": "^4.19.4",
-    "typescript": "^5.7.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
     "vite": "^6.0.7"
   },
   "dependencies": {
@@ -70,7 +72,7 @@
     "node": "^22.11.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-darwin-arm64": "^4.34.9",
-    "@rollup/rollup-linux-arm64-gnu": "^4.40.2"
+    "@rollup/rollup-darwin-arm64": "^4.46.2",
+    "@rollup/rollup-linux-arm64-gnu": "^4.44.0"
   }
 }
