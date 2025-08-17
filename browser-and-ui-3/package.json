@@ -1,12 +1,11 @@
 {
-  "name": "@slide/reduce-bundle-size",
+  "name": "@slide/browser-and-ui-3",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "slidev build",
-    "export": "slidev export",
-    "dev": "slidev"
+    "dev": "slidev",
+    "build": "slidev build"
   },
   "keywords": [],
   "author": "",
