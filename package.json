@@ -51,7 +51,7 @@
     "@vitejs/plugin-vue": "^5.2.4",
     "markdownlint-cli2": "^0.18.1",
     "playwright": "^1.53.1",
-    "inquirer": "^12.6.0",
+    "inquirer": "^12.9.3",
     "storybook": "^8.5.4",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
