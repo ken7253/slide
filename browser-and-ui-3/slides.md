@@ -19,7 +19,7 @@ src: "../theme-browser-and-ui/description.md"
 layout: intro
 ---
 
-# バンドルサイズを減らした話
+# バンドルサイズを半減させた話
 \#2 Network/Performance
 
 ---
@@ -53,7 +53,7 @@ layout: section
 
 - コンパイルターゲットをES5からES6に
 - Terserの設定で`mangle:false`になっていたのを解消
-- 重複しているコードの削除
+- 不要なコードの削除
 
 作業としては上の2つがメイン、コードの削除は段階的に実施
 
@@ -89,13 +89,16 @@ layout: section
 
 ## なぜES5はサイズが大きくなるか
 
-- Generatorがない
-- 関数宣言への変換が地味に効く
-- moduleがないのでHelper関数の共通化が行いづらい
+- ESMが使えないためTree shakingが効かない
+- アロー関数から関数宣言への変換
+- Generatorが存在せず非同期処理のコードが冗長になりがち
 
 ほとんどのサービスでは意味がないので`ES5`へのトランスパイルはやめるべき
 
-<!-- Generatorに関してはasyncなどの非同期処理を置き換えるためのhelper関数がGeneratorで書かれているため -->
+<!-- 
+まず、一番大きな要因としては
+- Generatorに関してはasyncなどの非同期処理を置き換えるためのhelper関数がGeneratorで書かれているため
+-->
 
 ---
 layout: section
@@ -107,24 +110,39 @@ layout: section
 layout: section
 ---
 
-## ES2020を最低ラインになるべく最新に
+## Baseline(Widely available)にあわせる
+
+<!--
+はい、組み込みみたいな特殊な対応環境でなければ、BaselineのWidely availableに合わせてください以上です。
+次からはそれができない環境の人向けのお話です。
+-->
+
+---
+layout: section
+---
+
+## 特殊な事情がある場合は、ES2017/ES2020を目指すとよさそう
+
+<!--個別で考えるなら、ES2020ぐらいまでは最低でも上げておきたい-->
 
 ---
 
-## 一般的なアプリケーションの指標は？
+## 特殊な事情がある場合
 
-今回のバンドルサイズ調整でもES2020を目指していた。
+今回のバンドルサイズ調整ではES2020を目指していた。
 
-- Optional chaining(オプショナルチェーン)
-- Nullish coalescing(Null 合体演算子)
+- Optional chaining(オプショナルチェーン`a?.b`)
+- Nullish coalescing(Null 合体演算子 `a ?? b`)
 
-上記の機能はES2020で追加されたものだがよく使われている一方で、トランスパイル時のサイズが増えがちだった。
+上記の機能はES2020で追加されたものでよく使われている。
+
+一方で、トランスパイル時のサイズが増えがちだった。
 
 <!-- どうしてもならasync/awaitが変換されないES2017以上という選択肢もあるが… -->
 
 ---
 
-## 一般的なアプリケーションの指標は？
+## 特殊な事情がある場合
 
 ### Optional chaining(オプショナルチェーン)
 
@@ -134,7 +152,7 @@ a?.b?.c
 // downlevel: 100 Bytes
 var _a;
 (_a = a) === null || _a === void 0 || (_a = _a.b) === null || _a === void 0 ? void 0 : _a.c;
-// minfy: 64 Bytes
+// minfy: 64 Bytes x7.1!
 var l;null===(l=a)||void 0===l||null===(l=l.b)||void 0===l||l.c;
 ```
 
@@ -146,17 +164,14 @@ a ?? b;
 // downlevel: 52 Bytes
 var _a;
 (_a = a) !== null && _a !== void 0 ? _a : b;
-// minfy: 34 Bytes
+// minfy: 34 Bytes x4.8!
 var l;null!==(l=a)&&void 0!==l||b;
 ```
 
----
-
-## 一般的なアプリケーションの指標は？
-
-一方でアプリケーションのバージョンを固定してしまうと、新機能を使うたびにpolyfillやトランスパイルでバンドルサイズが増えてしまう。
-
-基本的には定期的になるべく最新に引き上げてあげる必要がありそう。
+<!--
+これはbabel+terserで試してます。
+ミニファイ後もオプショナルチェーンで7倍、Null合体で5倍近く増えています。
+-->
 
 ---
 layout: section
@@ -181,3 +196,82 @@ JSのminifyを行うツール
 ### mangle
 
 変数名などを短くしてminifyを行う方法
+
+---
+
+## なぜ`mangle:false`になっていたのか
+
+依存ライブラリの一部がmangleを行うと壊れたため
+
+リリースのために一時的に`mangle:false`されていたのが放置されていた。
+
+- ライブラリ側のアップデートで修正されていたのが確認
+- ライブラリをアップデート
+- 記述を削除してリリース
+
+`4.11MB`->`2.95MB`に削減
+
+---
+
+## 不要なコードの削除
+
+- 開発中しか利用しないコードのバンドルを防ぐ
+- 重複しているコードを共通化する
+
+---
+
+### 開発中しか利用しないコードのバンドルを防ぐ
+
+````md magic-move
+
+```ts
+// mock.ts
+export const worker = setupWorker(...handlers);
+
+/* ============================================ */
+
+import { worker } from "./mock.ts";
+// mswのモックを有効化する処理
+const initApp = () => {
+  if (
+      (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') &&
+      process.env.USE_MOCK === 'true'
+    ) {
+    worker.start();
+  };
+  // ...
+}
+```
+
+```ts
+// mock.ts
+export const worker = setupWorker(...handlers);
+
+/* ============================================ */
+
+// mswのモックを有効化する処理
+if (process.env.NODE_ENV === 'development') {
+  if (process.env.ENABLE_MSW === 'true') {
+    import("./mock.ts").then((worker) => worker.start())
+  }
+};
+
+const initApp = () => {
+  //...
+}
+```
+````
+
+- デットコード削除の対象になるようにダイナミックインポートに
+
+---
+
+## 重複しているコードを削除・共通化する
+
+ここはほぼおまけ程度
+
+- ダイアログやローディングなど共通化できる部分を共通化
+- リファクタリングの作業を進めていくと自然とコード量が減っていく
+- 型情報から不要だと分かるオプショナルチェーンや初期値の代入を削る
+
+`2.95MB` -> `2.83MB`
