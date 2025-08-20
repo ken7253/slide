@@ -5,7 +5,7 @@ layout: intro
 ---
 
 # Browser and UI
-\#2 Network/Performance
+\#3 Network/Performance
 
 ---
 src: "../theme-browser-and-ui/me.md"
@@ -20,7 +20,7 @@ layout: intro
 ---
 
 # バンドルサイズを半減させた話
-\#2 Network/Performance
+\#3 Network/Performance
 
 ---
 
