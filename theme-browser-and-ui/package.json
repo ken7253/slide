@@ -19,7 +19,7 @@
     "@slidev/types": "^51.1.0"
   },
   "devDependencies": {
-    "@slidev/cli": "^51.1.0"
+    "@slidev/cli": "^52.2.4"
   },
   "//": "Learn more: https://sli.dev/guide/write-theme.html",
   "slidev": {
