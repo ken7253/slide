@@ -183,7 +183,7 @@ layout: section
 
 ## Terserとmangleとは？
 
-![](/img/terser.org_.png)
+![terser.orgのスクリーンショット](/img/terser.org_.png)
 
 ---
 
