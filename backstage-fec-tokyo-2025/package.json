@@ -1,0 +1,14 @@
+{
+  "name": "@slide/backstage-fec-tokyo-2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev",
+    "export": "slidev export",
+    "build": "slidev build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}
