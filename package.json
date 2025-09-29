@@ -75,6 +75,6 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.46.2",
-    "@rollup/rollup-linux-arm64-gnu": "^4.44.0"
+    "@rollup/rollup-linux-arm64-gnu": "^4.52.3"
   }
 }
