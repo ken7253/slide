@@ -3,16 +3,16 @@ import path from "node:path";
 
 import inquirer from "inquirer";
 
-import { reservedDirChars } from "./util/reservedDirChars.js";
+import { reservedDirChars } from "./util/reservedDirChars.ts";
 
 /** プロパティの存在チェックと型の絞り込みを行う形ガード */
 const hasWorkspaces = (
-  packageJSON: Object
+  packageJSON: Object,
 ): packageJSON is { workspaces: string[] } => {
   const hasProperty = Object.hasOwn(packageJSON, "workspaces");
   if (!hasProperty) return false;
   const isArray = Array.isArray(
-    (packageJSON as { workspaces: unknown }).workspaces
+    (packageJSON as { workspaces: unknown }).workspaces,
   );
   return isArray;
 };
@@ -49,7 +49,7 @@ const hasWorkspaces = (
       .then((answer) => {
         if (!(answer instanceof Object)) return;
         const hasAnswer = (
-          v: unknown
+          v: unknown,
         ): v is { currentName: unknown; newName: unknown } => {
           if (!(v instanceof Object)) return false;
           const hasCurrentName = Object.hasOwn(v, "currentName");

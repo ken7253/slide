@@ -6,7 +6,7 @@ import { promisify } from "node:util";
 import dayjs from "dayjs";
 import inquirer from "inquirer";
 
-import { reservedDirChars } from "./util/reservedDirChars.js";
+import { reservedDirChars } from "./util/reservedDirChars.ts";
 
 /** Promise like exec. */
 const exec = promisify(childProcess.exec);
@@ -34,12 +34,12 @@ const crateWorkspace = (name: string | null) => {
         process.cwd(),
         "scripts",
         "assets",
-        "slides.md"
+        "slides.md",
       );
       const slideFilePath = path.join(
         process.cwd(),
         workspaceName,
-        "slides.md"
+        "slides.md",
       );
 
       const copyTemplateTask = cp(templateFilePath, slideFilePath);
@@ -48,17 +48,17 @@ const crateWorkspace = (name: string | null) => {
       const makeStyleFileTask = mkdir(styleDir).then(() => {
         writeFile(
           path.join(styleDir, "index.ts"),
-          'import "./mod.css"\nimport "@slide/reuse/styles";'
+          'import "./mod.css"\nimport "@slide/reuse/styles";',
         );
         writeFile(path.join(styleDir, "mod.css"), "");
       });
 
       const taskGroup = [makeScriptsTask, copyTemplateTask, makeStyleFileTask];
-      Promise.allSettled(taskGroup).then(() =>
-        console.log(`[Done] Create ${workspaceName}`)
-      ).catch((e) => {
-        console.log(e)
-      });
+      Promise.allSettled(taskGroup)
+        .then(() => console.log(`[Done] Create ${workspaceName}`))
+        .catch((e) => {
+          console.log(e);
+        });
     });
 };
 
