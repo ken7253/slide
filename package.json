@@ -35,7 +35,7 @@
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
-    "@slidev/cli": "^52.2.4",
+    "@slidev/cli": "^52.8.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "@storybook/addon-interactions": "^8.6.14",
@@ -63,7 +63,7 @@
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/radix-icons": "^1.2.5",
     "@iconify-json/simple-icons": "^1.2.57",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.19",
     "qrcode": "^1.5.4",
     "vue": "^3.5.13"
   },
