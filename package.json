@@ -68,10 +68,10 @@
     "vue": "^3.5.13"
   },
   "volta": {
-    "node": "22.11.0"
+    "node": "24.14.1"
   },
   "engines": {
-    "node": "^22.11.0"
+    "node": "^24.14.1"
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.46.2",
