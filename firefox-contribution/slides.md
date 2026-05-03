@@ -92,13 +92,34 @@ src: "../reuse/me.md"
 WIP: CSS Engineが行っている処理についての図を入れる
 
 ---
+layout: two-cols-header
+---
 
 ## 修正したバグについて
 
+`CSSStyleDeclaration`インターフェイスの`getPropertyValue`メソッドの返り値が仕様と異なっていた部分の修正。
+
+::left::  
+
+```ts
+`
+<!-- html $0 -->
+<div style="--foo: var(--bar) ;">
+   <p>children</p>
+</div>
+`
+
+const pattern1 = $0.style.getPropertyValue("--foo");
+const pattern2 = window.getComputedStyle($0).getPropertyValue("--foo");
+const pattern3 = window.getComputedStyle($0.children[0]).getPropertyValue("--foo");
+```
+
+::right::
+
+<div style="display:flex;flex-direction:column;align-items:center;">
 <QRCode text="https://github.com/web-platform-tests/wpt/blob/master/css/css-variables/variable-definition.html" />
-
-
-<!-- 今回の修正はCSSOMに関するSpecで -->
+<span style="text-align:center;">テストケース(WPT)</span>
+</div>
 
 ---
 
