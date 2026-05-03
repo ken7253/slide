@@ -1,13 +1,10 @@
 ---
-theme: default
+theme: ../theme-browser-and-ui
 titleTemplate: '%s - ken7253'
-colorSchema: 'dark'
-fonts:
-  sans: 'M PLUS 2'
-  mono: 'M PLUS 1 Code'
+layout: intro
 ---
 
-# slide title
+# Firefoxにコントリビューションして得られた学び
 
 ---
 src: "../reuse/me.md"

@@ -1,0 +1,5 @@
+#app {
+  .slidev-layout.intro h1 {
+    font-size: 2rem;
+  }
+}
