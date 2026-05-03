@@ -60,7 +60,8 @@
       }
     }
 
-    code {
+    /* Inline code */
+    code:not([class]) {
       margin: 0 4px;
       color: var(--theme-c-background);
     }
