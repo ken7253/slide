@@ -101,14 +101,14 @@ layout: two-cols-header
 
 ::left::  
 
-```ts
-`
-<!-- html $0 -->
+```html
+<!-- $0 -->
 <div style="--foo: var(--bar) ;">
    <p>children</p>
 </div>
-`
+```
 
+```ts
 const pattern1 = $0.style.getPropertyValue("--foo");
 const pattern2 = window.getComputedStyle($0).getPropertyValue("--foo");
 const pattern3 = window.getComputedStyle($0.children[0]).getPropertyValue("--foo");
