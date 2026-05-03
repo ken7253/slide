@@ -34,12 +34,31 @@ src: "../reuse/me.md"
 ## 貢献までの流れ
 
 - Bugzillaのアカウント作成
-- Bugzilla or WPTなどで修正したいバグを探す
+- Phabricatorのアカウント作成
 - FirefoxのGitHubリポジトリからコードをClone
+- Bugzilla or WPTなどで修正したいバグを探す
 
 ---
 
-### Bugzilla
+### Bugzillaのアカウント作成
+
+![firefoxのbugzillaページのスクリーンショット](/img/bugzilla.mozilla.org_home.png)
+
+---
+
+### Phabricatorのアカウント作成
+
+![Phabricatorのホーム画面のスクリーンショット](/img/phabricator.services.mozilla.com.png)
+
+---
+
+### FirefoxのGitHubリポジトリからコードをClone
+
+![firefoxのGitHubページのスクリーンショット](/img/github.com_mozilla-firefox_firefox.png)
+
+---
+
+### Bugzilla or WPTなどで修正したいバグを探す
 
 ---
 
