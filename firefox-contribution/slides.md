@@ -68,6 +68,18 @@ src: "../reuse/me.md"
 ![WPTのダッシュボードのスクリーンショット](/img/wpt.fyi_results.png)
 
 ---
+layout: section
+---
+
+## 自分たちの書いたコードがどのように動いているのか知るのは楽しい
+
+---
+layout: section
+---
+
+## ブラウザという環境は与えられるものではなく変えていける
+
+---
 
 ## Browser and UIという勉強会を開催しています。
 
