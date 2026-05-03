@@ -83,7 +83,20 @@ src: "../reuse/me.md"
 
 ## CSS Engineとはなにか
 
-<!-- WIP: CSS Engineが行っている処理についての図を入れる -->
+WIP: CSS Engineが行っている処理についての図を入れる
+
+---
+
+## 修正したバグについて
+
+<QRCode text="https://github.com/web-platform-tests/wpt/blob/master/css/css-variables/variable-definition.html" />
+
+
+---
+
+## 修正したバグについて
+
+![パッチとして送ったcustom_properties.rsのdiff画面のスクリーンショット、実質的な変更は7行だけ。](/img/patch-diff.png)
 
 ---
 layout: section
