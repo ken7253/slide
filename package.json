@@ -31,7 +31,8 @@
     "css-polyfill",
     "beyond-early-returns",
     "reduce-bundle-size",
-    "browser-and-ui-3"
+    "browser-and-ui-3",
+    "firefox-contribution"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
