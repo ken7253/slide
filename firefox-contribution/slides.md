@@ -60,6 +60,8 @@ src: "../reuse/me.md"
 
 ### Bugzilla or WPTなどで修正したいバグを探す
 
+![WPTのダッシュボードのスクリーンショット](/img/wpt.fyi_results.png)
+
 ---
 
 ## Browser and UIという勉強会を開催しています。
