@@ -1,0 +1,49 @@
+#app {
+  .slidev-layout.intro {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      width: 150px;
+      height: 150px;
+      rotate: 15deg;
+      background-image: url("/img/fec-nagoya.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  :is(#slide-content, .print-slide-container) {
+    ul {
+      text-box-trim: trim-both;
+    }
+
+    p {
+      text-box-trim: trim-both;
+      line-height: 1.8;
+    }
+
+    h3 {
+      text-align: center;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+    text-box-trim: trim-both;
+    line-height: 1.6;
+  }
+}

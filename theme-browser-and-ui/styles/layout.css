@@ -60,7 +60,8 @@
       }
     }
 
-    code {
+    /* Inline code */
+    code:not([class]) {
       margin: 0 4px;
       color: var(--theme-c-background);
     }
@@ -87,6 +88,14 @@
         background-color: var(--theme-c-text);
         opacity: 0.3;
       }
+    }
+
+    hr {
+      margin: 1.5rem 0;
+      border: none;
+      height: 1px;
+      background-color: var(--theme-c-text);
+      opacity: 0.2;
     }
   }
 

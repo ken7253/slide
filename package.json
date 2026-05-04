@@ -31,7 +31,8 @@
     "css-polyfill",
     "beyond-early-returns",
     "reduce-bundle-size",
-    "browser-and-ui-3"
+    "browser-and-ui-3",
+    "firefox-contribution"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -65,6 +66,9 @@
     "dayjs": "^1.11.19",
     "qrcode": "^1.5.4",
     "vue": "^3.5.13"
+  },
+  "overrides": {
+    "twoslash-vue": "0.3.7"
   },
   "volta": {
     "node": "24.14.1"
