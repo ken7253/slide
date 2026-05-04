@@ -155,6 +155,54 @@ const pattern3 = window.getComputedStyle($0.children[0]).getPropertyValue("--foo
 
 ## 修正したバグについて
 
+![修正したテストケースのパターンを表した図](/img/test-case.svg)
+
+`getPropertyValue`メソッドは大まかに3つのパターンがある
+
+- `style`属性から直接取得する場合
+- `getComputedStyle`を経由して取得した場合
+- カスケードした値を`getComputedStyle`経由で解決する場合
+
+---
+
+## 修正したバグについて
+
+`getPropertyValue`の返り値に`<whitespace-token>`（半角スペース）が含まれてしまっていたが、この挙動に仕様との差異があったため修正を行った。
+
+```html
+<!-- $0 -->
+<div style="--foo: var(--bar) ;">
+   <p>children</p>
+</div>
+```
+
+```ts
+const pattern1 = $0.style.getPropertyValue("--foo");
+
+console.log(pattern1);
+// 🙅
+// "var(--bar) "
+
+// 🙆
+// "var(--bar)"
+```
+
+---
+layout: section
+---
+
+### なぜこのバグを修正しようと思ったのか
+
+---
+layout: section
+---
+
+### 簡単そうだったから
+
+---
+
+## 修正したバグについて
+
 ![パッチとして送ったcustom_properties.rsのdiff画面のスクリーンショット、実質的な変更は7行だけ。](/img/patch-diff.png)
 
 これだけを治すのに2,3週間…！
@@ -234,19 +282,13 @@ CSSOMの仕様を定めるCSS Object Model (CSSOM) Module Level 1には getPrope
 
 ## CIの結果が読めなかった
 
-
-
----
-layout: section
 ---
 
-## 書いたコードがどのように動いているのかを知る重要性
+## 修正を終えてみて
 
----
-layout: section
----
-
-## 環境は与えられるものではなく改善に加われる
+- 小さなバグから始められたのは非常によかった
+- 何を修正するのか、関連する仕様の調査が重要（思っている以上に！）
+- リリースノートに自分の名前が載るのはテンションが上がる
 
 ---
 
