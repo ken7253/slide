@@ -1,12 +1,42 @@
 ---
 theme: ../theme-browser-and-ui
 titleTemplate: "%s - ken7253"
-layout: intro
+src: ./title.md
 ---
 
-# Firefoxにコントリビューションして得られた学び
+---
+layout: section
+---
 
-[@フロントエンドカンファレンス名古屋](https://fec-nagoya-org.github.io/2026/) / [#fec_nagoya](https://x.com/search?f=tweets&vertical=default&q=%23fec_nagoya&src=typd)
+## ちょっとだけ質問
+
+---
+layout: section
+---
+
+## フロントエンドエンジニア
+
+---
+layout: section
+---
+
+## OSSとかにパッチを送ったことがある
+
+---
+layout: section
+---
+
+## ブラウザにパッチを送ったことがある
+
+---
+layout: section
+---
+
+## ブラウザ（開発）に興味を持ってくれる人を増やすため
+
+---
+src: ./title.md
+---
 
 <!-- prettier-ignore-start -->
 
@@ -58,6 +88,11 @@ Bugzillaはブラウザ開発以外にバグの報告などにも利用される
 ### Phabricatorのアカウント作成
 
 ![Phabricatorのホーム画面のスクリーンショット](/img/phabricator.services.mozilla.com.png)
+
+<!--
+Phabricator(ファブリケーター)はfirefoxのソースコード管理ツールで、自分も詳しくないですがGitHubのような感じでレビューを行ったりするのに利用されています。
+ソースコードの取得自体は公式のGitHubからcloneを行えますが、パッチ自体はこっちにだすひつようがあります。
+-->
 
 ---
 
@@ -195,14 +230,20 @@ CSSOMの仕様を定めるCSS Object Model (CSSOM) Module Level 1には getPrope
 <hr/>
 
 ```sh
-./mach wpt test_list <directory | file>
+./mach wpt test_list <directory | file> --headless
 # or
-./mach test <directory | file>
+./mach test <directory | file> --headless
 ```
 
 ---
 
+## テストの効率的な実行方法を知らなかった
+
+---
+
 ## CIの結果が読めなかった
+
+
 
 ---
 layout: section
