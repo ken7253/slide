@@ -107,13 +107,13 @@ Phabricator(ファブリケーター)はfirefoxのソースコード管理ツー
 
 ## CSS Engineとはなにか
 
-![](/img/browser-overview.svg)
+![ブラウザの機能をおおまかにレンダリングとJSEngineとその他の機能に分けた図](/img/browser-overview.svg)
 
 ---
 
 ## CSS Engineとはなにか
 
-![](/img/rendering-engine.svg)
+![レンダリングエンジンの簡易的な流れを表した図、取得したHTML/CSSからPaintingまでの流れを列挙している](/img/rendering-engine.svg)
 
 ---
 
