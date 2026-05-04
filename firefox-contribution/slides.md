@@ -278,6 +278,8 @@ CSSOMの仕様を定めるCSS Object Model (CSSOM) Module Level 1には getPrope
 
 ## テストの効率的な実行方法を知らなかった
 
+TODO! treeherderの確認からローカルでのテスト実行まで
+
 ---
 
 ## CIの結果が読めなかった
