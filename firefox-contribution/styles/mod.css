@@ -21,6 +21,12 @@
     }
   }
 
+  :is(#slide-content, .print-slide-container) {
+    ul {
+      text-box-trim: trim-both;
+    }
+  }
+
   h1,
   h2,
   h3,
