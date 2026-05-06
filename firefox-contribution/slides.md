@@ -102,6 +102,13 @@ Phabricator(ファブリケーター)はfirefoxのソースコード管理ツー
 普通にフロントエンドエンジニアとして開発をしていると知らない場合もあると思いますが、ブラウザ自体の開発に利用されるweb-platform-testという共通のテストがあります。
 このスクショのように各ブラウザがどの程度、仕様通りの実装をしているのかやどの機能にバグが残っているのかなどが確認できます。
 -->
+---
+
+## CSS Engineとはなにか
+
+<h3 style="display: flex;justify-content: center;align-items: center;height: 100%;padding-bottom: 60px;">
+全DOMノードのスタイル計算を完了させてレンダリングツリーを作る
+</h3>
 
 ---
 
@@ -136,13 +143,6 @@ layout: two-cols-header
 より詳しい解説などが気になる人はこちらの記事に書かれています。
 </p>
 </div>
-
----
-
-## CSS Engineとはなにか
-
-全てのDOMノード
-
 
 ---
 layout: two-cols-header
