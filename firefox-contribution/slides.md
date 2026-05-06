@@ -123,9 +123,19 @@ layout: two-cols-header
 
 ::left::
 
-![](/img/css-engine.svg)
+<img style="padding: 0 8px;" src="/img/css-engine.svg" alt="CSS EngineとRendererの境界及びJS APIとの関係性を書いた図" />
 
 ::right::
+
+<div style="height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 16px;">
+
+<QRCode text="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/" />
+
+<p style="font-size:.75rem;">
+参考記事:<a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Inside a super fast CSS engine: Quantum CSS (aka Stylo)</a><br/>
+より詳しい解説などが気になる人はこちらの記事に書かれています。
+</p>
+</div>
 
 ---
 
