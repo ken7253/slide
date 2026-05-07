@@ -204,8 +204,6 @@ Bugzillaにバグとして起票されていないものはパッチを送って
 次にもう一つ登録が必要なのがPhabricator(ファブリケーター)でこれはfirefoxのソースコード管理ツールみたいな感じで、自分も詳しくないですがGitHubのような感じでレビューを行ったりするのに利用されています。
 
 ソースコードの取得自体は公式のGitHubからできるんですが、パッチ自体はこっちに出す必要があります。
-
-Bugzillaのチケットとの紐づけとレビュアーの指定をパッチのタイトルで行ったりするなどレビュー時のお作法が結構独特なので
 -->
 
 ---
@@ -236,11 +234,21 @@ layout: two-cols-header
 <p style="font-size: 1rem;">Firefoxコントリビューター向けクイックリファレンス</p>
 </div>
 
+<!--
+レビューを出すまでに結構お作法的な事が多いので、コントリビューター向けのクイックリファレンスぐらいは最低限読んでおいたほうがよいと思います。
+
+具体的な話になっちゃいますが、たとえばパッチの提出に必要な`moz-phab`コマンドの使い方であったり、タイトルでBugzillaのチケットとレビュワーの指定をしたりするのでそこらへんの知識であったり、レビュー後の修正分を`--amend`でまとめたりするみたいなルールがあったりします。
+-->
+
 ---
 
 ### FirefoxのGitHubリポジトリからコードをClone
 
 ![firefoxのGitHubページのスクリーンショット](/img/github.com_mozilla-firefox_firefox.png)
+
+<!--
+ここは普通のOSSと同じ感じでGitHubからコードをCloneできます、はい。
+-->
 
 ---
 
@@ -248,52 +256,28 @@ layout: two-cols-header
 
 ![WPTのダッシュボードのスクリーンショット](/img/wpt.fyi_results.png)
 
+<!--
+そして準備が整ったら直すバグとかを探していくんですが、個人的には最初の修正はWPTのダッシュボードとかから小さい互換性の問題とかを見つけていくほうがよいのかなと思っています。
+
+でWPTってなんだよってなった人も多いかと思います。
+普通にフロントエンド開発をしていると知らない人多いとおもうのですが、ブラウザ自体の仕様に対しての互換性を測ったり、テストの共通化のために各種ブラウザ向けの統一テストみたいなものが用意されています。
+
+このスクショのように各ブラウザがどの程度、仕様通りの実装をしているのかやどの機能にバグが残っているのかなどが確認できます。
+
+ただ一個だけ注意してほしいのがこのWPTは結構いじわるなテストケースとかも用意されてたり仕様ごとにテストの粒度もまちまちだったりするのでこのテストの通過率だけを見てブラウザの開発が遅れてるとか進んでいる、みたな指標ではないのでよろしくお願いします。
+-->
+
+---
+layout: section
+---
+
+## 修正したバグについて
 
 <!--
-普通にフロントエンドエンジニアとして開発をしていると知らない場合もあると思いますが、ブラウザ自体の開発に利用されるweb-platform-testという共通のテストがあります。
-このスクショのように各ブラウザがどの程度、仕様通りの実装をしているのかやどの機能にバグが残っているのかなどが確認できます。
+（水でも飲む。）
+
+はい、修正の準備と経緯みたいな話が終わったので自分が修正したバグについて話していきます。
 -->
----
-
-## CSS Engineとはなにか
-
-<h3 style="display: flex;justify-content: center;align-items: center;height: 100%;padding-bottom: 60px;">
-全DOMノードのスタイル計算を完了させてレンダリングツリーを作る
-</h3>
-
----
-
-## CSS Engineとはなにか
-
-![ブラウザの機能をおおまかにレンダリングとJSEngineとその他の機能に分けた図](/img/browser-overview.svg)
-
----
-
-## CSS Engineとはなにか
-
-![レンダリングエンジンの簡易的な流れを表した図、取得したHTML/CSSからPaintingまでの流れを列挙している](/img/rendering-engine.svg)
-
----
-layout: two-cols-header
----
-
-## CSS Engineとはなにか
-
-::left::
-
-<img style="padding: 0 8px;" src="/img/css-engine.svg" alt="CSS EngineとRendererの境界及びJS APIとの関係性を書いた図" />
-
-::right::
-
-<div style="height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 16px;">
-
-<QRCode text="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/" />
-
-<p style="font-size:.75rem;">
-参考記事:<a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Inside a super fast CSS engine: Quantum CSS (aka Stylo)</a><br/>
-より詳しい解説などが気になる人はこちらの記事に書かれています。
-</p>
-</div>
 
 ---
 layout: two-cols-header
@@ -324,6 +308,112 @@ const pattern3 = window.getComputedStyle($0.children[0]).getPropertyValue("--foo
 <QRCode text="https://github.com/web-platform-tests/wpt/blob/master/css/css-variables/variable-definition.html" />
 <span style="text-align:center;">テストケース(WPT)</span>
 </div>
+
+<!--
+修正を行った箇所なんですが、めちゃくちゃニッチかつ小さい修正なので分かりづらくてすいませんって感じなんですけどみなさんCSSOMってご存知ですかね？
+
+はい、DOMとかは有名なんであれなんですけどまあ同じようにJSからCSSを操作したり情報を取ったりするためのAPI群の大まかな集まりとしてCSSOM APIというのがあります。
+
+そのなかでも`CSSStyleDeclaration`インターフェイスによって実装されている`getPropertyValue`というメソッドがあるんですよね。
+
+簡単に言うと要素が持っているCSSの情報に対してプロパティを渡すとCSS Valueの文字列を返してくれるよっていう非常にシンプルなメソッドなんですよね。
+
+これでCSS変数名を渡してその値を取ろうとすると本来であればホワイトスペースを除去して返さないといけないんだけどFirefoxだけその実装になっていないのを発見して修正にチャレンジしてみました。
+-->
+
+---
+layout: section
+---
+
+### なぜこのバグを修正しようと思ったのか
+
+<!--
+はい、というわけでなんでこれ直そうと思ったの？って話ですが
+-->
+
+---
+layout: section
+---
+
+### 簡単そうだったから
+
+<!--
+もちろんCSSは好きですしRustも書きたいという気持ちがあったのでCSS Engineの修正にチャレンジしたんですが、最大の理由は自分の実力を考えたときに本当に簡単な問題から始めたかったなというのが大きかったです。
+
+今も新機能を実装する、みたいなパッチを出すことには興味がありますが実際問題としていきなりそういうことをするよりかは、小さい非互換を治していって少しずつコードの全体像を掴んでいくみたいなアプローチでやっていくことをおすすめしたいなと思います。
+-->
+
+---
+
+## CSS Engineとはなにか
+
+<h3 style="display: flex;justify-content: center;align-items: center;height: 100%;padding-bottom: 60px;">
+全DOMノードのスタイル計算を完了させてレンダリングツリーを作る
+</h3>
+
+<!--
+はい、というわけでCSS Engineという単語が出てきたのですが
+
+CSSEngineというのは一言で言うとここに書いてあるとおり「全DOMノードのスタイル計算を完了させてレンダリングツリーを作る」ためのモジュールになります。
+
+Firefox内部ではstyloだったりQuantum CSSと呼ばれているモジュールです。
+-->
+
+---
+
+## CSS Engineとはなにか
+
+![ブラウザの機能をおおまかにレンダリングとJSEngineとその他の機能に分けた図](/img/browser-overview.svg)
+
+<!--
+そもそもの話になってしまうのですが現代のブラウザは複雑で様々なモジュールがまとまって「ブラウザ」としての機能を提供しています。
+
+JS EngineやRendering Engineなどが分かりやすいですが、ほかにもネットワーク関連のモジュールであったりAOMを提供するためのモジュールであったり多くの機能が連動しながらブラウザを作っています。
+-->
+
+---
+
+## CSS Engineとはなにか
+
+![レンダリングエンジンの簡易的な流れを表した図、取得したHTML/CSSからPaintingまでの流れを列挙している](/img/rendering-engine.svg)
+
+<!--
+その中でもCSS Engineはレンダリングエンジンに含まれます。
+
+レンダリングエンジンはChromeであればBlink、FirefoxはGeckoなど名前自体は聞いたことがある人も多いのかなと思います。
+-->
+
+---
+layout: two-cols-header
+---
+
+## CSS Engineとはなにか
+
+::left::
+
+<img style="padding: 0 8px;" src="/img/css-engine.svg" alt="CSS EngineとRendererの境界及びJS APIとの関係性を書いた図" />
+
+::right::
+
+<div style="height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 16px;">
+
+<QRCode text="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/" />
+
+<p style="font-size:.75rem;">
+参考記事:<a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Inside a super fast CSS engine: Quantum CSS (aka Stylo)</a><br/>
+より詳しい解説などが気になる人はこちらの記事に書かれています。
+</p>
+</div>
+
+<!--
+レンダリングエンジンはHTMLとCSSの解析から画面への出力までを担いますが
+
+その中でもレンダリングに必要な情報をまとめたオブジェクトであるレンダーツリーを管理するCSSEngineとレンダーツリーを元に画面描画を行うレンダラーに大まかに分かれています。
+
+またCSSOMをJSに公開するのもCSSEngineの役割だったします。
+
+StyloなどのCSSEngineが行っていることについてはMozillaの方がまとめているブログがあるのでもしもっと詳しく知りたい方とかがいればこちらの記事を読んでいただけると非常に参考になるかなと思います。
+-->
 
 ---
 
@@ -360,18 +450,6 @@ console.log(pattern1);
 // 🙆
 // "var(--bar)"
 ```
-
----
-layout: section
----
-
-### なぜこのバグを修正しようと思ったのか
-
----
-layout: section
----
-
-### 簡単そうだったから
 
 ---
 
