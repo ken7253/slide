@@ -131,6 +131,10 @@ layout: two-cols-header
 <a style="font-size: .75rem;" href="https://gihyo.jp/book/2024/978-4-297-14546-0">https://gihyo.jp/book/2024/978-4-297-14546-0</a>
 </p>
 
+<!--
+直接的
+-->
+
 ---
 
 ## 貢献までの流れ
