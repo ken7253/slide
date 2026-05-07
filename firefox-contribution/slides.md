@@ -156,11 +156,91 @@ layout: two-cols-header
 ![styloに出したPRのレビューコメント、この修正はupstreamであるfirefoxを直すべきと指摘されている。](/img/servo-pr-comment.png)
 
 <!--
-小さい修正だったのですぐ終わるだろうと思っていたんですが、ここで大きな誤算があってservoのEngienであるstyloというモジュールはfirefoxとコードベースを共有しておりfirefox側がupstreamとなっていました。
+小さい修正だったのですぐ終わるだろうと思っていたんですが、ここで大きな誤算があってservoのCSS Engienであるstyloというモジュールはfirefoxとコードベースを共有しておりfirefox側がupstreamとなっていました。
 
 そのためこのモジュールの修正はservo（stylo）を直すのではなくfirefox本体に手を加えないといけなかったようでした。
 
 というわけでここまでがfirefoxにコントリビューションすることになった経緯になります。
+-->
+
+---
+layout: section
+---
+
+## CSS Engineとはなにか
+
+<!--
+ちょっと次に移る前にstyloについて補足させてください。
+
+CSSEngineというのは一言で言うと「全DOMノードのスタイル計算を完了させてレンダリングツリーを作る」ためのモジュールになります。
+
+Firefox内部ではstyloだったりQuantum CSSと呼ばれているモジュールです。
+-->
+
+---
+
+## CSS Engineとはなにか
+
+![ブラウザの機能をおおまかにレンダリングとJSEngineとその他の機能に分けた図](/img/browser-overview.svg)
+
+<!--
+そもそもの話になってしまうのですが現代のブラウザは複雑で様々なモジュールがまとまって「ブラウザ」としての機能を提供しています。
+
+JS EngineやRendering Engineなどが分かりやすいですが、ほかにもネットワーク関連のモジュールであったりAOMを提供するためのモジュールであったり多くの機能が連動しながらブラウザを作っています。
+-->
+
+---
+
+## CSS Engineとはなにか
+
+![レンダリングエンジンの簡易的な流れを表した図、取得したHTML/CSSからPaintingまでの流れを列挙している](/img/rendering-engine.svg)
+
+<!--
+その中でもCSS Engineはレンダリングエンジンに含まれます。
+
+レンダリングエンジンはChromeであればBlink、FirefoxはGeckoなど名前自体は聞いたことがある人も多いのかなと思います。
+-->
+
+---
+layout: two-cols-header
+---
+
+## CSS Engineとはなにか
+
+::left::
+
+<img style="padding: 0 8px;" src="/img/css-engine.svg" alt="CSS EngineとRendererの境界及びJS APIとの関係性を書いた図" />
+
+::right::
+
+<div style="height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 16px;">
+
+<QRCode text="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/" />
+
+<p style="font-size:.75rem;">
+参考記事:<a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Inside a super fast CSS engine: Quantum CSS (aka Stylo)</a><br/>
+より詳しい解説などが気になる人はこちらの記事に書かれています。
+</p>
+</div>
+
+<!--
+レンダリングエンジンはHTMLとCSSの解析から画面への出力までを担いますが
+
+その中でもレンダリングに必要な情報をまとめたオブジェクトであるレンダーツリーを管理するCSSEngineとレンダーツリーを元に画面描画を行うレンダラーに大まかに分かれています。
+
+またCSSOMをJSに公開するのもCSSEngineの役割だったします。
+
+StyloなどのCSSEngineが行っていることについてはMozillaの方がまとめているブログがあるのでもしもっと詳しく知りたい方とかがいればこちらの記事を読んでいただけると非常に参考になるかなと思います。
+-->
+
+---
+layout: section
+---
+
+## 貢献までの流れ
+
+<!--
+でここからが実際にfirefoxにパッチを送りたい場合どう進めていけばいいのかみたいな話になってきます。
 -->
 
 ---
@@ -173,7 +253,6 @@ layout: two-cols-header
 - Bugzilla or WPTなどで修正したいバグを探す
 
 <!--
-でここからが実際にfirefoxにパッチを送りたい場合どう進めていけばいいのかみたいな話になってきます。
 
 ブラウザの開発って適切かどうかは分からないんですが一般的なOSSと違って独特の作法だったりツールだったりが出てくるのでちょっと雰囲気が掴みづらい部分があるんですがそこら辺を補足する感じで話していこうと思います。
 
@@ -262,6 +341,8 @@ layout: two-cols-header
 でWPTってなんだよってなった人も多いかと思います。
 普通にフロントエンド開発をしていると知らない人多いとおもうのですが、ブラウザ自体の仕様に対しての互換性を測ったり、テストの共通化のために各種ブラウザ向けの統一テストみたいなものが用意されています。
 
+先ほどのセッションでtest262の話があったのでそれを聞いてた人は想像つくんじゃないかなと思うんですが、それのブラウザ全体版みたいな感じですね。
+
 このスクショのように各ブラウザがどの程度、仕様通りの実装をしているのかやどの機能にバグが残っているのかなどが確認できます。
 
 ただ一個だけ注意してほしいのがこのWPTは結構いじわるなテストケースとかも用意されてたり仕様ごとにテストの粒度もまちまちだったりするのでこのテストの通過率だけを見てブラウザの開発が遅れてるとか進んでいる、みたな指標ではないのでよろしくお願いします。
@@ -338,81 +419,15 @@ layout: section
 ### 簡単そうだったから
 
 <!--
+非常に雑にまとめると自分でも出来そうだったから、簡単そうに見えたからです。
+
 もちろんCSSは好きですしRustも書きたいという気持ちがあったのでCSS Engineの修正にチャレンジしたんですが、最大の理由は自分の実力を考えたときに本当に簡単な問題から始めたかったなというのが大きかったです。
 
-今も新機能を実装する、みたいなパッチを出すことには興味がありますが実際問題としていきなりそういうことをするよりかは、小さい非互換を治していって少しずつコードの全体像を掴んでいくみたいなアプローチでやっていくことをおすすめしたいなと思います。
--->
+今も新機能を実装する、みたいなパッチを出すことには興味がありますが実際問題としていきなりそういうことをするよりかは、小さい非互換を治していって少しずつコードの全体像を掴んでいくみたいなアプローチでやっていくことをおすすめしたいし自分もそういうやり方じゃないと難しいなと思います。
 
----
+今聞いている方の中にもこれぐらいだったら自分でも直せそう！と思った人もいると思います。いや本当にそうなんですよね探せばこういう実際にバグを治しながら実装を学ぶみたいな事ができるものがあるんです。
 
-## CSS Engineとはなにか
-
-<h3 style="display: flex;justify-content: center;align-items: center;height: 100%;padding-bottom: 60px;">
-全DOMノードのスタイル計算を完了させてレンダリングツリーを作る
-</h3>
-
-<!--
-はい、というわけでCSS Engineという単語が出てきたのですが
-
-CSSEngineというのは一言で言うとここに書いてあるとおり「全DOMノードのスタイル計算を完了させてレンダリングツリーを作る」ためのモジュールになります。
-
-Firefox内部ではstyloだったりQuantum CSSと呼ばれているモジュールです。
--->
-
----
-
-## CSS Engineとはなにか
-
-![ブラウザの機能をおおまかにレンダリングとJSEngineとその他の機能に分けた図](/img/browser-overview.svg)
-
-<!--
-そもそもの話になってしまうのですが現代のブラウザは複雑で様々なモジュールがまとまって「ブラウザ」としての機能を提供しています。
-
-JS EngineやRendering Engineなどが分かりやすいですが、ほかにもネットワーク関連のモジュールであったりAOMを提供するためのモジュールであったり多くの機能が連動しながらブラウザを作っています。
--->
-
----
-
-## CSS Engineとはなにか
-
-![レンダリングエンジンの簡易的な流れを表した図、取得したHTML/CSSからPaintingまでの流れを列挙している](/img/rendering-engine.svg)
-
-<!--
-その中でもCSS Engineはレンダリングエンジンに含まれます。
-
-レンダリングエンジンはChromeであればBlink、FirefoxはGeckoなど名前自体は聞いたことがある人も多いのかなと思います。
--->
-
----
-layout: two-cols-header
----
-
-## CSS Engineとはなにか
-
-::left::
-
-<img style="padding: 0 8px;" src="/img/css-engine.svg" alt="CSS EngineとRendererの境界及びJS APIとの関係性を書いた図" />
-
-::right::
-
-<div style="height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 16px;">
-
-<QRCode text="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/" />
-
-<p style="font-size:.75rem;">
-参考記事:<a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Inside a super fast CSS engine: Quantum CSS (aka Stylo)</a><br/>
-より詳しい解説などが気になる人はこちらの記事に書かれています。
-</p>
-</div>
-
-<!--
-レンダリングエンジンはHTMLとCSSの解析から画面への出力までを担いますが
-
-その中でもレンダリングに必要な情報をまとめたオブジェクトであるレンダーツリーを管理するCSSEngineとレンダーツリーを元に画面描画を行うレンダラーに大まかに分かれています。
-
-またCSSOMをJSに公開するのもCSSEngineの役割だったします。
-
-StyloなどのCSSEngineが行っていることについてはMozillaの方がまとめているブログがあるのでもしもっと詳しく知りたい方とかがいればこちらの記事を読んでいただけると非常に参考になるかなと思います。
+なのでぜひやってみてほしいです！
 -->
 
 ---
@@ -427,29 +442,11 @@ StyloなどのCSSEngineが行っていることについてはMozillaの方が�
 - `getComputedStyle`を経由して取得した場合
 - カスケードした値を`getComputedStyle`経由で解決する場合
 
----
+<!--
+はい、話を戻しまして話題に上げている`getPropertyValue`メソッドというか`CSSStyleDeclaration`インターフェイスなんですがこれがでてくる場合が大まかに3つありました、要素の`style`属性経由で直接アクセスする場合と、`getComputedStyle()`を経由して計算された値を取得するパターンとカスケード経由の3つです。
 
-## 修正したバグについて
-
-`getPropertyValue`の返り値に`<whitespace-token>`（半角スペース）が含まれてしまっていたが、この挙動に仕様との差異があったため修正を行った。
-
-```html
-<!-- $0 -->
-<div style="--foo: var(--bar) ;">
-   <p>children</p>
-</div>
-```
-
-```ts
-const pattern1 = $0.style.getPropertyValue("--foo");
-
-console.log(pattern1);
-// 🙅
-// "var(--bar) "
-
-// 🙆
-// "var(--bar)"
-```
+複数の経路があるんですが、実装されているインターフェイスは共通なのでそこまで大きな修正にはならなかったです。
+-->
 
 ---
 
@@ -458,6 +455,18 @@ console.log(pattern1);
 ![パッチとして送ったcustom_properties.rsのdiff画面のスクリーンショット、実質的な変更は7行だけ。](/img/patch-diff.png)
 
 これだけを治すのに2,3週間…！
+
+<!--
+はい、というわけで実際に自分が送ったパッチのDiffがこれです。
+
+少なっ！って感じですよね。
+
+まあ実際はテスト関連のdiffも結構あるので本当にこれだけってわけではないんですが実際のブラウザの挙動に影響するパッチはこれだけです。
+
+なんか内容を整理したり、実際の変更を見るとなんかいけそうな気がしてきませんか？
+
+修正量も少なくて比較的簡単なタスクだったんですが自分はこれでもパッチを取り込んで貰えるまでに2-3週間ぐらい掛かりました。
+-->
 
 ---
 layout: section
