@@ -5,11 +5,13 @@ import QRCode from "qrcode";
 export type Props = {
   text: string;
   removeParams?: boolean;
+  width?: number | undefined;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   text: "",
   removeParams: true,
+  width: undefined,
 });
 
 const canvas = ref<HTMLCanvasElement>();
@@ -24,12 +26,14 @@ const removeParams = (text: string) => {
 };
 
 const link = computed(() =>
-  URL.canParse(props.text) ? removeParams(props.text) : undefined
+  URL.canParse(props.text) ? removeParams(props.text) : undefined,
 );
 
 onMounted(() => {
   if (!(canvas.value instanceof HTMLCanvasElement)) return;
-  QRCode.toCanvas(canvas.value, removeParams(props.text) ?? "");
+  QRCode.toCanvas(canvas.value, removeParams(props.text) ?? "", {
+    width: props.width,
+  });
 });
 </script>
 
@@ -55,5 +59,7 @@ onMounted(() => {
 
 .canvas {
   display: block;
+  height: inherit;
+  width: inherit;
 }
 </style>

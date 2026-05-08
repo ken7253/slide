@@ -616,7 +616,7 @@ layout: section
 
 ## Browser and UIという勉強会を開催しています。
 
-<div style="display: flex;height: 100%;justify-content: center;align-items: center;flex-direction: column;">
-<QRCode text="https://browser-and-ui.connpass.com/" />
+<div style="display: flex;height: 100%;justify-content: center;align-items: center;flex-direction: column;gap:24px;">
+<QRCode text="https://browser-and-ui.connpass.com/" width="280" />
 <p>次回開催は未定ですが、近々やろうと思います！</p>
 </div>
