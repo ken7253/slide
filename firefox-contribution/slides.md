@@ -5,6 +5,28 @@ src: ./title.md
 ---
 
 ---
+
+## スライドはこちらから
+
+<div style="
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;">
+<QRCode text="https://speakerdeck.com/ken7253/firefoxnikontoribiyusiyonsitede-raretaxue-bi" width="300"/>
+<p>スライドを上記にアップロードしています</p>
+</div>
+
+<!--
+今回の資料ですが事前にspeakerdeckにアップロードしています。
+
+今回そんなにコードの詳細についての話みたいなのはしないんですけど、コードとかちょっと見づらい場合もあるかもなので気になる方は手元でこちらを確認しながら聞いていただいてもよいかなと思いますので良ければご活用ください。
+
+（ちょっと待つ）
+-->
+
+---
 layout: section
 ---
 
