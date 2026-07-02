@@ -1,16 +1,23 @@
 ---
-theme: default
+theme: ../theme-browser-and-ui
 titleTemplate: '%s - ken7253'
-colorSchema: 'dark'
-fonts:
-  sans: 'M PLUS 2'
-  mono: 'M PLUS 1 Code'
+layout: intro
 ---
 
-# slide title
+# Browser and UI #4
 
 ---
-src: "../reuse/me.md"
+src: "../theme-browser-and-ui/me.md"
 ---
+
+---
+src: "../theme-browser-and-ui/description.md"
+---
+
+---
+layout: intro
+---
+
+## File System Access APIについて
 
 ---
