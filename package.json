@@ -32,7 +32,8 @@
     "beyond-early-returns",
     "reduce-bundle-size",
     "browser-and-ui-3",
-    "firefox-contribution"
+    "firefox-contribution",
+    "browser-and-ui-4"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
