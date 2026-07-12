@@ -7,11 +7,21 @@ h6 {
   line-height: 1.6 !important;
 }
 
-.slidev-layout h2:not(:first-child),
-.slidev-layout h3:not(:first-child),
-.slidev-layout h4:not(:first-child),
-.slidev-layout h5:not(:first-child),
-.slidev-layout h6:not(:first-child) {
-  margin-bottom: 0 !important;
-  margin-top: 16px;
+#app {
+  .slidev-layout h2:not(:first-child),
+  .slidev-layout h3:not(:first-child),
+  .slidev-layout h4:not(:first-child),
+  .slidev-layout h5:not(:first-child),
+  .slidev-layout h6:not(:first-child) {
+    margin-bottom: 0 !important;
+    margin-top: 16px;
+  }
+
+  .slidev-layout.two-cols-header {
+    column-gap: 8px;
+
+    [class*="col-"] > p {
+      margin: 0;
+    }
+  }
 }
