@@ -44,7 +44,7 @@
     "markdownlint-cli2": "^0.18.1",
     "playwright": "^1.62.1",
     "playwright-chromium": "^1.62.1",
-    "typescript": "^5.8.3",
+    "typescript": "^7.0.2",
     "vite": "^6.0.7"
   },
   "dependencies": {
