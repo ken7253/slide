@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/radix-icons": "^1.2.5",
+    "@iconify-json/radix-icons": "^1.2.6",
     "@iconify-json/simple-icons": "^1.2.57",
     "dayjs": "^1.11.23",
     "qrcode": "^1.5.4",
