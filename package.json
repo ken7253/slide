@@ -40,7 +40,7 @@
     "@types/node": "^22.13.14",
     "@types/qrcode": "^1.5.6",
     "@vitejs/plugin-vue": "^6.0.8",
-    "inquirer": "^13.4.2",
+    "inquirer": "^14.2.0",
     "markdownlint-cli2": "^0.18.1",
     "playwright": "^1.62.1",
     "playwright-chromium": "^1.62.1",
