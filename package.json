@@ -39,7 +39,7 @@
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.13.14",
     "@types/qrcode": "^1.5.5",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue": "^6.0.8",
     "inquirer": "^13.4.2",
     "markdownlint-cli2": "^0.18.1",
     "playwright": "^1.62.1",
