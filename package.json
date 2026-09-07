@@ -33,7 +33,7 @@
     "firefox-contribution"
   ],
   "devDependencies": {
-    "@slidev/cli": "^52.15.1",
+    "@slidev/cli": "^52.19.1",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "@types/inquirer": "^9.0.7",
