@@ -17,10 +17,10 @@ image: /img/developer.mozilla.org-ja-docs-Web-HTML-Reference-Elements-H.png
 layout: section
 ---
 
-![](/img/heading-model.svg)
+![見出しレベル1〜3が並ぶマークアップと、それが表している入れ子構造のオブジェクトモデルを対比した図](/img/heading-model.svg)
 
 ---
 layout: section
 ---
 
-![](/img/model-to-component.svg)
+![入れ子構造のオブジェクトモデルと、それをコンポーネントで表現する3つの書き方を対比した図](/img/model-to-component.svg)
