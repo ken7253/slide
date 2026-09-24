@@ -1,0 +1,112 @@
+---
+theme: ../theme-browser-and-ui
+titleTemplate: '%s - ken7253'
+---
+
+# フロントエンドカンファレンス福岡 参加レポート
+
+---
+src: "../theme-browser-and-ui/me.md"
+---
+
+---
+layout: section
+---
+
+## フロントエンドカンファレンスとは？
+
+---
+layout: two-cols-header
+---
+
+### フロントエンドカンファレンスとは？
+
+::left::
+
+<img src="/img/vue-fes.png" class="m-auto w-45 h-45" alt="" />
+
+<img src="/img/jsconfjp.png" class="m-auto w-50 h-50" alt="" />
+
+::right::
+
+- VueFes/JSConfが既にあった
+- クライアントサイド技術の話
+  - CSS/HTML
+  - ブラウザ開発
+  - a11y
+  - i18n
+
+---
+
+### フロントエンドカンファレンスとは？
+
+![](/img/fec-h-2024.png)
+
+<!-- フロントエンドカンファレンスは増えたがその火付け役的なのはやはりフロントエンドカンファレンス北海道2024 -->
+
+---
+layout: section
+---
+
+## フロントエンドカンファレンス福岡とは？
+
+---
+
+### フロントエンドカンファレンス福岡とは？
+
+![](/img/fe-conf-map.jpg)
+
+---
+
+### フロントエンドカンファレンス福岡とは？
+
+- フロントエンドのエキスパート向け
+- エコシステムよりも標準・プラットフォーマー側の話が主体
+- 60分セッションのみ、昼食時間なしのストロングスタイルだった
+
+---
+layout: default
+---
+
+## 参加したセッション
+
+- 杜甫々が語るフロントエンド開発技術の歴史と今後
+- なぜJavaScriptは異常なほど速いのか？
+- Webプラットフォームで議論されているセキュリティ課題
+- Webの地図
+- ウェブコンポーネントの進化
+- Web エコシステムとサイバースペース地政学
+
+
+---
+
+## 杜甫々が語るフロントエンド開発技術の歴史と今後
+
+---
+
+## なぜJavaScriptは異常なほど速いのか？
+
+---
+
+## Webプラットフォームで議論されているセキュリティ課題
+
+---
+
+## Webの地図
+
+---
+
+## ウェブコンポーネントの進化
+
+---
+
+## Web エコシステムとサイバースペース地政学
+
+---
+
+## 感想
+
+<img src="/img/overall.webp" alt="" class="w-[60%]" >
+
+<a style="text-box-trim: trim-both;font-size: smaller;" href="https://blog.sakupi01.com/dev/articles/organizing-fec-f-2026">
+https://blog.sakupi01.com/dev/articles/organizing-fec-f-2026 より引用</a>
