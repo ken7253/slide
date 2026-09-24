@@ -106,4 +106,7 @@ layout: default
 
 ## 感想
 
----
+<img src="/img/overall.webp" alt="" class="w-[60%]" >
+
+<a style="text-box-trim: trim-both;font-size: smaller;" href="https://blog.sakupi01.com/dev/articles/organizing-fec-f-2026">
+https://blog.sakupi01.com/dev/articles/organizing-fec-f-2026 より引用</a>
