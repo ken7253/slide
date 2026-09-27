@@ -102,8 +102,40 @@ AIの話もしていて、面白かったのはアセンブラから高級言語
 
 ## なぜJavaScriptは異常なほど速いのか？
 
-- プロパティアクセス
+- プロパティアクセスの最適化
+  - HiddenClass
+  - インラインキャッシュ
 - 演算子の最適化
+
+---
+layout: default
+---
+
+### 辞書モードの `a.x`
+
+<MemoryAccess mode="dict" :step="$clicks" />
+
+---
+layout: default
+---
+
+### Hidden Class 方式の `a.x`
+
+<MemoryAccess mode="hc" :step="$clicks" />
+
+---
+
+### コードを書くうえで注意できる点は？
+
+- 同じ種類のオブジェクトは、クラスかファクトリ関数1か所で作る
+- すべてのプロパティを、生成時に同じ順序で初期化する。後から足さない
+- オプショナルなプロパティも省略せず、常に定義しておく
+- `delete` は使わず `undefined` を代入する（辞書モード化を防ぐ）
+- `Object.setPrototypeOf` などで、生成後にプロトタイプを変えない
+
+あくまで同じようなオブジェクトを大量に、繰り返し処理するような場合。
+
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html#performance-and-size-optimizations
 
 ---
 
@@ -114,7 +146,7 @@ AIの話もしていて、面白かったのはアセンブラから高級言語
 - DOM Clobbring
 - prototype pollution
 - Thenable
-- TC39 TG3()
+- TC39 TG3  
 
 ---
 
