@@ -5,6 +5,8 @@ titleTemplate: '%s - ken7253'
 
 # フロントエンドカンファレンス福岡 参加レポート
 
+![](/img/hakata.jpg)
+
 ---
 src: "../theme-browser-and-ui/me.md"
 ---
