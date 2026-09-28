@@ -294,6 +294,14 @@ ex) [Background Fetch API が消えそうだった話](https://blog.jxck.io/entr
 
 ## Web エコシステムとサイバースペース地政学
 
+- これまでのサプライチェーン攻撃
+- npmはパッケージ数も最大級なのでよく狙われている
+- AIの普及によってOSSはアイデアだけを共有するようになるかもね
+
+`npm i`するだけで便利な機能がたくさん使えてる世界から脱却できるのか？
+
+セキュリティとめんどくささを天秤にかけたときにサプライチェーン攻撃に当たらないように祈りながら`npm i`するようになるのでは。
+
 ---
 
 ## 感想
@@ -302,3 +310,8 @@ ex) [Background Fetch API が消えそうだった話](https://blog.jxck.io/entr
 
 <a style="text-box-trim: trim-both;font-size: smaller;" href="https://blog.sakupi01.com/dev/articles/organizing-fec-f-2026">
 https://blog.sakupi01.com/dev/articles/organizing-fec-f-2026 より引用</a>
+
+<!--
+- rniwaさんと喋れたのが非常に嬉しかった。
+- 本当の意味で現地でしか聞けない話（大人の事情的に）がめちゃくちゃ多くて最高だった。
+-->
