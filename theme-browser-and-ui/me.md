@@ -3,6 +3,7 @@ theme: .
 titleTemplate: '%s - ken7253'
 layout: cover
 ---
+
 <!-- markdownlint-disable first-line-h1 -->
 <div style="display: flex; flex-direction: column; gap: 24px;height: 100%;justify-content: center;">
   <div style="display: flex; justify-content: space-between; position: relative;">
@@ -39,3 +40,8 @@ layout: cover
     </a>
   </div>
 </div>
+
+<!--
+というわけで簡単に自己紹介ですが、ken7253というディスプレイネームで活動しているブラウザとユーザーインターフェースが好きなフロントエンドエンジニアです。
+今回は見出しのお話なんですが
+-->
