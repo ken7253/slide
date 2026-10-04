@@ -60,8 +60,9 @@ layout: section
 -->
 
 ---
-layout: iframe-left
-url: https://blog.sakupi01.com/dev/articles/the-history-of-outline-algorithm
+layout: image-left
+image: /img/blog.sakupi01.com-dev-articles-the-history-of-outline-algorithm.png
+backgroundSize: contain
 ---
 
 ## Outline algorithm
